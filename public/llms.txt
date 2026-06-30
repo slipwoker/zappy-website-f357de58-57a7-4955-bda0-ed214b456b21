@@ -1,0 +1,85 @@
+# מטרה פנימית - מתנות עם משמעות — Generative Engine Optimization Map
+
+> A personalized accessories brand centered around empowering affirmations and positive self-talk. The brand sells customizable keychains, bookmarks, gift sets, and mugs, each featuring a powerful personal declaration such as 'I am strong', 'I am successful', or 'I am loved'. The concept is rooted in the belief that placing an empowering word in front of your eyes daily can shift your mindset and transform your reality. Customers choose their own color, shape, and word to create a deeply personal talisman. The brand also offers matching gift products for loved ones, creating a community of empowerment and mindfulness.
+
+---
+
+## Pages
+
+### דף הבית
+https://-f357de58.zappy5.app
+גלו אביזרים אישיים עם אמירות מחזקות כמו &#39;אני חזקה&#39; או &#39;אני מצליחה&#39;. צרו מחזיק מפתחות, ספל או סימניה בצבע, צורה ומילה שתזכיר לכם כל יום את הכוח שלכם. הפיחו משמעות בשולחן העבודה עוד היום.
+
+### תודה שפניתם | מטרה פנימית - מתנות עם משמעות
+https://-f357de58.zappy5.app/thank-you
+מטרה פנימית - מתנות עם משמעות - תודה שפניתם | מטרה פנימית - מתנות עם משמעות
+
+## Legal & Policy
+
+### Privacy Policy
+https://-f357de58.zappy5.app/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://-f357de58.zappy5.app/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://-f357de58.zappy5.app/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+## How to Contact Us
+
+- (No contact details configured yet.)
+
+### Contact form
+- URL: https://-f357de58.zappy5.app
+- Endpoint: https://-f357de58.zappy5.app/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text)
+  - `email` (email)
+  - `phone` (tel)
+  - `message` (textarea)
+  - `privacy_consent` (checkbox)
+
+---
+
+# Business Context (for LLM understanding)
+
+## About מטרה פנימית - מתנות עם משמעות
+A personalized accessories brand centered around empowering affirmations and positive self-talk. The brand sells customizable keychains, bookmarks, gift sets, and mugs, each featuring a powerful personal declaration such as 'I am strong', 'I am successful', or 'I am loved'. The concept is rooted in the belief that placing an empowering word in front of your eyes daily can shift your mindset and transform your reality. Customers choose their own color, shape, and word to create a deeply personal talisman. The brand also offers matching gift products for loved ones, creating a community of empowerment and mindfulness.
+
+## Services/Products
+- מחזיקי מפתחות בהתאמה אישית עם מילים מעצימות (בחירת צבע, צורה ומילה)
+- סימניות עם מילים מעצימות
+- מארזים מתנה
+- כוסות עם מילה מעצימה
+- קישורים לרשתות חברתיות (פייסבוק, טיקטוק, אינסטגרם)
+- כתבות בתקשורת
+- המלצות לקוחות
+- דף יצירת קשר
+
+## Target Audience
+- אנשים המחפשים השראה יומיומית ומתנות אישיות משמעותיות לעצמם ולאהוביהם
+- מחפשי השראה יומיומית
+- נותני מתנות בהתאמה אישית
+- חובבי התפתחות אישית
+- רוכשי מתנות לחברות
+- אמהות יצירתיות
+- מתנות לעובדים
+- מתנות לצוות חינוכי מורים גננות
+
+## Industry
+Personalized Gifts & Accessories
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://-f357de58.zappy5.app/sitemap.xml
+- Robots: https://-f357de58.zappy5.app/robots.txt
+- Flattened page text (for LLMs): https://-f357de58.zappy5.app/llms-full.txt
