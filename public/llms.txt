@@ -33,9 +33,9 @@ Information about WCAG compliance and accessibility features.
 ## How to Contact Us
 
 - Email: ellaofir76@gmail.com
-- Phone: +972506886796
-- Phone (tel): tel:+972506886796
-- Address: שד' חן , רחובות, מחוז המרכז, 3, ישראל
+- Phone: 050-6886796
+- Phone (tel): tel:0506886796
+- Address: שד' חן , רחובות, מחוז המרכז, 7646918, ישראל
 
 ### Contact form
 - URL: https://example.com
