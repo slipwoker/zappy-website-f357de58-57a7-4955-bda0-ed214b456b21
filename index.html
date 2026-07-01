@@ -257,6 +257,253 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow: hidden;
+  padding-bottom: 80px;
+  direction: rtl;
+}
+
+.index-hero-section__bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 30%;
+}
+
+.index-hero-section__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(30, 30, 27, 0.48) 0%, rgba(30, 30, 27, 0.35) 40%, rgba(30, 30, 27, 0.15) 100%);
+  pointer-events: none;
+}
+
+.index-hero-section__content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 40px 60px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.index-hero-section__text-group {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.index-hero-section__headline {
+  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-light);
+  margin: 0;
+  letter-spacing: -0.01em;
+  text-align: right;
+}
+
+.index-hero-section__subtitle {
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text-light);
+  margin: 0;
+  text-align: right;
+  opacity: 0.9;
+}
+
+.index-hero-section__brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 8px 0 0 0;
+  text-align: right;
+  letter-spacing: 0.02em;
+}
+
+.index-hero-section__description {
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-light);
+  margin: 0;
+  text-align: right;
+  opacity: 0.85;
+}
+
+.index-hero-section__cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.index-hero-section__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.index-hero-section__btn--primary {
+  background: var(--accent);
+  color: var(--text-light);
+  border: none;
+  box-shadow: 0 8px 24px rgba(233, 140, 164, 0.3);
+}
+
+.index-hero-section__btn--primary:hover {
+  background: #D9788F;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(233, 140, 164, 0.45);
+}
+
+.index-hero-section__btn--secondary {
+  background: transparent;
+  color: var(--text-light);
+  border: 2px solid var(--text-light);
+  backdrop-filter: blur(4px);
+}
+
+.index-hero-section__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.index-hero-section__decor-leaf {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 220px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  transform: rotate(-15deg);
+}
+
+.index-hero-section__decor-leaf svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.index-hero-section__divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.index-hero-section__divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .index-hero-section {
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+
+  .index-hero-section__content {
+    padding: 120px 24px 40px 24px;
+    justify-content: center;
+  }
+
+  .index-hero-section__text-group {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .index-hero-section__headline {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .index-hero-section__subtitle {
+    font-size: 1.125rem;
+    text-align: center;
+  }
+
+  .index-hero-section__brand-name {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .index-hero-section__description {
+    text-align: center;
+  }
+
+  .index-hero-section__cta-group {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .index-hero-section__btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  .index-hero-section__decor-leaf {
+    top: 5%;
+    right: -10%;
+    width: 150px;
+    opacity: 0.2;
+  }
+
+  .index-hero-section__divider-wrapper {
+    height: 60px;
+  }
+}
+/* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:index-hero */
+.hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 48px !important; line-height: 1.2 !important; }
+@media (max-width: 1024px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 36px !important; }
+}
+@media (max-width: 768px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 28px !important; }
+}
+
+</style>
     <link rel="stylesheet" href="/styles.css">
     <script>window.ZAPPY_WEBSITE_ID = "f357de58-57a7-4955-bda0-ed214b456b21"; window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
 
@@ -835,21 +1082,30 @@
 </script>
   
   <main id="main">
-    <section data-band-index="0" id="hero" class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-treatment="fade-bleed" style="--hero-fade-color: var(--bg-light);" data-hero-type="fullscreen-scrim">
-  <img loading="eager" fetchpriority="high" class="hero-fade-img" data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="A sunlit flat lay photograph on soft linen fabric showing a personalized engraved keychain with an empowering Hebrew affirmation word, a hand gently placing it near daily essentials like keys and a notebook. The composition is bright, tactile, and emotionally warm, shot from above with natural window light. The subject is positioned toward the right side of the frame." width="1200" height="600" src="/assets/site-index-hero-image-1.webp" alt="מחזיק מפתחות מותאם אישית עם מילה מעצימה על רקע פשתן רך באור טבעי">
-  <div class="hero-fade-content">
-    <p class="hero-eyebrow">מטרה פנימית</p>
-    <h1 class="display-xl">המילה שלך.<br>הכוח שלך.</h1>
-    <h3 class="hero-subtitle">קחי מילה מעצימה, שימי אותה מול העיניים בכל יום, ותני לה לשנות את המציאות שלך מבפנים.</h3>
-    <div class="hero-cta-row">
-      <a href="#contact" class="btn-primary">צרי את שלך עכשיו</a>
-      <a href="#products" class="btn-secondary">גלי מוצרים תואמים</a>
+    <section class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="hero">
+  <div class="index-hero-section__bg-wrapper" style="background-image: url('assets/site-index-hero-image-1.webp'); background-size: cover; background-position: center;"></div>
+  <div class="index-hero-section__scrim"></div>
+  <div class="index-hero-section__content">
+    <div class="index-hero-section__text-group">
+      <h1 class="index-hero-section__headline">המילה שלך.<br>הכוח שלך.</h1>
+      <h3 class="index-hero-section__subtitle">קחי מילה מעצימה, שימי אותה מול העיניים בכל יום, ותני לה לשנות את המציאות שלך מבפנים.</h3>
+      <p class="index-hero-section__brand-name">מטרה פנימית</p>
+      <p class="index-hero-section__description">בחרי צבע, צורה ומילה — וצרי הצהרה אישית שתמיד תהיה איתך</p>
+      <div class="index-hero-section__cta-group">
+        <a href="#contact" class="index-hero-section__btn index-hero-section__btn--primary" style="color: #1A1A1A !important">צרי את שלך עכשיו</a>
+        <a href="#products" class="index-hero-section__btn index-hero-section__btn--secondary">גלי מוצרים תואמים</a>
+      </div>
     </div>
-    <p class="hero-reassurance">בחרי צבע, צורה ומילה — וצרי הצהרה אישית שתמיד תהיה איתך</p>
+    <div class="index-hero-section__decor-leaf" aria-hidden="true">
+      <svg viewBox="0 0 220 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M110 10C90 40 60 80 40 120C20 160 10 200 15 240C20 280 40 290 50 280C60 270 55 240 45 210C35 180 30 150 40 130C50 110 70 100 90 100C110 100 120 120 115 140C110 160 95 180 85 200C75 220 70 240 80 250C90 260 105 250 110 230C115 210 110 180 100 160C90 140 95 120 110 100C125 80 140 60 150 40C160 20 165 10 160 5C155 0 145 5 130 15C115 25 105 30 110 10Z" fill="#A8C5A0" opacity="0.35"></path>
+        <path d="M120 15C115 35 105 60 95 80C85 100 75 115 70 125C65 135 65 140 70 138C75 136 80 125 88 112C96 99 105 85 115 75C125 65 135 60 140 58C145 56 145 58 140 62C135 66 128 74 122 85C116 96 112 108 112 118C112 128 116 132 120 128C124 124 126 115 128 105C130 95 132 88 135 85C138 82 140 84 140 90C140 96 138 105 135 115" stroke="#A8C5A0" stroke-width="2" opacity="0.25" fill="none"></path>
+      </svg>
+    </div>
   </div>
-  <div class="index-hero-divider-wrapper">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,80 L0,30 Q150,20 300,32 T600,28 Q750,35 900,26 T1200,30 L1200,80 Z" fill="var(--bg-light)" opacity="0.9"></path>
+  <div class="index-hero-section__divider-wrapper" aria-hidden="true" data-no-icon-edit="true">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,20 Q60,35 120,25 T240,30 Q300,18 360,28 T480,22 Q540,32 600,24 T720,30 Q780,20 840,28 T960,24 Q1020,32 1080,22 T1200,20 L1200,80 Z" fill="var(--bg-light)"></path>
     </svg>
   </div>
 </section>
