@@ -258,240 +258,258 @@
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
 
+
+
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .index-hero-section {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding: 120px 16px 80px;
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
   overflow: hidden;
-  padding-bottom: 80px;
+}
+
+.index-hero-section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
   direction: rtl;
 }
 
-.index-hero-section__bg-wrapper {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center 30%;
-}
-
-.index-hero-section__scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(135deg, rgba(30, 30, 27, 0.48) 0%, rgba(30, 30, 27, 0.35) 40%, rgba(30, 30, 27, 0.15) 100%);
-  pointer-events: none;
-}
-
-.index-hero-section__content {
+/* Text Column */
+.index-hero-section__text-col {
   position: relative;
   z-index: 10;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 140px 40px 60px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  padding-inline-end: 20px;
 }
 
-.index-hero-section__text-group {
-  max-width: 580px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+.index-hero-section__kicker {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-block-end: 16px;
 }
 
 .index-hero-section__headline {
   font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 1.15;
-  color: var(--text-light);
-  margin: 0;
   letter-spacing: -0.01em;
-  text-align: right;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin: 0 0 24px 0;
 }
 
 .index-hero-section__subtitle {
   font-family: 'Inter', 'Assistant', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1.55;
-  color: var(--text-light);
-  margin: 0;
-  text-align: right;
-  opacity: 0.9;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0 0 40px 0;
+  max-width: 90%;
 }
 
-.index-hero-section__brand-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin: 8px 0 0 0;
-  text-align: right;
-  letter-spacing: 0.02em;
-}
-
-.index-hero-section__description {
-  font-family: 'Inter', 'Assistant', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.65;
-  color: var(--text-light);
-  margin: 0;
-  text-align: right;
-  opacity: 0.85;
-}
-
-.index-hero-section__cta-group {
+.index-hero-section__ctas {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
-  margin-top: 12px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .index-hero-section__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 32px;
-  border-radius: 100px;
+  display: inline-block;
+  text-decoration: none;
   font-family: 'Inter', 'Assistant', sans-serif;
   font-weight: 600;
   font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  white-space: nowrap;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
 }
 
 .index-hero-section__btn--primary {
   background: var(--accent);
-  color: var(--text-light);
+  color: #FFFFFF;
+  padding: 14px 32px;
+  border-radius: 100px;
   border: none;
   box-shadow: 0 8px 24px rgba(233, 140, 164, 0.3);
 }
 
 .index-hero-section__btn--primary:hover {
-  background: #D9788F;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(233, 140, 164, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(233, 140, 164, 0.4);
 }
 
-.index-hero-section__btn--secondary {
+.index-hero-section__btn--ghost {
   background: transparent;
-  color: var(--text-light);
-  border: 2px solid var(--text-light);
-  backdrop-filter: blur(4px);
+  color: var(--text-dark);
+  border: 2px solid var(--border-light);
+  padding: 14px 32px;
+  border-radius: 100px;
 }
 
-.index-hero-section__btn--secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
+.index-hero-section__btn--ghost:hover {
+  background: var(--bg-light);
+  border-color: var(--text-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(30, 30, 27, 0.08);
 }
 
-.index-hero-section__decor-leaf {
+/* Decorative Tassel */
+.index-hero-section__tassel {
   position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 220px;
-  z-index: 0;
+  bottom: -20px;
+  inset-inline-end: -40px;
+  width: 60px;
+  height: auto;
+  opacity: 0.6;
   pointer-events: none;
-  opacity: 0.35;
-  transform: rotate(-15deg);
+  z-index: 0;
 }
 
-.index-hero-section__decor-leaf svg {
+/* Image Column */
+.index-hero-section__image-col {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-hero-section__image-frame {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(180, 100, 100, 0.14);
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.index-hero-section__image-frame:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.index-hero-section__image-frame img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
 }
 
-.index-hero-section__divider-wrapper {
+/* Decorative Eucalyptus */
+.index-hero-section__leaf {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  z-index: 5;
+  top: -30px;
+  inset-inline-start: -40px;
+  width: 220px;
+  height: auto;
+  opacity: 0.35;
   pointer-events: none;
+  z-index: 0;
 }
 
-.index-hero-section__divider-wrapper svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
   .index-hero-section {
-    min-height: 100vh;
-    padding-bottom: 60px;
+    padding: 100px 16px 60px;
   }
 
-  .index-hero-section__content {
-    padding: 120px 24px 40px 24px;
-    justify-content: center;
+  .index-hero-section__container {
+    grid-template-columns: 1fr !important;
+    gap: 48px;
   }
 
-  .index-hero-section__text-group {
-    max-width: 100%;
+  .index-hero-section__text-col {
+    padding-inline-end: 0;
+    order: 1;
     text-align: center;
-    align-items: center;
-    gap: 16px;
   }
 
   .index-hero-section__headline {
-    font-size: 2.5rem;
-    text-align: center;
+    font-size: 2.25rem;
+    line-height: 1.2;
   }
 
   .index-hero-section__subtitle {
-    font-size: 1.125rem;
-    text-align: center;
+    font-size: 1.1rem;
+    max-width: 100%;
+    margin: 0 auto 32px auto;
   }
 
-  .index-hero-section__brand-name {
-    font-size: 1.25rem;
-    text-align: center;
-  }
-
-  .index-hero-section__description {
-    text-align: center;
-  }
-
-  .index-hero-section__cta-group {
+  .index-hero-section__ctas {
     justify-content: center;
+    flex-direction: column;
     width: 100%;
   }
 
   .index-hero-section__btn {
-    padding: 12px 24px;
-    font-size: 0.95rem;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
   }
 
-  .index-hero-section__decor-leaf {
-    top: 5%;
-    right: -10%;
-    width: 150px;
-    opacity: 0.2;
+  .index-hero-section__image-col {
+    order: 0;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
-  .index-hero-section__divider-wrapper {
-    height: 60px;
+  .index-hero-section__image-frame {
+    transform: none;
+    max-width: 100%;
+  }
+
+  .index-hero-section__image-frame:hover {
+    transform: scale(1.01);
+  }
+
+  .index-hero-section__tassel {
+    display: none;
+  }
+
+  .index-hero-section__leaf {
+    width: 140px;
+    top: -20px;
+    inset-inline-start: -10px;
+    opacity: 0.25;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .index-hero-section__container {
+    gap: 40px;
+  }
+
+  .index-hero-section__headline {
+    font-size: 2.5rem;
+  }
+
+  .index-hero-section__subtitle {
+    max-width: 100%;
+  }
+
+  .index-hero-section__tassel {
+    inset-inline-end: -20px;
+    bottom: -30px;
+    width: 50px;
+  }
+
+  .index-hero-section__leaf {
+    width: 180px;
+    inset-inline-start: -20px;
   }
 }
 /* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:index-hero */
@@ -501,6 +519,15 @@
 }
 @media (max-width: 768px) {
   .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 28px !important; }
+}
+
+/* ZAPPY_POSTGEN_GUARD_SPLIT_HERO_INSET:דף הבית-hero (index-hero) — keep the split-hero copy column off the viewport edge with a logical inline gutter (class-agnostic) */
+[data-layout-spec="דף הבית-hero"] [data-zappy-hero-copy="true"] {
+  padding-inline: clamp(28px, 5vw, 80px) !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 768px) {
+  [data-layout-spec="דף הבית-hero"] [data-zappy-hero-copy="true"] { padding-inline: clamp(20px, 6vw, 28px) !important; }
 }
 
 </style>
@@ -1082,31 +1109,48 @@
 </script>
   
   <main id="main">
-    <section class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="hero">
-  <div class="index-hero-section__bg-wrapper" style="background-image: url('assets/site-index-hero-image-1.webp'); background-size: cover; background-position: center;"></div>
-  <div class="index-hero-section__scrim"></div>
-  <div class="index-hero-section__content">
-    <div class="index-hero-section__text-group">
-      <h1 class="index-hero-section__headline">המילה שלך.<br>הכוח שלך.</h1>
-      <h3 class="index-hero-section__subtitle">קחי מילה מעצימה, שימי אותה מול העיניים בכל יום, ותני לה לשנות את המציאות שלך מבפנים.</h3>
-      <p class="index-hero-section__brand-name">מטרה פנימית</p>
-      <p class="index-hero-section__description">בחרי צבע, צורה ומילה — וצרי הצהרה אישית שתמיד תהיה איתך</p>
-      <div class="index-hero-section__cta-group">
-        <a href="#contact" class="index-hero-section__btn index-hero-section__btn--primary" style="color: #1A1A1A !important">צרי את שלך עכשיו</a>
-        <a href="#products" class="index-hero-section__btn index-hero-section__btn--secondary">גלי מוצרים תואמים</a>
+    <section class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-type="side-by-side" id="hero">
+  <div class="index-hero-section__container">
+    
+    <!-- Text Column (Right side in RTL) -->
+    <div class="index-hero-section__text-col" data-zappy-hero-copy="true">
+      <span class="index-hero-section__kicker" style="color: #1A1A1A !important">מטרה פנימית</span>
+      <h1 class="index-hero-section__headline">המילים שלך,<br>הכוח שלך</h1>
+      <h3 class="index-hero-section__subtitle">תכשיטים ומתנות בעיצוב אישי עם מסר של העצמה יומיומית. בחרי את הצבע, הצורה והמילה שמדברת אלייך.</h3>
+      
+      <div class="index-hero-section__ctas">
+        <a href="#shop" class="index-hero-section__btn index-hero-section__btn--primary" style="color: #1A1A1A !important">עיצוב אישי עכשיו</a>
+        <a href="#gallery" class="index-hero-section__btn index-hero-section__btn--ghost">גלו את הקולקציה</a>
       </div>
-    </div>
-    <div class="index-hero-section__decor-leaf" aria-hidden="true">
-      <svg viewBox="0 0 220 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M110 10C90 40 60 80 40 120C20 160 10 200 15 240C20 280 40 290 50 280C60 270 55 240 45 210C35 180 30 150 40 130C50 110 70 100 90 100C110 100 120 120 115 140C110 160 95 180 85 200C75 220 70 240 80 250C90 260 105 250 110 230C115 210 110 180 100 160C90 140 95 120 110 100C125 80 140 60 150 40C160 20 165 10 160 5C155 0 145 5 130 15C115 25 105 30 110 10Z" fill="#A8C5A0" opacity="0.35"></path>
-        <path d="M120 15C115 35 105 60 95 80C85 100 75 115 70 125C65 135 65 140 70 138C75 136 80 125 88 112C96 99 105 85 115 75C125 65 135 60 140 58C145 56 145 58 140 62C135 66 128 74 122 85C116 96 112 108 112 118C112 128 116 132 120 128C124 124 126 115 128 105C130 95 132 88 135 85C138 82 140 84 140 90C140 96 138 105 135 115" stroke="#A8C5A0" stroke-width="2" opacity="0.25" fill="none"></path>
+
+      <!-- Decorative Tassel SVG -->
+      <svg data-element-type="icon" data-icon-type="svg" aria-hidden="true" class="index-hero-section__tassel" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 0V40" stroke="#E8B4B8" stroke-width="1.5" stroke-linecap="round"></path>
+        <path d="M25 5L30 0L35 5" stroke="#E8B4B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <circle cx="30" cy="45" r="4" fill="#E8B4B8"></circle>
+        <path d="M20 55C20 55 25 80 30 80C35 80 40 55 40 55" stroke="#E8B4B8" stroke-width="1.5" stroke-linecap="round"></path>
+        <path d="M22 65C22 65 26 85 30 85C34 85 38 65 38 65" stroke="#E8B4B8" stroke-width="1.5" stroke-linecap="round"></path>
+        <path d="M24 75C24 75 27 90 30 90C33 90 36 75 36 75" stroke="#E8B4B8" stroke-width="1.5" stroke-linecap="round"></path>
+        <line x1="30" y1="50" x2="30" y2="52" stroke="#E8B4B8" stroke-width="1.5"></line>
       </svg>
     </div>
-  </div>
-  <div class="index-hero-section__divider-wrapper" aria-hidden="true" data-no-icon-edit="true">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,80 L0,20 Q60,35 120,25 T240,30 Q300,18 360,28 T480,22 Q540,32 600,24 T720,30 Q780,20 840,28 T960,24 Q1020,32 1080,22 T1200,20 L1200,80 Z" fill="var(--bg-light)"></path>
-    </svg>
+
+    <!-- Image Column (Left side in RTL) -->
+    <div class="index-hero-section__image-col">
+      <div class="index-hero-section__image-frame">
+        <img data-context="A beautifully styled flat lay of personalized affirmation accessories on a light linen surface. A handcrafted keychain with the Hebrew word for strength, a ceramic mug with a delicate gold foil affirmation, and a velvet bookmark with a tassel. Soft natural light, warm neutral tones, eucalyptus leaves scattered around for a calming botanical touch." width="600" height="400" src="/assets/personalized-gifts-accessories-section-דף הבית-hero-index-hero-image-1.webp" alt="מתנות בעיצוב אישי עם מסרים מעצימים">
+      </div>
+      
+      <!-- Decorative Eucalyptus SVG -->
+      <svg data-element-type="icon" data-icon-type="svg" aria-hidden="true" class="index-hero-section__leaf" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M160 20C140 40 100 80 80 120C60 160 40 180 20 200" stroke="#A8C5A0" stroke-width="2" stroke-linecap="round" opacity="0.7"></path>
+        <path d="M180 40C160 60 130 90 110 130C90 170 70 190 50 210" stroke="#A8C5A0" stroke-width="1.5" stroke-linecap="round" opacity="0.5"></path>
+        <path d="M140 10C120 30 90 70 70 110C50 150 30 170 10 190" stroke="#A8C5A0" stroke-width="2" stroke-linecap="round" opacity="0.6"></path>
+        <path d="M170 60C155 75 135 100 120 130C105 160 90 175 75 195" stroke="#A8C5A0" stroke-width="1.5" stroke-linecap="round" opacity="0.4"></path>
+        <path d="M130 100C120 115 105 140 95 160C85 180 75 190 60 205" stroke="#A8C5A0" stroke-width="1.5" stroke-linecap="round" opacity="0.5"></path>
+      </svg>
+    </div>
+
   </div>
 </section>
 
