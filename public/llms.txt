@@ -32,7 +32,10 @@ Information about WCAG compliance and accessibility features.
 
 ## How to Contact Us
 
-- (No contact details configured yet.)
+- Email: ellaofir76@gmail.com
+- Phone: +972506886796
+- Phone (tel): tel:+972506886796
+- Address: שד' חן , רחובות, מחוז המרכז, 3, ישראל
 
 ### Contact form
 - URL: https://example.com
