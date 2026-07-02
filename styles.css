@@ -68,17 +68,17 @@
   src: url('assets/fonts/Rubik-Bold.woff2') format('woff2');
 }
 :root {
-  /* Color Palette */
-  --primary: #1E1E1B;
-  --secondary: #7FA089;
-  --accent: #E98CA4;
-  --bg-light: #FCFAF7;
-  --bg-dark: #1E1E1B;
-  --text-dark: #1E1E1B;
+/* Color Palette */
+  --primary: #1A56DB;
+  --secondary: #E76F51;
+  --accent: #F4A261;
+  --bg-light: #FFFFFF;
+  --bg-dark: #1A56DB;
+  --text-dark: #4a4a4a;
   --text-light: #FCFAF7;
-  --text-muted: #6F6A63;
-  --border-light: #E9DFD2;
-  --border-dark: #4A4A46;
+  --text-muted: #656565;
+  --border-light: #8c867e;
+  --border-dark: #7d7d79;
   --nav-bg: #FCFAF7;
   --nav-text: #1E1E1B;
   --nav-text-hover: #E98CA4;
@@ -101,6 +101,13 @@
   --spacing-element-gap: 16px;
   --transition-default: all 0.3s ease;
   --transition-hover: all 0.3s ease;
+  --primary-color: #1A56DB;
+  --secondary-color: #E76F51;
+  --accent-color: #F4A261;
+  --background-color: #FFFFFF;
+  --surface-color: #F0F4FA;
+  --text-color: #4a4a4a;
+  --text-secondary-color: #656565;
 }
 
 /* CSS Reset / Normalize */
@@ -369,7 +376,7 @@ html:not([dir]) .whatsapp-float {
   --nav-bg: #FCFAF7;
   --nav-text: #1E1E1B;
   --nav-text-hover: #E98CA4;
-  --primary: #1E1E1B;
+  --primary: #1A56DB;
   --text-light: #FCFAF7;
 }
 
@@ -569,7 +576,7 @@ html:not([dir]) .whatsapp-float {
   --nav-bg: #FCFAF7;
   --nav-text: #1E1E1B;
   --nav-text-hover: #E98CA4;
-  --primary: #1E1E1B;
+  --primary: #1A56DB;
   --text-light: #FCFAF7;
 }
 
@@ -833,7 +840,7 @@ html:not([dir]) .whatsapp-float {
 .navbar a:focus-visible,
 .navbar button:focus-visible,
 .nav-menu a:focus-visible {
-  outline: 2px solid var(--primary-color, var(--primary, #1E1E1B));
+  outline: 2px solid var(--primary-color, var(--primary, #1A56DB));
   outline-offset: 2px;
 }
 
@@ -1869,10 +1876,10 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
 /* Footer Base */
 .site-footer {
   background-color: var(--bg-light, #FCFAF7);
-  color: var(--text-dark, #1E1E1B);
+  color: var(--text-dark, #1A56DB);
   padding: 4rem 2rem 0;
   font-family: 'Rubik', sans-serif;
-  border-top: 2px solid var(--accent, #E98CA4);
+  border-top: 2px solid var(--accent, #F4A261);
   direction: rtl;
   text-align: right;
 }
@@ -1896,7 +1903,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
-  color: var(--primary, #1E1E1B);
+  color: var(--primary, #1A56DB);
   letter-spacing: -0.01em;
   position: relative;
   padding-bottom: 0.75rem;
@@ -1909,7 +1916,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
   right: 0;
   width: 40px;
   height: 2px;
-  background-color: var(--accent, #E98CA4);
+  background-color: var(--accent, #F4A261);
   border-radius: 1px;
 }
 
@@ -1951,7 +1958,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
 }
 
 .footer-links a:hover {
-  color: var(--accent, #E98CA4);
+  color: var(--accent, #F4A261);
   padding-right: 6px;
 }
 
@@ -1972,7 +1979,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
 }
 
 .contact-icon {
-  color: var(--accent, #E98CA4);
+  color: var(--accent, #F4A261);
   font-size: 1rem;
   width: 20px;
   text-align: center;
@@ -1988,7 +1995,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
 }
 
 .contact-text a:hover {
-  color: var(--accent, #E98CA4);
+  color: var(--accent, #F4A261);
 }
 
 /* Business Hours */
@@ -2010,7 +2017,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
 
 .hours-day {
   font-weight: 500;
-  color: var(--text-dark, #1E1E1B);
+  color: var(--text-dark, #1A56DB);
 }
 
 .hours-time {
@@ -2032,7 +2039,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background-color: var(--secondary, #7FA089);
+  background-color: var(--secondary, #E76F51);
   color: #fff;
   font-size: 1rem;
   text-decoration: none;
@@ -2041,7 +2048,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
 }
 
 .footer-social a:hover {
-  background-color: var(--accent, #E98CA4);
+  background-color: var(--accent, #F4A261);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
@@ -2088,7 +2095,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
 }
 
 .footer-legal a:hover {
-  color: var(--accent, #E98CA4);
+  color: var(--accent, #F4A261);
 }
 
 .zappy-attribution {
@@ -2103,7 +2110,7 @@ main:not(.courses-page-main) { margin-top: 0 !important; padding-top: 0 !importa
 
 .zappy-attribution:hover {
   opacity: 1;
-  color: var(--accent, #E98CA4);
+  color: var(--accent, #F4A261);
 }
 
 /* Responsive */
@@ -3320,7 +3327,7 @@ main { flex: 1 0 auto; }
   font-size: 1rem;
   font-weight: 400;
   color: var(--text-dark);
-  background-color: #fff;
+  background-color: #FFFFFF;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-input, 6px);
   padding: 12px 16px;
@@ -3797,9 +3804,9 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
   --cc-modal-bg: #ffffff;
   --cc-primary-color: #1f2937;
   --cc-secondary-color: #4b5563;
-  --cc-btn-primary-bg: #1e1e1b;
+  --cc-btn-primary-bg: #1A56DB;
   --cc-btn-primary-color: #ffffff;
-  --cc-btn-primary-border: #1e1e1b;
+  --cc-btn-primary-border: #1A56DB;
   --cc-btn-primary-hover-bg: #050502;
   --cc-btn-primary-hover-border: #050502;
   --cc-btn-primary-hover-color: #ffffff;
@@ -3815,7 +3822,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
   --cc-btn-secondary-hover-bg: #e5e7eb;
   --cc-btn-secondary-hover-color: #111827;
   --cc-btn-secondary-hover-border: #d1d5db;
-  --cc-toggle-on-bg: #1e1e1b;
+  --cc-toggle-on-bg: #1A56DB;
 }
 
 #cc-main,
@@ -3928,7 +3935,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
  * defaults for the preferences modal's two secondary pills). */
 #zappy-cookie-banner .zappy-cookie-banner__button--customize {
   background-color: transparent !important;
-  color: #1e1e1b !important;
+  color: #1A56DB !important;
   border: none !important;
   padding: 0 8px !important;
   height: 32px !important;
@@ -4261,7 +4268,7 @@ html[dir="rtl"] .footer-contact li > a { flex-direction: row !important; }
 .mic-access-tool-box-header,
 div[id*="mic-access-tool-box"] header,
 div[id*="mic-access-tool-box"] .header {
-  background: #FCFAF7 !important;
+  background: #FFFFFF !important;
   color: white !important;
 }
 
@@ -4298,7 +4305,7 @@ div[id*="mic-access-tool-box"] button:hover {
 #mic-access-tool-box button[title*="Reset"],
 #mic-access-tool-box [class*="reset"],
 div[id*="mic-access-tool-box"] button[class*="reset"] {
-  background: #FCFAF7 !important;
+  background: #FFFFFF !important;
   color: white !important;
 }
 
@@ -4407,7 +4414,7 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 }
 
 .index-testimonials-section__card-quote-icon {
-  color: #E98CA4;
+  color: #b9590d;
   margin-bottom: 16px;
   opacity: 0.6;
   display: flex;
@@ -4554,7 +4561,7 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #E8637A;
+  color: #b9590d;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s ease, color 0.3s ease;
@@ -4563,8 +4570,8 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 }
 
 .index-testimonials-section__press-card-link:hover {
-  border-bottom-color: #E8637A;
-  color: #d44a5f;
+  border-bottom-color: #F4A261;
+  color: #b9590d;
 }
 
 /* ----- Tags / Categories ----- */
@@ -4593,9 +4600,9 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 }
 
 .index-testimonials-section__tag:hover {
-  background: #E8637A;
+  background: #F4A261;
   color: #FFFFFF;
-  border-color: #E8637A;
+  border-color: #F4A261;
 }
 
 /* ==========================================================================
@@ -4821,6 +4828,15 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
   text-align: center !important;
 }
 [data-layout-spec="דף הבית-gallery"] > header > * { margin-inline: auto !important; max-width: 100% !important; }
+
+/* === BUTTON TEXT OVERRIDES START === */
+.btn-accent,
+.btn--accent,
+[class*="btn-accent"],
+[class*="btn--accent"] { color: #333333 !important; }
+.navbar .nav-cta-btn,
+.nav-cta-btn { color: #FFFFFF !important; }
+/* === BUTTON TEXT OVERRIDES END === */
 
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
