@@ -50,4 +50,4 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
-Sitemap: https://matara-pnimit-matanot-im-mashm.zappy5.app/sitemap.xml
+Sitemap: https://ellaswords.co.il/sitemap.xml
