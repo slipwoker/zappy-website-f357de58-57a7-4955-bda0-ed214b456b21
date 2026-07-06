@@ -5460,6 +5460,150 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
     transform: none;
   }
 }
+
+/* Added Component Styles */
+/* ============================================
+   Gallery Section — Clean Photo Grid
+   No text, no titles, no descriptions — just visuals
+   ============================================ */
+
+.gallery-section {
+  background-color: var(--background-color, #FFFFFF);
+  padding: 80px 24px;
+  direction: rtl;
+  font-family: system-ui, sans-serif;
+}
+
+/* ----- Grid Container ----- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 240px;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ----- Gallery Item ----- */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--surface-color, #F0F4FA);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-item:focus-within {
+  outline: 2px solid var(--primary-color, #1A56DB);
+  outline-offset: 2px;
+}
+
+/* ----- Images ----- */
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+/* ----- Varied Sizes for Masonry Feel ----- */
+.gallery-item--tall {
+  grid-row: span 2;
+}
+
+.gallery-item--wide {
+  grid-column: span 2;
+}
+
+/* ----- Responsive Breakpoints ----- */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .gallery-section {
+    padding: 60px 20px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    gap: 14px;
+  }
+  
+  .gallery-item--wide {
+    grid-column: span 2;
+  }
+}
+
+/* Small Tablet / Large Phone (600px - 768px) */
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 48px 16px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+    gap: 12px;
+  }
+  
+  .gallery-item--wide {
+    grid-column: span 2;
+  }
+  
+  .gallery-item--tall {
+    grid-row: span 1;
+  }
+}
+
+/* Mobile (up to 600px) */
+@media (max-width: 600px) {
+  .gallery-section {
+    padding: 40px 12px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 180px;
+    gap: 10px;
+  }
+  
+  .gallery-item {
+    border-radius: 10px;
+  }
+  
+  .gallery-item--wide {
+    grid-column: span 2;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Small Mobile (up to 400px) */
+@media (max-width: 400px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+    gap: 12px;
+  }
+  
+  .gallery-item--wide {
+    grid-column: span 1;
+  }
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
