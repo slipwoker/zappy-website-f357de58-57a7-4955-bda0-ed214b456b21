@@ -7,25 +7,25 @@
 ## Pages
 
 ### דף הבית
-https://example.com
+https://matara-pnimit-matanot-im-mashm.zappy5.app
 גלו אביזרים אישיים עם אמירות מחזקות כמו &#39;אני חזקה&#39; או &#39;אני מצליחה&#39;. צרו מחזיק מפתחות, ספל או סימניה בצבע, צורה ומילה שתזכיר לכם כל יום את הכוח שלכם. הפיחו משמעות בשולחן העבודה עוד היום.
 
 ### תודה שפניתם | מטרה פנימית - מתנות עם משמעות
-https://example.com/thank-you
+https://matara-pnimit-matanot-im-mashm.zappy5.app/thank-you
 מטרה פנימית - מתנות עם משמעות - תודה שפניתם | מטרה פנימית - מתנות עם משמעות
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://matara-pnimit-matanot-im-mashm.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://matara-pnimit-matanot-im-mashm.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://matara-pnimit-matanot-im-mashm.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -38,8 +38,8 @@ Information about WCAG compliance and accessibility features.
 - Address: שד' חן , רחובות, מחוז המרכז, 7646918, ישראל
 
 ### Contact form
-- URL: https://example.com
-- Endpoint: https://example.com/api/email/contact-form
+- URL: https://matara-pnimit-matanot-im-mashm.zappy5.app
+- Endpoint: https://matara-pnimit-matanot-im-mashm.zappy5.app/api/email/contact-form
 - Method: POST
 - Content-Type: application/json
 - Fields:
@@ -83,6 +83,6 @@ Personalized Gifts & Accessories
 
 # Machine-readable feeds
 
-- Sitemap (XML): https://example.com/sitemap.xml
-- Robots: https://example.com/robots.txt
-- Flattened page text (for LLMs): https://example.com/llms-full.txt
+- Sitemap (XML): https://matara-pnimit-matanot-im-mashm.zappy5.app/sitemap.xml
+- Robots: https://matara-pnimit-matanot-im-mashm.zappy5.app/robots.txt
+- Flattened page text (for LLMs): https://matara-pnimit-matanot-im-mashm.zappy5.app/llms-full.txt
