@@ -1063,6 +1063,314 @@
     }
 }
 </style>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.index-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #3D2B2B;
+  color: var(--text-light);
+  direction: rtl;
+  padding-bottom: 80px;
+}
+
+/* Background Image Layer */
+.index-hero-section .hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.index-hero-section .hero-bg-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+/* Scrim Overlay */
+.index-hero-section .hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(60, 30, 30, 0.15) 0%,
+    rgba(60, 30, 30, 0.35) 40%,
+    rgba(45, 20, 20, 0.55) 70%,
+    rgba(30, 15, 15, 0.65) 100%
+  );
+}
+
+/* Decorative Motifs */
+.index-hero-section .hero-decorations {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.index-hero-section .deco-eucalyptus {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 220px;
+  height: auto;
+  opacity: 0.35;
+}
+
+.index-hero-section .deco-tassel {
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  width: 60px;
+  height: auto;
+  opacity: 0.6;
+}
+
+/* Text & CTA Overlay */
+.index-hero-section .hero-overlay {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.index-hero-section .hero-content {
+  max-width: 600px;
+  text-align: right;
+  padding: 40px 0;
+}
+
+.index-hero-section .hero-brand-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  opacity: 0.8;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.index-hero-section .hero-headline {font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text-light);
+  margin-bottom: 24px;}
+
+.index-hero-section .hero-subtitle {
+  font-family: 'Assistant', 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin-bottom: 16px;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.index-hero-section .hero-description {
+  font-family: 'Assistant', 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 32px;
+  opacity: 0.85;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* CTA Buttons */
+.index-hero-section .hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+.index-hero-section .btn-hero-primary {
+  display: inline-block;
+  background-color: #E8637A;
+  color: #FFFFFF;
+  padding: 14px 32px;
+  border-radius: 100px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 30px rgba(232, 99, 122, 0.3);
+  text-shadow: none;
+}
+
+.index-hero-section .btn-hero-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(232, 99, 122, 0.45);
+  background-color: #D94F65;
+}
+
+.index-hero-section .btn-hero-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--text-light);
+  padding: 14px 32px;
+  border-radius: 100px;
+  border: 2px solid rgba(252, 250, 247, 0.6);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(4px);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.index-hero-section .btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--text-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Bottom Curve Transition */
+.index-hero-section .hero-divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.index-hero-section .hero-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .index-hero-section {
+    min-height: 100vh;
+    padding-bottom: 60px;
+    align-items: flex-start;
+    padding-top: 100px;
+  }
+
+  .index-hero-section .hero-overlay {
+    padding: 0 24px;
+    justify-content: center;
+  }
+
+  .index-hero-section .hero-content {
+    max-width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .index-hero-section .hero-headline {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .index-hero-section .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .index-hero-section .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .index-hero-section .hero-ctas {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .index-hero-section .btn-hero-primary,
+  .index-hero-section .btn-hero-secondary {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .index-hero-section .hero-brand-name {
+    text-align: center;
+  }
+
+  .index-hero-section .deco-eucalyptus {
+    top: 5%;
+    right: -10%;
+    width: 150px;
+    opacity: 0.25;
+  }
+
+  .index-hero-section .deco-tassel {
+    bottom: 10%;
+    left: -5%;
+    width: 40px;
+    opacity: 0.4;
+  }
+
+  .index-hero-section .hero-divider-wrapper {
+    height: 60px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .index-hero-section .hero-overlay {
+    padding: 0 40px;
+  }
+
+  .index-hero-section .hero-headline {
+    font-size: 3rem;
+  }
+
+  .index-hero-section .hero-content {
+    max-width: 550px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .index-hero-section .hero-headline {
+    font-size: 4rem;
+  }
+
+  .index-hero-section .hero-content {
+    max-width: 700px;
+  }
+}
+/* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:index-hero */
+.hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 48px !important; line-height: 1.2 !important; }
+@media (max-width: 1024px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 36px !important; }
+}
+@media (max-width: 768px) {
+  .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 28px !important; }
+}
+
+/* ZAPPY_POSTGEN_GUARD_HERO_TYPO:דף הבית-hero (index-hero) — stripped 1 jarring hero headline effect(s) */
+
+</style>
     <link rel="stylesheet" href="/styles.css">
     <script>window.ZAPPY_WEBSITE_ID = "f357de58-57a7-4955-bda0-ed214b456b21"; window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
 
@@ -1641,21 +1949,60 @@
 </script>
   
   <main id="main">
-    <section data-band-index="0" id="hero" class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-treatment="fade-bleed" style="--hero-fade-color: var(--bg-light);" data-hero-type="fullscreen-scrim">
-  <div data-zappy-zoom-wrapper="true" data-element-id="img-1782981144563-uou1s01uh" data-element-type="image" data-zappy-zoom-wrapper-width-mode="full" style="position: absolute !important; top: 0px !important; left: 0px !important; width: 100% !important; height: 100% !important; max-width: none !important; margin-left: 0px !important; margin-right: 0px !important; z-index: 0 !important; overflow: hidden !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-zoom-wrapper-align="center"><img loading="eager" fetchpriority="high" class="hero-fade-img" data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="A sunlit flat lay photograph on soft linen fabric showing a personalized engraved keychain with an empowering Hebrew affirmation word, a hand gently placing it near daily essentials like keys and a notebook. The composition is bright, tactile, and emotionally warm, shot from above with natural window light. The subject is positioned toward the right side of the frame." width="1200" height="600" src="/assets/site-index-hero-image-1-1782911108786-fujzdh.webp" alt="מחזיק מפתחות מותאם אישית עם מילה מעצימה על רקע פשתן רך באור טבעי" data-hero-background="true" data-element-type="image" data-element-id="img-1782981144563-uou1s01uh" style="object-position: 60% 58% !important; margin: 0px !important; position: absolute !important; left: 0% !important; top: 0% !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; display: block !important; object-fit: cover !important;" data-zappy-zoom="1" data-zappy-object-position="60% 58%" data-zappy-mobile-object-position="63% 59%" data-zappy-mobile-zoom="1"></div>
-  <div class="hero-fade-content">
-    <p class="hero-eyebrow" style="color: rgb(30, 30, 27) !important;"><span style="color: #1A56DB !important">מטרה פנימית - מתנות עם משמעות</span></p>
-    <h1 class="display-xl" >כשאת בוחרת מילה<br>את בוחרת מציאות</h1>
-    <h3 class="hero-subtitle">קחי מילה מעצימה, שימי אותה מול העיניים בכל יום, ותני לה לשנות את המציאות שלך מבפנים.</h3>
-    <div class="hero-cta-row">
-      <a href="#contact" class="btn-primary" data-element-type="button" data-element-id="btn-1782981144558-keou89b10" data-native-element="true">צרי את שלך עכשיו</a>
-      <a href="#products" class="btn-secondary" data-element-type="button" data-element-id="btn-1782981144558-hh4b4dbzs" data-native-element="true">גלי מוצרים תואמים</a>
-    </div>
-    <p class="hero-reassurance">בחרי צבע, צורה ומילה — וצרי הצהרה אישית שתמיד תהיה איתך</p>
+    <section class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="hero">
+  <!-- Background Image Layer -->
+  <div class="hero-bg-wrapper">
+    <div class="hero-bg-image" style="background-image: url('assets/site-index-hero-image-1-1782911108786-fujzdh.webp'); background-size: cover; background-position: center 30%;"></div>
   </div>
-  <div class="index-hero-divider-wrapper">
+
+  <!-- Scrim Overlay Layer -->
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <!-- Decorative Motifs -->
+  <div class="hero-decorations" aria-hidden="true">
+    <!-- Eucalyptus Leaf Branch (hero-leaf-accent) -->
+    <svg class="deco-eucalyptus" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M180,20 C160,10 130,30 140,60 C150,90 120,80 110,100 C100,120 130,140 150,130 C170,120 200,100 190,70 C185,50 200,30 180,20Z" stroke="#A8C5A0" stroke-width="1.5" fill="none" opacity="0.35"></path>
+      <path d="M140,60 C120,50 90,70 100,100" stroke="#A8C5A0" stroke-width="1.5" fill="none" opacity="0.35"></path>
+      <path d="M110,100 C90,90 60,110 70,140" stroke="#A8C5A0" stroke-width="1.5" fill="none" opacity="0.35"></path>
+      <path d="M150,130 C170,120 200,100 190,70" stroke="#A8C5A0" stroke-width="1.5" fill="none" opacity="0.35"></path>
+      <line x1="180" y1="20" x2="210" y2="10" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></line>
+      <line x1="140" y1="60" x2="170" y2="50" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></line>
+      <line x1="110" y1="100" x2="140" y2="90" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></line>
+    </svg>
+
+    <!-- Tassel Decoration (tassel-decoration) -->
+    <svg class="deco-tassel" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30,10 C30,10 25,20 25,30 C25,40 35,40 35,30 C35,20 30,10 30,10Z" fill="#E8B4B8" opacity="0.6"></path>
+      <line x1="30" y1="30" x2="30" y2="50" stroke="#E8B4B8" stroke-width="2" opacity="0.6"></line>
+      <path d="M20,50 L40,50 L45,80 L15,80 Z" fill="#E8B4B8" opacity="0.6"></path>
+      <line x1="20" y1="80" x2="18" y2="110" stroke="#E8B4B8" stroke-width="1.5" opacity="0.6"></line>
+      <line x1="25" y1="80" x2="24" y2="110" stroke="#E8B4B8" stroke-width="1.5" opacity="0.6"></line>
+      <line x1="30" y1="80" x2="30" y2="110" stroke="#E8B4B8" stroke-width="1.5" opacity="0.6"></line>
+      <line x1="35" y1="80" x2="36" y2="110" stroke="#E8B4B8" stroke-width="1.5" opacity="0.6"></line>
+      <line x1="40" y1="80" x2="42" y2="110" stroke="#E8B4B8" stroke-width="1.5" opacity="0.6"></line>
+    </svg>
+  </div>
+
+  <!-- Text & CTA Overlay Group -->
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <p class="hero-brand-name">מטרה פנימית - מתנות עם משמעות</p>
+      <h1 class="hero-headline">כשאת בוחרת מילה<br>את בוחרת מציאות</h1>
+      <h3 class="hero-subtitle">קחי מילה מעצימה, שימי אותה מול העיניים בכל יום, ותני לה לשנות את המציאות שלך מבפנים.</h3>
+      <p class="hero-description">בחרי צבע, צורה ומילה — וצרי הצהרה אישית שתמיד תהיה איתך</p>
+      
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-hero-primary">צרי את שלך עכשיו</a>
+        <a href="#products" class="btn-hero-secondary">גלי מוצרים תואמים</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Curve Transition -->
+  <div class="hero-divider-wrapper" aria-hidden="true">
     <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,80 L0,30 Q150,20 300,32 T600,28 Q750,35 900,26 T1200,30 L1200,80 Z" fill="var(--bg-light)" opacity="0.9"></path>
+      <path d="M0,80 L0,10 Q150,70 300,20 T600,15 T900,25 T1200,10 L1200,80 Z" fill="var(--bg-light)"></path>
     </svg>
   </div>
 </section>
