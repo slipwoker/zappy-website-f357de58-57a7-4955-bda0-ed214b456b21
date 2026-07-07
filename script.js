@@ -4372,7 +4372,7 @@ function fixContrast(){
       var n = parseFloat(amount);
       if (!isFinite(n)) n = 0;
       var sym = (window.ZAPPY_CURRENCY_SYMBOL || '').trim() || '₪';
-      var rate = 1;
+      var rate = getCartDisplayExchangeRate();
       try {
         if (window.ZAPPY_MULTI_CURRENCY && window.ZAPPY_MULTI_CURRENCY.enabled) {
           var lang = '';
@@ -4385,14 +4385,42 @@ function fixContrast(){
           var langs = window.ZAPPY_MULTI_CURRENCY.languages || {};
           if (lang && langs[lang]) {
             if (langs[lang].symbol) sym = langs[lang].symbol;
-            var r = parseFloat(langs[lang].exchangeRate);
-            if (isFinite(r) && r > 0) rate = r;
           } else if (window.ZAPPY_MULTI_CURRENCY.base && window.ZAPPY_MULTI_CURRENCY.base.symbol) {
             sym = window.ZAPPY_MULTI_CURRENCY.base.symbol;
           }
         }
       } catch (e) {}
       return sym + convertDisplayAmount(n, rate).toFixed(2);
+    }
+
+    function getCartDisplayExchangeRate() {
+      var rate = 1;
+      try {
+        if (window.ZAPPY_MULTI_CURRENCY && window.ZAPPY_MULTI_CURRENCY.enabled) {
+          var lang = '';
+          try { lang = new URLSearchParams(window.location.search).get('lang') || ''; } catch (e) {}
+          if (!lang && window.zappyI18n && typeof window.zappyI18n.getCurrentLanguage === 'function') {
+            lang = window.zappyI18n.getCurrentLanguage();
+          }
+          if (!lang) lang = document.documentElement.getAttribute('lang') || '';
+          lang = String(lang).split('-')[0].toLowerCase();
+          var langs = window.ZAPPY_MULTI_CURRENCY.languages || {};
+          if (lang && langs[lang]) {
+            var r = parseFloat(langs[lang].exchangeRate);
+            if (isFinite(r) && r > 0) rate = r;
+          }
+        }
+      } catch (e) {}
+      return rate;
+    }
+
+    function parseDisplayedCartAmount(text) {
+      var match = String(text || '').match(/-?[\d,.]+/);
+      if (!match) return NaN;
+      var parsed = parseFloat(match[0].replace(/,/g, ''));
+      if (!isFinite(parsed)) return NaN;
+      var rate = getCartDisplayExchangeRate();
+      return rate > 0 ? Math.abs(parsed) / rate : Math.abs(parsed);
     }
 
     function getCartTotalTarget(drawer) {
@@ -4407,6 +4435,42 @@ function fixContrast(){
       if (!label || label === 'ecom_total') label = existingText.indexOf('סה') !== -1 ? 'סה"כ' : 'Total';
       legacyTotal.innerHTML = '<span>' + label + ':</span><span id="cart-drawer-total">' + formatCartDisplayAmount(0) + '</span>';
       return document.getElementById('cart-drawer-total');
+    }
+
+    /** Auto discounts already rendered by updateCartDrawerSummary (bundle, seasonal, customer, etc.). */
+    function readDrawerAutoDiscount(totalEl) {
+      if (totalEl) {
+        var attrDiscount = parseFloat(totalEl.getAttribute('data-zappy-auto-discount'));
+        if (isFinite(attrDiscount) && attrDiscount > 0.005) return attrDiscount;
+      }
+
+      var subtotalEl = document.getElementById('cart-drawer-subtotal');
+      if (subtotalEl && totalEl) {
+        var subtotal = parseDisplayedCartAmount(subtotalEl.textContent);
+        var renderedTotal = parseDisplayedCartAmount(totalEl.textContent);
+        if (isFinite(subtotal) && isFinite(renderedTotal) && subtotal >= renderedTotal) {
+          var renderedDiscount = subtotal - renderedTotal;
+          if (renderedDiscount > 0.005) return renderedDiscount;
+        }
+      }
+
+      var discount = 0;
+      var discountRows = document.querySelectorAll('#cart-drawer .zappy-cart-discount-row');
+      for (var i = 0; i < discountRows.length; i++) {
+        var row = discountRows[i];
+        if (!row || row.style.display === 'none') continue;
+        var valueEl = row.querySelector('span:last-child') || row;
+        var amount = parseDisplayedCartAmount(valueEl.textContent);
+        if (isFinite(amount)) discount += amount;
+      }
+      if (discount > 0.005) return discount;
+
+      var bundleRow = document.querySelector('.cart-drawer-bundle-discount');
+      if (!bundleRow || bundleRow.style.display === 'none') return 0;
+      var bundleEl = document.getElementById('cart-drawer-bundle-discount');
+      if (!bundleEl) return 0;
+      var bundleAmount = parseDisplayedCartAmount(bundleEl.textContent);
+      return isFinite(bundleAmount) ? bundleAmount : 0;
     }
 
     function patchCartTotals() {
@@ -4428,7 +4492,9 @@ function fixContrast(){
         }
       });
       if (totalEl) {
-        var nextTotal = formatCartDisplayAmount(total);
+        var autoDiscount = readDrawerAutoDiscount(totalEl);
+        var displayTotal = Math.max(0, total - autoDiscount);
+        var nextTotal = formatCartDisplayAmount(displayTotal);
         if (totalEl.textContent !== nextTotal) totalEl.textContent = nextTotal;
       }
     }
@@ -4538,11 +4604,21 @@ function fixContrast(){
         window.getVariantAttributeLabels.__zappyRuntimeI18nWrapped = true;
       }
 
+      function getVariantGroupLabel(attr) {
+        var product = window.currentProduct;
+        var t = window.productTranslations || {};
+        if (typeof window.getVariantAttributeLabels === 'function' && product) {
+          var attrLabels = window.getVariantAttributeLabels(product, t) || {};
+          var resolved = attrLabels[attr] || attrLabels[String(attr).toLowerCase()];
+          if (resolved) return resolved;
+        }
+        return getText(String(attr).toLowerCase());
+      }
+
       document.querySelectorAll('.variant-group').forEach(function(group) {
         var attr = group.getAttribute('data-group');
         if (!attr) return;
-        var key = String(attr).toLowerCase();
-        var labelText = getText(key);
+        var labelText = getVariantGroupLabel(attr);
         var label = group.querySelector('.variant-group-label');
         if (label) {
           var selected = label.querySelector('.variant-selected-value');
@@ -5911,3 +5987,494 @@ function fixContrast(){
     boot();
   }
 })();
+
+/* ZAPPY_CART_BUNDLE_DISCOUNT_V3 */
+;(function() {
+  if (window.__zappyCartAutomaticDiscountRuntimeV3) return;
+  window.__zappyCartAutomaticDiscountRuntimeV3 = true;
+
+  function getWebsiteId() {
+    return window.ZAPPY_WEBSITE_ID || document.body.getAttribute('data-website-id') || document.documentElement.getAttribute('data-website-id') || '';
+  }
+
+  function apiUrl(path) {
+    var base = window.ZAPPY_API_BASE || window.location.origin || '';
+    if (base.endsWith('/')) base = base.slice(0, -1);
+    return base + path;
+  }
+
+  function readCart() {
+    var wid = getWebsiteId();
+    if (!wid) return [];
+    try {
+      var cart = JSON.parse(localStorage.getItem('zappy_cart_' + wid) || '[]');
+      return Array.isArray(cart) ? cart : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function formatMoney(amount) {
+    if (typeof window.zappyFormatMoney === 'function') {
+      try { return window.zappyFormatMoney(amount); } catch (e) {}
+    }
+    var sym = '₪';
+    try {
+      if (window.zappyStoreSettings && window.zappyStoreSettings.currencySymbol) {
+        sym = window.zappyStoreSettings.currencySymbol;
+      }
+    } catch (e) {}
+    return sym + (parseFloat(amount) || 0).toFixed(2);
+  }
+
+  function getEcomLabel(key, fallback) {
+    if (typeof getEcomText === 'function') {
+      try {
+        var v = getEcomText(key, fallback);
+        if (v) return v;
+      } catch (e) {}
+    }
+    return fallback;
+  }
+
+  function getUnitPrice(item) {
+    if (item && item.selectedVariant && item.selectedVariant.price != null && item.selectedVariant.price !== '') {
+      var vp = parseFloat(item.selectedVariant.price);
+      if (Number.isFinite(vp)) return vp;
+    }
+    if (item && item.displayPrice != null && item.displayPrice !== '') {
+      var dp = parseFloat(item.displayPrice);
+      if (Number.isFinite(dp)) return dp;
+    }
+    var reg = parseFloat(item && item.price);
+    var sale = parseFloat(item && item.sale_price);
+    if (Number.isFinite(sale) && Number.isFinite(reg) && sale < reg) return sale;
+    return Number.isFinite(reg) ? reg : 0;
+  }
+
+  function getLineTotal(item) {
+    var price = getUnitPrice(item);
+    var qty = parseInt(item.quantity, 10) || 1;
+    var step = parseFloat(item.quantityStep || item.quantity_step) || 1;
+    var unit = (item.quantityUnit || item.quantity_unit || 'piece');
+    if (unit === 'piece') return price * qty;
+    return price * (qty / step);
+  }
+
+  function getProductId(item) {
+    return String((item && (item.productId || item.id)) || '');
+  }
+
+  function idListContains(ids, id) {
+    var idStr = String(id || '');
+    for (var i = 0; i < ids.length; i++) {
+      if (String(ids[i]) === idStr) return true;
+    }
+    return false;
+  }
+
+  function getCartSubtotal(cart) {
+    var total = 0;
+    for (var i = 0; i < cart.length; i++) total += getLineTotal(cart[i]);
+    return total;
+  }
+
+  function calcBestBundleGroupDiscount(groupBundles, unitPrices) {
+    if (!groupBundles.length || !unitPrices.length) return 0;
+    unitPrices.sort(function(a, c) { return c - a; });
+
+    var prefixSums = [0];
+    for (var i = 0; i < unitPrices.length; i++) {
+      prefixSums.push(prefixSums[prefixSums.length - 1] + unitPrices[i]);
+    }
+
+    var dp = [0];
+    for (var n = 1; n <= unitPrices.length; n++) {
+      var best = dp[n - 1] || 0;
+      for (var b = 0; b < groupBundles.length; b++) {
+        var tier = groupBundles[b];
+        if (n < tier.qty) continue;
+        var groupSum = prefixSums[n] - prefixSums[n - tier.qty];
+        var saving = Math.max(0, groupSum - tier.bPrice);
+        if (saving <= 0) continue;
+        best = Math.max(best, (dp[n - tier.qty] || 0) + saving);
+      }
+      dp[n] = best;
+    }
+    return dp[unitPrices.length] || 0;
+  }
+
+  function calcBundleDiscount(bundles, cart) {
+    var groups = {};
+    for (var i = 0; i < bundles.length; i++) {
+      var b = bundles[i];
+      var qty = parseInt(b.quantity, 10);
+      var bPrice = parseFloat(b.bundlePrice);
+      if (!qty || qty < 2 || !Number.isFinite(bPrice) || bPrice < 0) continue;
+
+      var ids = Array.isArray(b.eligibleProductIds) ? b.eligibleProductIds.map(function(id) { return String(id || ''); }).filter(Boolean).sort() : [];
+      var appliesToAll = b.appliesTo === 'all';
+      if (!appliesToAll && ids.length === 0) continue;
+
+      var key = appliesToAll ? 'all' : ('products:' + ids.join('|'));
+      if (!groups[key]) groups[key] = { appliesToAll: appliesToAll, ids: ids, bundles: [] };
+      groups[key].bundles.push({ qty: qty, bPrice: bPrice });
+    }
+
+    var totalDiscount = 0;
+    Object.keys(groups).forEach(function(key) {
+      var group = groups[key];
+      var unitPrices = [];
+      for (var j = 0; j < cart.length; j++) {
+        var item = cart[j];
+        var itemId = getProductId(item);
+        if (!group.appliesToAll && !idListContains(group.ids, itemId)) continue;
+        var uPrice = getUnitPrice(item);
+        var itemQty = parseInt(item.quantity, 10) || 1;
+        for (var k = 0; k < itemQty; k++) unitPrices.push(uPrice);
+      }
+      totalDiscount += calcBestBundleGroupDiscount(group.bundles, unitPrices);
+    });
+    return totalDiscount;
+  }
+
+  function calcSeasonalDiscount(discounts, cart) {
+    var totalDiscount = 0;
+    for (var i = 0; i < discounts.length; i++) {
+      var d = discounts[i];
+      var ids = Array.isArray(d.product_ids) ? d.product_ids : [];
+      var appliesToAll = d.applies_to === 'all' || ids.length === 0;
+      var eligibleSubtotal = 0;
+
+      for (var j = 0; j < cart.length; j++) {
+        var item = cart[j];
+        if (appliesToAll || idListContains(ids, getProductId(item))) {
+          eligibleSubtotal += getLineTotal(item);
+        }
+      }
+
+      var value = parseFloat(d.value);
+      if (!Number.isFinite(value) || eligibleSubtotal <= 0) continue;
+      if (d.type === 'percentage') {
+        totalDiscount += (eligibleSubtotal * value) / 100;
+      } else if (d.type === 'fixed') {
+        totalDiscount += Math.min(value, eligibleSubtotal);
+      }
+    }
+    return totalDiscount;
+  }
+
+  function calcCustomerDiscount(cart) {
+    var cfg = window.__zappyCustomerDiscountConfig;
+    var percent = parseFloat(cfg && (cfg.discountPercent || cfg.discount_percent));
+    if (!Number.isFinite(percent) || percent <= 0) return 0;
+
+    var excluded = Array.isArray(cfg.excludedProductIds)
+      ? cfg.excludedProductIds
+      : (Array.isArray(cfg.excluded_product_ids) ? cfg.excluded_product_ids : []);
+    var eligibleSubtotal = 0;
+    for (var i = 0; i < cart.length; i++) {
+      var item = cart[i];
+      if (!idListContains(excluded, getProductId(item))) {
+        eligibleSubtotal += getLineTotal(item);
+      }
+    }
+    return eligibleSubtotal > 0 ? (eligibleSubtotal * percent) / 100 : 0;
+  }
+
+  function injectCss() {
+    var css =
+      '.cart-drawer-footer .zappy-cart-summary-row{display:flex;justify-content:space-between;align-items:center;font-size:.95rem;margin-bottom:8px}' +
+      '.cart-drawer-footer .cart-drawer-subtotal,.cart-drawer-footer .cart-drawer-subtotal span{color:var(--zappy-cart-drawer-total-color,var(--text-light,#f9fafb))}' +
+      '.cart-drawer-footer .zappy-cart-discount-row{color:var(--primary-color,var(--accent,var(--primary,#059669)));font-weight:500}' +
+      '.cart-drawer-subtotal,.cart-drawer-bundle-discount,.cart-drawer-seasonal-discount,.cart-drawer-customer-discount{display:none}';
+    var style = document.getElementById('zappy-cart-bundle-discount-css');
+    if (style) {
+      style.textContent = css;
+      return;
+    }
+    style = document.createElement('style');
+    style.id = 'zappy-cart-bundle-discount-css';
+    style.textContent = css;
+    (document.head || document.documentElement).appendChild(style);
+  }
+
+  function ensureSummaryRows() {
+    var footer = document.querySelector('#cart-drawer .cart-drawer-footer');
+    if (!footer) return null;
+    var totalRow = footer.querySelector('.cart-drawer-total');
+    if (!totalRow) return null;
+
+    var subtotalRow = footer.querySelector('.cart-drawer-subtotal');
+    if (!subtotalRow) {
+      subtotalRow = document.createElement('div');
+      subtotalRow.className = 'cart-drawer-subtotal zappy-cart-summary-row';
+      subtotalRow.innerHTML = '<span class="cart-drawer-subtotal-label"></span><span id="cart-drawer-subtotal"></span>';
+      footer.insertBefore(subtotalRow, totalRow);
+    }
+
+    var bundleRow = footer.querySelector('.cart-drawer-bundle-discount');
+    if (!bundleRow) {
+      bundleRow = document.createElement('div');
+      bundleRow.className = 'cart-drawer-bundle-discount zappy-cart-summary-row zappy-cart-discount-row';
+      bundleRow.innerHTML = '<span class="cart-drawer-bundle-discount-label"></span><span id="cart-drawer-bundle-discount"></span>';
+      footer.insertBefore(bundleRow, totalRow);
+    }
+
+    var seasonalRow = footer.querySelector('.cart-drawer-seasonal-discount');
+    if (!seasonalRow) {
+      seasonalRow = document.createElement('div');
+      seasonalRow.className = 'cart-drawer-seasonal-discount zappy-cart-summary-row zappy-cart-discount-row';
+      seasonalRow.innerHTML = '<span class="cart-drawer-seasonal-discount-label"></span><span id="cart-drawer-seasonal-discount"></span>';
+      footer.insertBefore(seasonalRow, totalRow);
+    }
+
+    var customerRow = footer.querySelector('.cart-drawer-customer-discount');
+    if (!customerRow) {
+      customerRow = document.createElement('div');
+      customerRow.className = 'cart-drawer-customer-discount zappy-cart-summary-row zappy-cart-discount-row';
+      customerRow.innerHTML = '<span class="cart-drawer-customer-discount-label"></span><span id="cart-drawer-customer-discount"></span>';
+      footer.insertBefore(customerRow, totalRow);
+    }
+
+    return { subtotalRow: subtotalRow, bundleRow: bundleRow, seasonalRow: seasonalRow, customerRow: customerRow, totalRow: totalRow };
+  }
+
+  function getDrawerTotalEl() {
+    var el = document.getElementById('cart-drawer-total');
+    if (el) return el;
+    var legacy = document.querySelector('#cart-drawer .cart-drawer-total');
+    if (!legacy) return null;
+    legacy.innerHTML = '<span>' + getEcomLabel('total', 'Total') + ':</span><span id="cart-drawer-total">' + formatMoney(0) + '</span>';
+    return document.getElementById('cart-drawer-total');
+  }
+
+  var bundlesCache = null;
+  var bundlesLoading = null;
+  var seasonalCache = null;
+  var seasonalLoading = null;
+  var customerLoading = null;
+
+  function loadBundles() {
+    if (bundlesCache) return Promise.resolve(bundlesCache);
+    if (bundlesLoading) return bundlesLoading;
+    var wid = getWebsiteId();
+    if (!wid) return Promise.resolve([]);
+    bundlesLoading = fetch(apiUrl('/api/ecommerce/storefront/quantity-bundles?websiteId=' + encodeURIComponent(wid)))
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        bundlesCache = (data && data.success && Array.isArray(data.data)) ? data.data : [];
+        return bundlesCache;
+      })
+      .catch(function() {
+        bundlesCache = [];
+        return bundlesCache;
+      })
+      .finally(function() { bundlesLoading = null; });
+    return bundlesLoading;
+  }
+
+  function loadSeasonalDiscounts() {
+    if (seasonalCache) return Promise.resolve(seasonalCache);
+    if (seasonalLoading) return seasonalLoading;
+    var wid = getWebsiteId();
+    if (!wid) return Promise.resolve([]);
+    seasonalLoading = fetch(apiUrl('/api/ecommerce/storefront/seasonal-discounts?websiteId=' + encodeURIComponent(wid)))
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        seasonalCache = (data && data.success && Array.isArray(data.data)) ? data.data : [];
+        return seasonalCache;
+      })
+      .catch(function() {
+        seasonalCache = [];
+        return seasonalCache;
+      })
+      .finally(function() { seasonalLoading = null; });
+    return seasonalLoading;
+  }
+
+  function hasActiveCustomerDiscount() {
+    var cfg = window.__zappyCustomerDiscountConfig;
+    var percent = parseFloat(cfg && (cfg.discountPercent || cfg.discount_percent));
+    return Number.isFinite(percent) && percent > 0;
+  }
+
+  function loadCustomerDiscount() {
+    var wid = getWebsiteId();
+    if (!wid) return Promise.resolve(null);
+    var token = null;
+    try { token = localStorage.getItem('zappy_customer_token_' + wid); } catch (e) {}
+    if (!token) {
+      window.__zappyCustomerDiscountConfig = null;
+      return Promise.resolve(null);
+    }
+    if (hasActiveCustomerDiscount()) {
+      return Promise.resolve(window.__zappyCustomerDiscountConfig);
+    }
+    if (customerLoading) return customerLoading;
+
+    if (typeof window.__zappyFetchCustomerDiscount === 'function') {
+      customerLoading = Promise.resolve(window.__zappyFetchCustomerDiscount())
+        .then(function() { return window.__zappyCustomerDiscountConfig || null; })
+        .catch(function() { return null; })
+        .finally(function() { customerLoading = null; });
+      return customerLoading;
+    }
+
+    customerLoading = fetch(apiUrl('/api/ecommerce/storefront/customer-discount?websiteId=' + encodeURIComponent(wid)), {
+      headers: { Authorization: 'Bearer ' + token }
+    })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        window.__zappyCustomerDiscountConfig = (data && data.success && data.data && data.data.discountPercent > 0) ? data.data : null;
+        return window.__zappyCustomerDiscountConfig;
+      })
+      .catch(function() {
+        window.__zappyCustomerDiscountConfig = null;
+        return null;
+      })
+      .finally(function() { customerLoading = null; });
+    return customerLoading;
+  }
+
+  function updateCartDrawerSummary() {
+    injectCss();
+    var drawerTotal = getDrawerTotalEl();
+    var rows = ensureSummaryRows();
+    if (!drawerTotal || !rows) return;
+    try {
+      var totalColor = window.getComputedStyle(rows.totalRow || drawerTotal).color;
+      if (totalColor) {
+        rows.subtotalRow.style.setProperty('--zappy-cart-drawer-total-color', totalColor);
+      }
+    } catch (e) {}
+
+    var cart = readCart();
+    if (!cart.length) {
+      rows.subtotalRow.style.display = 'none';
+      rows.bundleRow.style.display = 'none';
+      rows.seasonalRow.style.display = 'none';
+      rows.customerRow.style.display = 'none';
+      drawerTotal.setAttribute('data-zappy-auto-discount', '0');
+      drawerTotal.textContent = formatMoney(0);
+      return;
+    }
+
+    var subtotal = getCartSubtotal(cart);
+    var bundleDisc = calcBundleDiscount(bundlesCache || [], cart);
+    var seasonalDisc = calcSeasonalDiscount(seasonalCache || [], cart);
+    var customerDisc = calcCustomerDiscount(cart);
+    var autoDiscount = (bundleDisc || 0) + (seasonalDisc || 0) + (customerDisc || 0);
+    if (autoDiscount > subtotal) autoDiscount = subtotal;
+    var finalTotal = subtotal - autoDiscount;
+    var showBreakdown = autoDiscount > 0.005;
+    var remainingDiscount = autoDiscount;
+    var displayBundleDiscount = Math.min(Math.max(bundleDisc || 0, 0), remainingDiscount);
+    remainingDiscount -= displayBundleDiscount;
+    var displaySeasonalDiscount = Math.min(Math.max(seasonalDisc || 0, 0), remainingDiscount);
+    remainingDiscount -= displaySeasonalDiscount;
+    var displayCustomerDiscount = Math.min(Math.max(customerDisc || 0, 0), remainingDiscount);
+
+    rows.subtotalRow.style.display = showBreakdown ? 'flex' : 'none';
+    rows.bundleRow.style.display = displayBundleDiscount > 0.005 ? 'flex' : 'none';
+    rows.seasonalRow.style.display = displaySeasonalDiscount > 0.005 ? 'flex' : 'none';
+    rows.customerRow.style.display = displayCustomerDiscount > 0.005 ? 'flex' : 'none';
+
+    if (showBreakdown) {
+      var subLabel = rows.subtotalRow.querySelector('.cart-drawer-subtotal-label');
+      if (subLabel) subLabel.textContent = getEcomLabel('subtotal', 'Subtotal') + ':';
+      var subEl = document.getElementById('cart-drawer-subtotal');
+      if (subEl) subEl.textContent = formatMoney(subtotal);
+    }
+
+    if (displayBundleDiscount > 0.005) {
+      var bundleLabel = rows.bundleRow.querySelector('.cart-drawer-bundle-discount-label');
+      if (bundleLabel) bundleLabel.textContent = getEcomLabel('bundleDiscount', 'Bundle Discount') + ':';
+      var bundleEl = document.getElementById('cart-drawer-bundle-discount');
+      if (bundleEl) bundleEl.textContent = '-' + formatMoney(displayBundleDiscount);
+    }
+
+    if (displaySeasonalDiscount > 0.005) {
+      var seasonalLabel = rows.seasonalRow.querySelector('.cart-drawer-seasonal-discount-label');
+      if (seasonalLabel) seasonalLabel.textContent = getEcomLabel('seasonalDiscount', 'Seasonal Discount') + ':';
+      var seasonalEl = document.getElementById('cart-drawer-seasonal-discount');
+      if (seasonalEl) seasonalEl.textContent = '-' + formatMoney(displaySeasonalDiscount);
+    }
+
+    if (displayCustomerDiscount > 0.005) {
+      var customerLabel = rows.customerRow.querySelector('.cart-drawer-customer-discount-label');
+      if (customerLabel) customerLabel.textContent = getEcomLabel('customerDiscount', 'Customer Discount') + ':';
+      var customerEl = document.getElementById('cart-drawer-customer-discount');
+      if (customerEl) customerEl.textContent = '-' + formatMoney(displayCustomerDiscount);
+    }
+
+    drawerTotal.setAttribute('data-zappy-auto-discount', String(autoDiscount));
+    drawerTotal.textContent = formatMoney(finalTotal);
+  }
+
+  function refreshSummary() {
+    Promise.all([loadBundles(), loadSeasonalDiscounts(), loadCustomerDiscount()]).then(function() {
+      updateCartDrawerSummary();
+    });
+  }
+
+  function wrapRenderCartDrawer() {
+    var orig = window.zappyRenderCartDrawer;
+    if (typeof orig === 'function' && !orig.__zappyAutomaticDiscountWrappedV3) {
+      window.zappyRenderCartDrawer = function() {
+        var result = orig.apply(this, arguments);
+        refreshSummary();
+        return result;
+      };
+      window.zappyRenderCartDrawer.__zappyAutomaticDiscountWrappedV3 = true;
+    }
+  }
+
+  function wrapFn(name) {
+    var orig = window[name];
+    if (typeof orig !== 'function' || orig.__zappyAutomaticDiscountWrappedV3) return;
+    window[name] = function() {
+      var result = orig.apply(this, arguments);
+      refreshSummary();
+      return result;
+    };
+    window[name].__zappyAutomaticDiscountWrappedV3 = true;
+  }
+
+  function wrapCartMutators() {
+    wrapFn('zappyUpdateQty');
+    wrapFn('zappyRemoveFromCart');
+    wrapRenderCartDrawer();
+  }
+
+  function watchCartDrawer() {
+    var drawer = document.getElementById('cart-drawer');
+    if (!drawer || drawer.__zappyAutomaticDiscountObservedV3) return;
+    drawer.__zappyAutomaticDiscountObservedV3 = true;
+    var obs = new MutationObserver(function() {
+      if (drawer.classList.contains('active')) refreshSummary();
+    });
+    obs.observe(drawer, { attributes: true, attributeFilter: ['class'], subtree: true, childList: true, characterData: true });
+  }
+
+  function boot() {
+    wrapCartMutators();
+    watchCartDrawer();
+    refreshSummary();
+  }
+
+  boot();
+  document.addEventListener('DOMContentLoaded', boot);
+  window.addEventListener('load', function() { setTimeout(boot, 100); });
+  setTimeout(boot, 500);
+  setTimeout(boot, 1500);
+  document.addEventListener('click', function(event) {
+    if (event.target && event.target.closest && event.target.closest('#cart-drawer-toggle, [data-cart-toggle], .cart-link.nav-cart, a.nav-cart')) {
+      setTimeout(refreshSummary, 50);
+      setTimeout(refreshSummary, 400);
+    }
+  }, true);
+})();
+
+/* ZAPPY_CART_BUNDLE_SUMMARY_COLOR_V3 */
+;(function(){var id='zappy-cart-bundle-summary-color-css';var css='.cart-drawer-footer .zappy-cart-summary-row{display:flex;justify-content:space-between;align-items:center;font-size:.95rem;margin-bottom:8px}.cart-drawer-footer .cart-drawer-subtotal,.cart-drawer-footer .cart-drawer-subtotal span{color:var(--zappy-cart-drawer-total-color,var(--text-light,#f9fafb))}.cart-drawer-footer .zappy-cart-discount-row{color:var(--primary-color,var(--accent,var(--primary,#059669)));font-weight:500}';var el=document.getElementById(id);if(el){el.textContent=css;}else{var s=document.createElement('style');s.id=id;s.textContent=css;(document.head||document.documentElement).appendChild(s);}function sync(){var f=document.querySelector('.cart-drawer-footer');var total=document.querySelector('.cart-drawer-footer .cart-drawer-total');if(!f||!total)return;try{var c=getComputedStyle(total).color;if(c)f.style.setProperty('--zappy-cart-drawer-total-color',c);}catch(e){}}sync();document.addEventListener('DOMContentLoaded',sync);window.addEventListener('load',sync);setTimeout(sync,50);setTimeout(sync,500);})();
