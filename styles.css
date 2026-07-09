@@ -5604,6 +5604,17 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
     grid-column: span 1;
   }
 }
+
+#layout-1783600985194 .editorial-grid {
+  grid-template-columns: 1fr !important;
+  gap: 40px !important;
+}
+
+#layout-1783600985194 .editorial-media {
+  order: 0 !important;
+  max-width: 500px !important;
+  margin: 0 auto !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
