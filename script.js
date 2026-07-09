@@ -1478,6 +1478,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+/* Added Component Script */
+(function() {
+  const cta = document.querySelector('.promo-cta');
+  if (cta) {
+    cta.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector('#order');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+})();
+
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
