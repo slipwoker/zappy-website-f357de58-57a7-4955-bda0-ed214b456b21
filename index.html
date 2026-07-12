@@ -2073,14 +2073,17 @@
 }
 </style>
 
+
+
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .home-promo-section {
   background: #FDF8F6;
   color: var(--text-dark);
-  padding: 80px 16px;
+  padding: 80px 24px 100px;
   position: relative;
   overflow: visible;
+  font-family: 'Inter', 'Assistant', sans-serif;
   direction: rtl;
 }
 
@@ -2088,213 +2091,252 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 60px;
-  position: relative;
-  z-index: 1;
-}
-
-/* Image Column */
-.home-promo-section .promo-image-col {
-  flex: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-promo-section .promo-image-col img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 16px 60px rgba(180,100,100,0.18);
-  display: block;
+  gap: 48px;
   position: relative;
   z-index: 2;
+}
+
+/* Card Styling */
+.home-promo-section .promo-card {
+  flex: 1 1 55%;
   background: #FFFFFF;
-}
-
-.home-promo-section .decorative-tassel {
-  position: absolute;
-  top: -30px;
-  inset-inline-end: -20px;
-  width: 60px;
-  height: 120px;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.8;
-}
-
-/* Content Column */
-.home-promo-section .promo-content-col {
-  flex: 1;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(180,100,100,0.08);
+  padding: 48px 40px;
+  border: 1px solid #EDD8D0;
+  position: relative;
+  z-index: 10;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 24px;
   text-align: right;
-  gap: 20px;
-  position: relative;
-  z-index: 2;
 }
 
 .home-promo-section .promo-badge {
+  display: inline-flex;
+  align-self: flex-start;
   background: #E8637A;
   color: #FFFFFF;
+  padding: 8px 24px;
+  border-radius: 100px;
   font-size: 0.875rem;
   font-weight: 600;
-  padding: 8px 20px;
-  border-radius: 100px;
-  display: inline-block;
-  box-shadow: 0 4px 20px rgba(232,99,122,0.25);
-  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(232,99,122,0.3);
 }
 
-.home-promo-section .promo-headline {
+.home-promo-section .promo-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.home-promo-section .promo-header h2 {
   font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
   font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   color: #2C1810;
   margin: 0;
-  direction: rtl;
+  text-align: right;
 }
 
-.home-promo-section .promo-offer-highlight {
-  background: linear-gradient(135deg, #F5EDE8 0%, #FDF8F6 100%);
-  border: 2px dashed #E8637A;
-  border-radius: 12px;
-  padding: 16px 32px;
-  display: inline-flex;
+.home-promo-section .promo-highlight {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
 }
 
-.home-promo-section .offer-text {
-  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
-  font-size: 3rem;
+.home-promo-section .highlight-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
   font-weight: 700;
   color: #E8637A;
   line-height: 1;
+  letter-spacing: -1px;
 }
 
-.home-promo-section .promo-description {
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #3D2B2B;
-  margin: 0;
-  direction: rtl;
+.home-promo-section .promo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .home-promo-section .promo-subtitle {
   font-size: 1.05rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.75;
   color: #3D2B2B;
   margin: 0;
-  direction: rtl;
+  text-align: right;
 }
 
-.home-promo-section .promo-expiry {
+.home-promo-section .promo-description {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #3D2B2B;
+  margin: 0;
+  text-align: right;
+}
+
+.home-promo-section .promo-note {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #E8637A;
-  background: rgba(232,99,122,0.1);
-  padding: 6px 16px;
-  border-radius: 100px;
+  line-height: 1.6;
+  color: #6b7280;
   margin: 0;
-  direction: rtl;
+  text-align: right;
+  padding-top: 4px;
+  border-top: 1px dashed #EDD8D0;
 }
 
-.home-promo-section .promo-cta {
+.home-promo-section .promo-cta-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+.home-promo-section .promo-cta-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: #E8637A;
   color: #FFFFFF;
-  padding: 14px 36px;
+  padding: 14px 32px;
   border-radius: 100px;
+  border: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-decoration: none;
-  box-shadow: 0 8px 32px rgba(232,99,122,0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  direction: rtl;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232,99,122,0.25);
 }
 
-.home-promo-section .promo-cta:hover {
+.home-promo-section .promo-cta-link:hover {
+  background: #D94E63;
+  box-shadow: 0 8px 25px rgba(232,99,122,0.4);
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(232,99,122,0.4);
+}
+
+.home-promo-section .promo-cta-link span {
+  font-weight: 600;
   color: #FFFFFF;
-  text-decoration: none;
 }
 
-.home-promo-section .promo-footer-note {
-  font-size: 0.875rem;
+.home-promo-section .promo-footer {
+  margin-top: 8px;
+}
+
+.home-promo-section .promo-tagline {
+  font-size: 0.95rem;
   font-weight: 400;
-  color: #6b7280;
+  line-height: 1.7;
+  color: #3D2B2B;
   margin: 0;
-  direction: rtl;
+  text-align: right;
+  font-style: italic;
 }
 
-/* Decorative Heart Divider */
-.home-promo-section .section-heart-divider {
-  width: 40px;
-  height: auto;
-  margin-top: 12px;
-  opacity: 1;
+/* Media Column */
+.home-promo-section .promo-media {
+  flex: 1 1 45%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.home-promo-section .promo-image-wrapper {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 60px rgba(180,100,100,0.18);
+  position: relative;
+  z-index: 2;
+  background: #FDF8F6;
+}
+
+.home-promo-section .promo-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Decorative Tassel */
+.home-promo-section .promo-decorative-tassel {
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  width: 60px;
+  height: 120px;
+  z-index: 1;
   pointer-events: none;
+  opacity: 0.8;
+  transform: rotate(-15deg);
 }
 
-/* Responsive Styles */
+.home-promo-section .promo-decorative-tassel svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .home-promo-section {
-    padding: 60px 16px;
+    padding: 100px 16px 60px;
   }
 
   .home-promo-section .promo-container {
     flex-direction: column;
-    gap: 40px;
+    gap: 32px;
   }
 
-  .home-promo-section .promo-image-col {
-    order: -1;
+  .home-promo-section .promo-card {
+    padding: 32px 24px;
+    gap: 20px;
     width: 100%;
   }
 
-  .home-promo-section .promo-image-col img {
-    max-width: 100%;
-  }
-
-  .home-promo-section .decorative-tassel {
-    display: none;
-  }
-
-  .home-promo-section .promo-content-col {
-    width: 100%;
-    align-items: center;
-    text-align: center;
-  }
-
-  .home-promo-section .promo-headline {
+  .home-promo-section .promo-header h2 {
     font-size: 2rem;
-    text-align: center;
   }
 
-  .home-promo-section .offer-text {
-    font-size: 2.5rem;
+  .home-promo-section .highlight-number {
+    font-size: 2.8rem;
   }
 
-  .home-promo-section .promo-description,
-  .home-promo-section .promo-subtitle,
-  .home-promo-section .promo-footer-note {
-    text-align: center;
+  .home-promo-section .promo-cta-wrapper {
+    justify-content: center;
   }
 
-  .home-promo-section .promo-cta {
+  .home-promo-section .promo-cta-link {
     width: 100%;
     justify-content: center;
+  }
+
+  .home-promo-section .promo-media {
+    width: 100%;
+    order: -1;
+  }
+
+  .home-promo-section .promo-image-wrapper {
+    max-width: 350px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .home-promo-section .promo-decorative-tassel {
+    top: -10px;
+    right: -15px;
+    width: 45px;
+    height: 90px;
   }
 }
 </style>
@@ -3011,49 +3053,52 @@ html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,*::before,*::after{bo
   </div>
 </section>
 
-<section class="home-promo-section" data-layout-spec="Home-promo" data-zappy-section="true" id="ai-section-1783602784105-f2httni">
+<section class="home-promo-section" data-layout-spec="Home-promo" dir="rtl" data-zappy-section="true" id="ai-section-1783602784105-f2httni">
   <div class="promo-container">
-    <!-- Image Column (Left in RTL) -->
-    <div class="promo-image-col">
-      <img alt="Keychain with a purple tassel and a white/purple glitter resin charm inscribed with Hebrew text &quot;לנשום&quot; (to breathe)." src="/assets/ai-section-1783602779016-0-a5e8d4ac-1783603036781-hm1zq8.webp" data-placeholder="Click to upload new image" data-context="ai-generated-section" style="width: 100%; height: 100%; object-fit: cover; object-position: center" data-element-type="image" data-element-id="img-1783850583550-x8d390fz4" loading="lazy" decoding="async" fetchpriority="low">
-      <!-- Decorative tassel motif -->
-      <svg class="decorative-tassel" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 60 120" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30 0 L30 60" stroke="#E8B4B8" stroke-width="1.5" fill="none" opacity="0.6"></path>
-        <circle cx="30" cy="0" r="4" fill="#E8B4B8" opacity="0.6"></circle>
-        <path d="M15 60 L45 60 L40 90 L20 90 Z" fill="#E8B4B8" opacity="0.4"></path>
-        <path d="M25 90 L35 90 L32 110 L28 110 Z" fill="#E8B4B8" opacity="0.5"></path>
-        <line x1="20" y1="70" x2="25" y2="70" stroke="#E8B4B8" stroke-width="1" opacity="0.5"></line>
-        <line x1="35" y1="70" x2="40" y2="70" stroke="#E8B4B8" stroke-width="1" opacity="0.5"></line>
-      </svg>
-    </div>
-    
-    <!-- Content Column (Right in RTL) -->
-    <div class="promo-content-col">
-      <div class="promo-badge">מבצע יולי בלבד!</div>
-      
-      <h2 class="promo-headline">קנו 10 מחזיקי מפתחות<br>וקבלו 1 מתנה!</h2>
-      
-      <div class="promo-offer-highlight">
-        <span class="offer-text">10+1</span>
+    <article class="promo-card">
+      <div class="promo-badge">
+        <span>מבצע יולי בלבד!</span>
       </div>
-      
-      <p class="promo-description">על כל הזמנה של 10 מחזיקים — תקבלו 1 נוסף במתנה!</p>
-      
-      <p class="promo-subtitle">עצבו לכם מחזיק מפתחות עם מסר מעצים — מתנות עם משמעות</p>
-      
-      <p class="promo-expiry">המבצע תקף לחודש יולי בלבד — עד ה-31.7</p>
-      
-      <p style="text-align: center !important; display: flex !important; justify-content: center !important; align-items: flex-start !important; width: 100% !important;"><a href="https://wa.me/972506886796" class="promo-cta" data-native-element="true" data-element-id="btn-1783850586119-5rzsqm2e8" data-element-type="button" style="outline: none; border-color: rgb(232, 99, 122) !important; color: rgb(255, 255, 255) !important; background-color: rgb(232, 99, 122) !important; background-image: none !important;" target="_blank" rel="noopener noreferrer">להזמנה מהירה ←</a>
-      
-      </p><p class="promo-footer-note">בחרו את המסר המעצים שלכם — מתנה אישית עם משמעות</p>
-      
-      <!-- Decorative heart divider -->
-      <svg class="section-heart-divider" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 15 C10 5, 0 10, 0 12 C0 15, 10 20, 20 20 C30 20, 40 15, 40 12 C40 10, 30 5, 20 15 Z" fill="#E8637A"></path>
-        <line x1="0" y1="18" x2="15" y2="18" stroke="#E8637A" stroke-width="1"></line>
-        <line x1="25" y1="18" x2="40" y2="18" stroke="#E8637A" stroke-width="1"></line>
-      </svg>
-    </div>
+
+      <div class="promo-header">
+        <h2>קנו 10 מחזיקי מפתחות<br>וקבלו 1 מתנה!</h2>
+        <div class="promo-highlight">
+          <span class="highlight-number">10+1</span>
+        </div>
+      </div>
+
+      <div class="promo-content">
+        <p class="promo-subtitle">על כל הזמנה של 10 מחזיקים — תקבלו 1 נוסף במתנה!</p>
+        <p class="promo-description">עצבו לכם מחזיק מפתחות עם מסר מעצים — מתנות עם משמעות</p>
+        <p class="promo-note">המבצע תקף לחודש יולי בלבד — עד ה-31.7</p>
+      </div>
+
+      <div class="promo-cta-wrapper">
+        <a href="https://wa.me/972506886796" class="promo-cta-link" target="_blank" rel="noopener noreferrer">
+          <span>להזמנה מהירה ←</span>
+        </a>
+      </div>
+
+      <div class="promo-footer">
+        <p class="promo-tagline">בחרו את המסר המעצים שלכם — מתנה אישית עם משמעות</p>
+      </div>
+    </article>
+
+    <aside class="promo-media">
+      <div class="promo-image-wrapper">
+        <img alt="Keychain with a purple tassel and a white/purple glitter resin charm inscribed with Hebrew text &quot;לנשום&quot; (to breathe)." src="/assets/ai-section-1783602779016-0-a5e8d4ac-1783603036781-hm1zq8.webp" data-placeholder="Click to upload new image" data-context="ai-generated-section" style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
+      </div>
+      <div class="promo-decorative-tassel" aria-hidden="true" data-no-icon-edit="true">
+        <svg viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 0 C30 20, 28 40, 30 60 C32 80, 30 90, 30 100" stroke="#E8B4B8" stroke-width="1.5" fill="none" opacity="0.6"></path>
+          <circle cx="30" cy="0" r="4" fill="#E8B4B8" opacity="0.6"></circle>
+          <path d="M22 105 L30 120 L38 105" stroke="#E8B4B8" stroke-width="1.5" fill="none" opacity="0.6"></path>
+          <line x1="22" y1="105" x2="22" y2="115" stroke="#E8B4B8" stroke-width="1" opacity="0.4"></line>
+          <line x1="30" y1="110" x2="30" y2="120" stroke="#E8B4B8" stroke-width="1" opacity="0.4"></line>
+          <line x1="38" y1="105" x2="38" y2="115" stroke="#E8B4B8" stroke-width="1" opacity="0.4"></line>
+        </svg>
+      </div>
+    </aside>
   </div>
 </section>
 
