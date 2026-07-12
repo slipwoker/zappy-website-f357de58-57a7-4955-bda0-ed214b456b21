@@ -1844,234 +1844,7 @@
 
 
 
-<style data-zappy-section-v2-css="true">
-/* V2 Regenerated Section CSS */
-.home-layout-section {
-  position: relative;
-  background: #FDF8F6;
-  color: var(--text-dark);
-  padding: 80px 16px;
-  overflow: hidden;
-  font-family: 'Assistant', sans-serif;
-}
 
-/* Decorative Heart Divider */
-.home-layout-section .decorative-heart-divider {
-  position: absolute;
-  top: 20px;
-  inset-inline-start: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 45px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.9;
-}
-
-.home-layout-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* Editorial Split Grid */
-.home-layout-section .editorial-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  direction: rtl;
-}
-
-/* Text Column */
-.home-layout-section .editorial-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: right;
-}
-
-.home-layout-section .editorial-text h2 {
-  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #2C1810;
-  margin: 0 0 16px 0;
-}
-
-.home-layout-section .editorial-text .subtitle {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin: 0 0 32px 0;
-}
-
-/* Promo List */
-.home-layout-section .promo-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.home-layout-section .promo-list li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: #3D2B2B;
-  font-weight: 500;
-}
-
-.home-layout-section .promo-list .icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: rgba(232, 99, 122, 0.1);
-  border-radius: 50%;
-  color: #E8637A;
-  flex-shrink: 0;
-}
-
-.home-layout-section .action-text {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: #3D2B2B;
-  margin: 8px 0 24px 0;
-  font-weight: 600;
-}
-
-/* Button */
-.home-layout-section .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #E8637A;
-  color: #FFFFFF;
-  padding: 14px 32px;
-  border-radius: 30px;
-  border: none;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(232, 99, 122, 0.25);
-  white-space: nowrap;
-}
-
-.home-layout-section .btn-primary:hover {
-  background: #d44f62;
-  box-shadow: 0 12px 32px rgba(232, 99, 122, 0.35);
-  transform: translateY(-2px);
-}
-
-.home-layout-section .btn-icon {
-  display: flex;
-  align-items: center;
-}
-
-/* Image Column */
-.home-layout-section .editorial-media {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-layout-section .image-frame {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 16px 60px rgba(180, 100, 100, 0.18);
-  background: #FFFFFF;
-  border: 1px solid #EDD8D0;
-}
-
-.home-layout-section .image-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  aspect-ratio: 4/3;
-}
-
-/* Tassel Decoration */
-.home-layout-section .tassel-decoration {
-  position: absolute;
-  bottom: -30px;
-  inset-inline-end: -10px;
-  width: 60px;
-  height: 120px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.7;
-}
-
-.home-layout-section .tassel-decoration svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .home-layout-section {
-    padding: 100px 16px 60px;
-  }
-
-  .home-layout-section .editorial-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px;
-  }
-
-  .home-layout-section .editorial-text {
-    align-items: center;
-    text-align: center;
-  }
-
-  .home-layout-section .editorial-text h2 {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .home-layout-section .editorial-text .subtitle {
-    text-align: center;
-  }
-
-  .home-layout-section .promo-list li {
-    justify-content: center;
-    text-align: start;
-  }
-
-  .home-layout-section .action-text {
-    text-align: center;
-  }
-
-  .home-layout-section .editorial-media {
-    order: -1;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .home-layout-section .tassel-decoration {
-    inset-inline-end: 0;
-    bottom: -20px;
-    width: 50px;
-    height: 100px;
-  }
-}
-</style>
 
 
 
@@ -2337,6 +2110,175 @@
     right: -15px;
     width: 45px;
     height: 90px;
+  }
+}
+</style>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.home-layout-section {
+  position: relative;
+  background: #FDF8F6;
+  color: var(--text-dark);
+  padding: 80px 20px;
+  overflow: hidden;
+  direction: rtl;
+}
+
+.home-layout-section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.home-layout-section__image-wrapper {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(232, 99, 122, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.home-layout-section__image-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.home-layout-section__image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-layout-section__content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.home-layout-section__heading {
+  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #2C1810;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.home-layout-section__text {
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #3D2B2B;
+  margin-bottom: 32px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-layout-section__cta {
+  display: inline-block;
+  background: #E8637A;
+  color: #FFFFFF;
+  padding: 14px 36px;
+  border-radius: 100px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(232, 99, 122, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.home-layout-section__cta:hover {
+  background: #d44f68;
+  box-shadow: 0 12px 32px rgba(232, 99, 122, 0.45);
+  transform: translateY(-2px);
+}
+
+.home-layout-section__decoration {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.home-layout-section__decoration--leaf {
+  top: -20px;
+  right: -40px;
+  width: 220px;
+  height: auto;
+  opacity: 0.35;
+}
+
+.home-layout-section__decoration--leaf svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .home-layout-section {
+    padding: 100px 40px;
+  }
+
+  .home-layout-section__container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .home-layout-section__image-wrapper {
+    width: 45%;
+    max-width: 500px;
+    order: 1;
+  }
+
+  .home-layout-section__content {
+    width: 50%;
+    text-align: right;
+    order: 2;
+  }
+
+  .home-layout-section__heading {
+    font-size: 3rem;
+  }
+
+  .home-layout-section__text {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .home-layout-section__decoration--leaf {
+    top: -40px;
+    right: -60px;
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-layout-section {
+    padding: 60px 16px;
+  }
+
+  .home-layout-section__container {
+    gap: 32px;
+  }
+
+  .home-layout-section__heading {
+    font-size: 2rem;
+  }
+
+  .home-layout-section__decoration--leaf {
+    top: -30px;
+    right: -30px;
+    width: 150px;
   }
 }
 </style>
@@ -3206,21 +3148,22 @@ html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,*::before,*::after{bo
 
 <section class="home-layout-section" data-layout-spec="Home-layout" data-zappy-section="true" id="layout-1783335392003">
   <div class="home-layout-section__container">
+    <div class="home-layout-section__image-wrapper">
+      <img alt="ערכת מתנה אישית עם מחזיק מפתחות וסימניה מעוצבת" src="/assets/personalized-gifts-accessories-gallery-upload-1783255093582-qoryku.webp?t=1783357089985" data-placeholder="home-layout-image-1" data-context="A warm, editorial flat-lay of a personalized affirmation keychain and matching bookmark on a soft linen background, with a handwritten note and dried eucalyptus sprigs, evoking mindfulness and intentional gifting." style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
+    </div>
     <div class="home-layout-section__content">
       <h2 class="home-layout-section__heading">מוכנים להתחיל?</h2>
-      <p class="home-layout-section__text" style="text-align: center;">צרו את התזכורת האישית שלכם עוד היום!</p>
-      <p style="text-align: right !important; display: flex !important; justify-content: flex-start !important; align-items: flex-start !important; width: 100% !important;"><a href="#contact" class="home-layout-section__btn btn btn-primary" data-element-type="button" data-element-id="btn-1783357053843-6etemugct" data-native-element="true" style="border-color: var(--primary-color, var(--primary, #8B0000)) !important; color: rgb(255, 255, 255) !important; outline: none; background-color: var(--primary-color, var(--primary, #8B0000)) !important; background-image: none !important;">התחל עכשיו</a>
-    </p></div>
-    <div class="home-layout-section__media">
-      <div data-zappy-zoom-wrapper="true" data-element-id="img-1783357053850-639jhc820" data-element-type="image" data-zappy-zoom-wrapper-width="520px" data-zappy-zoom-wrapper-height="390px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 520px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 390px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" class="zappy-resizable-hover"><img data-placeholder="home-layout-image-1" data-context="A warm, editorial flat-lay of a personalized affirmation keychain and matching bookmark on a soft linen background, with a handwritten note and dried eucalyptus sprigs, evoking mindfulness and intentional gifting." width="600" height="400" src="/assets/personalized-gifts-accessories-gallery-upload-1783255093582-qoryku.webp?t=1783357089985" alt="ערכת מתנה אישית עם מחזיק מפתחות וסימניה מעוצבת" class="home-layout-section__image" style="object-position: 50% 50%; min-width: 200px; min-height: 150px; cursor: pointer; border-radius: 8px; object-fit: cover !important; margin: 0px !important; position: absolute !important; left: -1% !important; top: -40.3654% !important; width: 102% !important; height: 180.731% !important; max-width: none !important; max-height: none !important; display: block !important" data-element-type="image" data-element-id="img-1783357053850-639jhc820" data-zappy-zoom="1.02" data-zappy-original-width="520" data-zappy-original-height="390" loading="lazy" decoding="async" fetchpriority="low"></div>
-      <div class="home-layout-section__decorative-tassel" aria-hidden="true">
-        <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 60 120" width="60" height="120" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30,0 C30,0 28,10 28,20 C28,30 32,40 32,50 C32,60 28,70 28,80 L25,80 C25,80 27,85 30,85 C33,85 35,80 35,80 L32,80 C32,70 28,60 28,50 C28,40 32,30 32,20 C32,10 30,0 30,0 Z" fill="#E8B4B8" opacity="0.6"></path>
-          <path d="M25,80 L28,90 L32,80 Z" fill="#E8B4B8" opacity="0.6"></path>
-          <path d="M28,90 L30,120 L32,90 Z" fill="#E8B4B8" opacity="0.6"></path>
-        </svg>
-      </div>
+      <p class="home-layout-section__text">צרו את התזכורת האישית שלכם עוד היום!</p>
+      <a href="#contact" class="home-layout-section__cta btn-pill">התחל עכשיו</a>
     </div>
+  </div>
+  <div class="home-layout-section__decoration home-layout-section__decoration--leaf" aria-hidden="true">
+    <svg viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 10 Q90 40 85 90 Q80 140 60 190 Q40 140 35 90 Q30 40 60 10 Z" fill="none" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></path>
+      <path d="M60 10 Q60 50 60 190" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></path>
+      <path d="M60 40 Q75 55 85 70" fill="none" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></path>
+      <path d="M60 80 Q45 95 35 110" fill="none" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></path>
+    </svg>
   </div>
 </section>
 
