@@ -2114,60 +2114,43 @@
 }
 </style>
 
+
+
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .home-layout-section {
-  position: relative;
-  background: #FDF8F6;
+  background-color: #FDF8F6;
+  background-image: none;
   color: var(--text-dark);
-  padding: 80px 20px;
+  padding: 80px 24px 80px;
+  position: relative;
   overflow: hidden;
-  direction: rtl;
+  text-align: center;
 }
 
 .home-layout-section__container {
-  max-width: 1200px;
+  max-width: 720px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
   position: relative;
-  z-index: 10;
-}
-
-.home-layout-section__image-wrapper {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 12px 40px rgba(232, 99, 122, 0.25);
-  transition: transform 0.3s ease;
-}
-
-.home-layout-section__image-wrapper:hover {
-  transform: scale(1.02);
-}
-
-.home-layout-section__image-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
+  z-index: 2;
 }
 
 .home-layout-section__content {
-  text-align: center;
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 
 .home-layout-section__heading {
   font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.25;
   color: #2C1810;
-  margin-bottom: 16px;
-  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+  max-width: none !important;
 }
 
 .home-layout-section__text {
@@ -2176,109 +2159,70 @@
   font-weight: 400;
   line-height: 1.75;
   color: #3D2B2B;
-  margin-bottom: 32px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
+  max-width: 560px;
+  text-align: center;
 }
 
 .home-layout-section__cta {
-  display: inline-block;
   background: #E8637A;
   color: #FFFFFF;
-  padding: 14px 36px;
+  padding: 14px 28px;
   border-radius: 100px;
   border: none;
   font-weight: 600;
   font-size: 1rem;
-  text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(232, 99, 122, 0.3);
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  margin-top: 8px;
 }
 
 .home-layout-section__cta:hover {
-  background: #d44f68;
-  box-shadow: 0 12px 32px rgba(232, 99, 122, 0.45);
+  box-shadow: 0 12px 40px rgba(232, 99, 122, 0.25);
   transform: translateY(-2px);
 }
 
 .home-layout-section__decoration {
   position: absolute;
+  top: 50%;
+  inset-inline-start: -20px;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
+  opacity: 0.6;
 }
 
-.home-layout-section__decoration--leaf {
-  top: -20px;
-  right: -40px;
-  width: 220px;
-  height: auto;
-  opacity: 0.35;
-}
-
-.home-layout-section__decoration--leaf svg {
+.home-layout-section__decoration svg {
   width: 100%;
   height: 100%;
-}
-
-@media (min-width: 768px) {
-  .home-layout-section {
-    padding: 100px 40px;
-  }
-
-  .home-layout-section__container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-  }
-
-  .home-layout-section__image-wrapper {
-    width: 45%;
-    max-width: 500px;
-    order: 1;
-  }
-
-  .home-layout-section__content {
-    width: 50%;
-    text-align: right;
-    order: 2;
-  }
-
-  .home-layout-section__heading {
-    font-size: 3rem;
-  }
-
-  .home-layout-section__text {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .home-layout-section__decoration--leaf {
-    top: -40px;
-    right: -60px;
-    width: 280px;
-  }
+  display: block;
 }
 
 @media (max-width: 768px) {
   .home-layout-section {
-    padding: 60px 16px;
-  }
-
-  .home-layout-section__container {
-    gap: 32px;
+    padding: 100px 16px 60px;
   }
 
   .home-layout-section__heading {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
-  .home-layout-section__decoration--leaf {
-    top: -30px;
-    right: -30px;
-    width: 150px;
+  .home-layout-section__text {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .home-layout-section__decoration {
+    width: 50px;
+    height: 50px;
+    inset-inline-start: -10px;
+    top: 10%;
+    transform: none;
+    opacity: 0.4;
   }
 }
 </style>
@@ -3146,22 +3090,20 @@ html{box-sizing:border-box;-webkit-text-size-adjust:100%}*,*::before,*::after{bo
 
 
 
-<section class="home-layout-section" data-layout-spec="Home-layout" data-zappy-section="true" id="layout-1783335392003">
+<section class="home-layout-section" data-layout-spec="Home-layout" dir="rtl" id="layout-1783335392003">
   <div class="home-layout-section__container">
-    
     <div class="home-layout-section__content">
-      <h2 class="home-layout-section__heading" style="text-align: center;">מוכנים להתחיל?</h2>
-      <p class="home-layout-section__text" style="outline: none; text-align: center;">צרו את התזכורת האישית שלכם עוד היום!</p>
-      <p style="text-align: center;"><a href="#contact" class="home-layout-section__cta btn-pill" data-element-type="button" data-element-id="btn-1783863010132-l9njh5fgs" data-native-element="true" style="outline: none;">התחל עכשיו</a>
-    </p></div>
-  </div>
-  <div class="home-layout-section__decoration home-layout-section__decoration--leaf" aria-hidden="true">
-    <svg viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M60 10 Q90 40 85 90 Q80 140 60 190 Q40 140 35 90 Q30 40 60 10 Z" fill="none" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></path>
-      <path d="M60 10 Q60 50 60 190" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></path>
-      <path d="M60 40 Q75 55 85 70" fill="none" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></path>
-      <path d="M60 80 Q45 95 35 110" fill="none" stroke="#A8C5A0" stroke-width="1.5" opacity="0.35"></path>
-    </svg>
+      <h2 class="home-layout-section__heading">המתנה שמתחילה מבפנים</h2>
+      <p class="home-layout-section__text">בחרי מילה שמדברת אלייך, צבע שמרגש אותך, וצרי לעצמך או ליקירייך תכשיט אישי מלא במשמעות. כל מבט במחזיק מפתחות, בסימנייה או בספל יזכיר לך מי את באמת.</p>
+      <a href="#contact" class="home-layout-section__cta btn-primary">צרי את הקמע שלך</a>
+    </div>
+    <div class="home-layout-section__decoration" aria-hidden="true">
+      <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 10C20 10 18 15 15 18C12 21 10 25 10 28C10 33.5 14.5 38 20 38C25.5 38 30 33.5 30 28C30 25 28 21 25 18C22 15 20 10 20 10Z" fill="#E8637A" opacity="0.15"></path>
+        <path d="M20 15L20 28" stroke="#E8637A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"></path>
+        <path d="M16 20L20 24L24 20" stroke="#E8637A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"></path>
+      </svg>
+    </div>
   </div>
 </section>
 
