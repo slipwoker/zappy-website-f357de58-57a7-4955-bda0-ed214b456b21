@@ -1539,6 +1539,56 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })();
 
+/* ZAPPY_CUSTOM_JS_START:4ed67d8b2b0f */
+(function () {
+  function __zappyCustomInit() {
+    try {
+(function() {
+  var accordion = document.querySelector('.home-layout-section__accordion');
+  if (!accordion) return;
+  
+  var items = accordion.querySelectorAll('.home-layout-section__accordion-item');
+  
+  // Remove initial active state from all
+  items.forEach(function(item) {
+    item.classList.remove('active');
+  });
+  
+  accordion.addEventListener('click', function(e) {
+    var trigger = e.target.closest('.home-layout-section__accordion-trigger');
+    if (!trigger) return;
+    
+    var item = trigger.closest('.home-layout-section__accordion-item');
+    if (!item) return;
+    
+    var wasActive = item.classList.contains('active');
+    
+    // Close all
+    items.forEach(function(i) {
+      i.classList.remove('active');
+      var btn = i.querySelector('.home-layout-section__accordion-trigger');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+    
+    // Open clicked (if wasn't already open)
+    if (!wasActive) {
+      item.classList.add('active');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  });
+})();
+    } catch (e) {
+      if (typeof console !== 'undefined' && console.warn) { console.warn('[zappy-custom-js]', e); }
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', __zappyCustomInit);
+  } else {
+    __zappyCustomInit();
+  }
+})();
+/* ZAPPY_CUSTOM_JS_END:4ed67d8b2b0f */
+
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
