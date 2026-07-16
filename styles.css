@@ -6048,15 +6048,23 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 }
 
 
-/* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V1 */
+/* ZAPPY_ANNOUNCEMENT_HEADER_OFFSET_CSS_V2 */
+:root {
+  --zappy-header-stack-height: calc(var(--zappy-announcement-height, 40px) + var(--header-height, 72px));
+}
 body:has(.zappy-announcement-bar) nav.navbar:not(.zappy-catalog-menu),
 body:has(.zappy-announcement-bar) header.navbar,
 body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-search-panel) {
   top: var(--zappy-announcement-height, 40px) !important;
-  /* Transparent nav over body padding-top paints the page cream/gray as a
-     strip under the announcement before hero content fills that band.
-     Seed an opaque nav fallback; scroll/theme CSS can still override. */
-  background-color: var(--nav-bg, rgba(32, 26, 46, 0.94));
+}
+/* First-paint: pull fullscreen heroes behind the fixed announcement+nav so a
+   transparent --nav-bg does not flash the cream body strip (live FOUC that
+   preview never showed because preview injects the same underlap eagerly). */
+body:has(.zappy-announcement-bar) section[data-hero-type^="fullscreen"],
+body:has(.zappy-announcement-bar) .index-hero-section,
+body:has(.zappy-announcement-bar) main > section[class*="hero"]:first-of-type {
+  margin-top: calc(-1 * var(--zappy-header-stack-height)) !important;
+  padding-top: calc(var(--zappy-header-stack-height)) !important;
 }
 
 
