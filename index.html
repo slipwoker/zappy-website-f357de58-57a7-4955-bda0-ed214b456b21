@@ -2487,147 +2487,26 @@
 
 
 
-<style data-zappy-section-v2-css="true">
-/* V2 Regenerated Section CSS */
-.home-layout-section {
-  background-color: #FDF8F6;
-  background-image: none;
-  color: var(--text-dark);
-  padding: 80px 24px 80px;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
 
-.home-layout-section__container {
-  max-width: 720px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
 
-.home-layout-section__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-}
 
-.home-layout-section__heading {
-  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #2C1810;
-  margin: 0;
-  text-align: center;
-  max-width: none !important;
-}
-
-.home-layout-section__text {
-  font-family: 'Inter', 'Assistant', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 400;
-  line-height: 1.75;
-  color: #3D2B2B;
-  margin: 0;
-  max-width: 560px;
-  text-align: center;
-}
-
-.home-layout-section__cta {
-  background: #E8637A;
-  color: #FFFFFF;
-  padding: 14px 28px;
-  border-radius: 100px;
-  border: none;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-  margin-top: 8px;
-}
-
-.home-layout-section__cta:hover {
-  box-shadow: 0 12px 40px rgba(232, 99, 122, 0.25);
-  transform: translateY(-2px);
-}
-
-.home-layout-section__decoration {
-  position: absolute;
-  top: 50%;
-  inset-inline-start: -20px;
-  transform: translateY(-50%);
-  width: 80px;
-  height: 80px;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.6;
-}
-
-.home-layout-section__decoration svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .home-layout-section {
-    padding: 100px 16px 60px;
-  }
-
-  .home-layout-section__heading {
-    font-size: 1.75rem;
-  }
-
-  .home-layout-section__text {
-    max-width: 100%;
-    font-size: 1rem;
-  }
-
-  .home-layout-section__decoration {
-    width: 50px;
-    height: 50px;
-    inset-inline-start: -10px;
-    top: 10%;
-    transform: none;
-    opacity: 0.4;
-  }
-}
-</style>
 
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .home-layout-section {
-  background-color: #FDF8F6;
+  background: #FDF8F6;
   color: var(--text-dark);
-  padding: 64px 16px;
+  padding: 80px 16px;
   position: relative;
   overflow: hidden;
   direction: rtl;
-  text-align: right;
 }
 
 .home-layout-section__container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
-}
-
-/* Decorative heart divider */
-.home-layout-section__divider-deco {
-  text-align: center;
-  margin-bottom: 16px;
-  position: relative;
-  z-index: 1;
-}
-
-.home-layout-section__divider-deco svg {
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .home-layout-section__heading {
@@ -2638,96 +2517,112 @@
   color: #2C1810;
   text-align: center;
   margin-bottom: 48px;
-  position: relative;
-  z-index: 1;
 }
 
-/* FAQ Grid */
-.home-layout-section__faq-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 48px;
-  direction: rtl;
-}
-
-.home-layout-section__faq-item {
-  background: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(180,100,100,0.08);
-  border: 1px solid #EDD8D0;
-  padding: 1.5rem;
+.home-layout-section__accordion {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #EDD8D0;
+  border-radius: 12px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(180,100,100,0.08);
+  overflow: hidden;
+}
+
+.home-layout-section__accordion-item {
+  border-bottom: 1px solid #EDD8D0;
+}
+
+.home-layout-section__accordion-item:last-child {
+  border-bottom: none;
+}
+
+.home-layout-section__accordion-trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: right;
+  color: #2C1810;
   gap: 16px;
-  align-items: flex-start;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  min-width: 0;
+  transition: background-color 0.2s ease;
 }
 
-.home-layout-section__faq-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(180,100,100,0.12);
+.home-layout-section__accordion-trigger:hover {
+  background-color: #F5EDE8;
 }
 
-.home-layout-section__faq-icon {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
+.home-layout-section__accordion-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2px;
+  width: 20px;
+  height: 20px;
   color: #E8637A;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
-.home-layout-section__faq-content {
-  flex: 1;
-  min-width: 0;
+.home-layout-section__accordion-item.active .home-layout-section__accordion-icon {
+  transform: rotate(180deg);
 }
 
-.home-layout-section__faq-question {
+.home-layout-section__accordion-title {
   font-family: 'Inter', 'Assistant', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.4;
   color: #2C1810;
-  margin: 0 0 8px 0;
-  text-align: right;
+  margin: 0;
+  flex: 1;
 }
 
-.home-layout-section__faq-answer {
+.home-layout-section__accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.home-layout-section__accordion-item.active .home-layout-section__accordion-panel {
+  max-height: 500px;
+}
+
+.home-layout-section__accordion-content {
+  padding: 0 24px 24px 24px;
+  padding-inline-start: 60px;
+}
+
+.home-layout-section__accordion-content p {
   font-family: 'Inter', 'Assistant', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.7;
   color: #3D2B2B;
   margin: 0;
-  text-align: right;
 }
 
-/* Decorative Image */
 .home-layout-section__image-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 16px 60px rgba(180,100,100,0.18);
-  position: relative;
-  z-index: 1;
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
 }
 
-.home-layout-section__image-wrapper img {
-  display: block;
+.home-layout-section__decorative-image {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  max-width: 400px;
+  height: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(180,100,100,0.12);
+  border: 1px solid #EDD8D0;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .home-layout-section {
-    padding: 48px 16px;
+    padding: 100px 16px 60px;
   }
 
   .home-layout-section__heading {
@@ -2735,31 +2630,23 @@
     margin-bottom: 32px;
   }
 
-  .home-layout-section__faq-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px;
+  .home-layout-section__accordion-trigger {
+    padding: 16px;
+    gap: 12px;
   }
 
-  .home-layout-section__faq-item {
-    padding: 1.25rem;
+  .home-layout-section__accordion-content {
+    padding: 0 16px 16px 16px;
+    padding-inline-start: 48px;
   }
 
-  .home-layout-section__faq-question {
+  .home-layout-section__accordion-title {
     font-size: 1rem;
   }
 
-  .home-layout-section__faq-answer {
-    font-size: 0.9rem;
-  }
-
-  .home-layout-section__image-wrapper {
-    margin-top: 16px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .home-layout-section__faq-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .home-layout-section__decorative-image {
+    max-width: 100%;
+    height: 250px;
   }
 }
 </style>
@@ -3809,100 +3696,94 @@ body:has(.zappy-announcement-bar) main > section[class*="hero"]:first-of-type {
 
 
 
-<section class="home-layout-section" data-layout-spec="Home-layout" dir="rtl" data-zappy-section="true" id="layout-1783058683652">
+<section class="home-layout-section" data-layout-spec="Home-layout" data-zappy-section="true" id="layout-1783058683652">
   <div class="home-layout-section__container">
-    
-    <!-- Decorative SVG: section-heart-divider motif -->
-    <div class="home-layout-section__divider-deco" aria-hidden="true">
-      <svg data-element-type="icon" data-icon-type="svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 33L18.2 31.36C11.36 25.28 6 20.8 6 15.2C6 10.72 9.52 7.2 14 7.2C16.56 7.2 19.04 8.56 20 10.64C20.96 8.56 23.44 7.2 26 7.2C30.48 7.2 34 10.72 34 15.2C34 20.8 28.64 25.28 21.8 31.36L20 33Z" fill="#E8637A"></path>
-        <path d="M20 36L20 33" stroke="#E8637A" stroke-width="2" stroke-linecap="round"></path>
-      </svg>
-    </div>
-
     <h2 class="home-layout-section__heading">כמה דברים שכדאי לדעת:</h2>
-
-    <!-- FAQ Grid -->
-    <div class="home-layout-section__faq-grid">
-      
-      <!-- FAQ Item 1 -->
-      <div class="home-layout-section__faq-item">
-        <div class="home-layout-section__faq-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="#E8637A" stroke-width="1.5"></circle>
-            <path d="M12 16V12M12 8H12.01" stroke="#E8637A" stroke-width="1.5" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="home-layout-section__faq-content">
-          <h3 class="home-layout-section__faq-question">מה העלות של מחזיק מפתחות שנעשה בעבודת יד בהתאמה אישית?</h3>
-          <p class="home-layout-section__faq-answer">העלות נעה בין 30 ש"ח למחזיק קטן ללא תוספות למחזיק גדול עם תוספת קישוט בעלות של 60 ש"ח, כמובן שהזמנה בכמות - תקבל הצעה מותאמת.</p>
-        </div>
-      </div>
-
-      <!-- FAQ Item 2 -->
-      <div class="home-layout-section__faq-item">
-        <div class="home-layout-section__faq-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="#E8637A" stroke-width="1.5"></circle>
-            <path d="M12 6V12L16 14" stroke="#E8637A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        <div class="home-layout-section__faq-content">
-          <h3 class="home-layout-section__faq-question">כמה זמן ההכנה נדרש לביצוע? כמה זמן ייקח לי לקבל את המחזיק?</h3>
-          <p class="home-layout-section__faq-answer">זמן הכנה נע בין יומיים ל חודש - תלוי בכמות, בכמות של עד 20 מחזיקים מדובר בשבוע הכנה. כמובן שאם מדובר במשלוח עד הבית (לכל הארץ) יש לקח עוד 2-3 ימים. יש גם אפשרות לאיסוף.</p>
+    <div class="home-layout-section__accordion">
+      <!-- Accordion Item 1 -->
+      <div class="home-layout-section__accordion-item active">
+        <button class="home-layout-section__accordion-trigger" aria-expanded="true">
+          <span class="home-layout-section__accordion-icon">
+            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h3 class="home-layout-section__accordion-title">מה העלות של מחזיק מפתחות שנעשה בעבודת יד בהתאמה אישית?</h3>
+        </button>
+        <div class="home-layout-section__accordion-panel">
+          <div class="home-layout-section__accordion-content">
+            <p>העלות נעה בין 30 ש"ח למחזיק קטן ללא תוספות למחזיק גדול עם תוספת קישוט בעלות של 60 ש"ח, כמובן שהזמנה בכמות - תקבל הצעה מותאמת.</p>
+          </div>
         </div>
       </div>
-
-      <!-- FAQ Item 3 -->
-      <div class="home-layout-section__faq-item">
-        <div class="home-layout-section__faq-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="#E8637A" stroke-width="1.5"></circle>
-            <path d="M9.09 9C9.3251 8.33167 9.78915 7.76811 10.4 7.40913C11.0108 7.05016 11.7289 6.91894 12.4272 7.03871C13.1255 7.15849 13.7588 7.52152 14.2151 8.06353C14.6713 8.60553 14.9211 9.29152 14.92 10C14.92 12 11.92 13 11.92 13" stroke="#E8637A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M12 17H12.01" stroke="#E8637A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-        <div class="home-layout-section__faq-content">
-          <h3 class="home-layout-section__faq-question">האם ניתן להכין לי מארז לפי מוצרים שלא נמצאים באתר?</h3>
-          <p class="home-layout-section__faq-answer">כמובן, יש אפשרות להתאים מארז לפי הלקוח, כמעט כל דבר ניתן למתג ולהרכיב למארז מהמם. אם זה מחברת, סימניה, כוסות, מוצרים שמתאימים לחג או לאירוע כמו עפרונות וכרטיסים עם שוקולדים.</p>
-        </div>
-      </div>
-
-      <!-- FAQ Item 4 -->
-      <div class="home-layout-section__faq-item">
-        <div class="home-layout-section__faq-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="#E8637A" stroke-width="1.5"></circle>
-            <path d="M8 12H16M12 8V16" stroke="#E8637A" stroke-width="1.5" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="home-layout-section__faq-content">
-          <h3 class="home-layout-section__faq-question">האם ניתן לרשום כל דבר על המחזיק?</h3>
-          <p class="home-layout-section__faq-answer">כמעט, ניתן להכניס עד 3 מילים במחזיק, יש את המחזיקים הגדולים שאפשר להכניס גם משפט ארוך יותר. אפשר לבחור כל מילה שמדברת אליך או ליעד המתנה. לכל אחד יש משמעות שונה בחיים.</p>
+      <!-- Accordion Item 2 -->
+      <div class="home-layout-section__accordion-item">
+        <button class="home-layout-section__accordion-trigger" aria-expanded="false">
+          <span class="home-layout-section__accordion-icon">
+            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h3 class="home-layout-section__accordion-title">כמה זמן ההכנה נדרש לביצוע? כמה זמן ייקח לי לקבל את המחזיק?</h3>
+        </button>
+        <div class="home-layout-section__accordion-panel">
+          <div class="home-layout-section__accordion-content">
+            <p>זמן הכנה נע בין יומיים ל חודש - תלוי בכמות, בכמות של עד 20 מחזיקים מדובר בשבוע הכנה. כמובן שאם מדובר במשלוח עד הבית (לכל הארץ) יש לקח עוד 2-3 ימים. יש גם אפשרות לאיסוף.</p>
+          </div>
         </div>
       </div>
-
-      <!-- FAQ Item 5 -->
-      <div class="home-layout-section__faq-item">
-        <div class="home-layout-section__faq-icon">
-          <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" stroke="#E8637A" stroke-width="1.5"></circle>
-            <path d="M12 16V12M12 8H12.01" stroke="#E8637A" stroke-width="1.5" stroke-linecap="round"></path>
-          </svg>
-        </div>
-        <div class="home-layout-section__faq-content">
-          <h3 class="home-layout-section__faq-question">בהזמנה גדולה של 100 מחזיקים - ניתן לקבל דוגמה ראשונה?</h3>
-          <p class="home-layout-section__faq-answer">כמובן, בכל הזמנה אני מכינה דוגמה אחת ולפני שאני ממשיכה אני מחכה לאישור או תיקון של המזמין, גם אם מדובר בכמות קטנה.</p>
+      <!-- Accordion Item 3 -->
+      <div class="home-layout-section__accordion-item">
+        <button class="home-layout-section__accordion-trigger" aria-expanded="false">
+          <span class="home-layout-section__accordion-icon">
+            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h3 class="home-layout-section__accordion-title">האם ניתן להכין לי מארז לפי מוצרים שלא נמצאים באתר?</h3>
+        </button>
+        <div class="home-layout-section__accordion-panel">
+          <div class="home-layout-section__accordion-content">
+            <p>כמובן, יש אפשרות להתאים מארז לפי הלקוח, כמעט כל דבר ניתן למתג ולהרכיב למארז מהמם. אם זה מחברת, סימניה, כוסות, מוצרים שמתאימים לחג או לאירוע כמו עפרונות וכרטיסים עם שוקולדים.</p>
+          </div>
         </div>
       </div>
-
+      <!-- Accordion Item 4 -->
+      <div class="home-layout-section__accordion-item">
+        <button class="home-layout-section__accordion-trigger" aria-expanded="false">
+          <span class="home-layout-section__accordion-icon">
+            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h3 class="home-layout-section__accordion-title">האם ניתן לרשום כל דבר על המחזיק?</h3>
+        </button>
+        <div class="home-layout-section__accordion-panel">
+          <div class="home-layout-section__accordion-content">
+            <p>כמעט, ניתן להכניס עד 3 מילים במחזיק, יש את המחזיקים הגדולים שאפשר להכניס גם משפט ארוך יותר. אפשר לבחור כל מילה שמדברת אליך או ליעד המתנה. לכל אחד יש משמעות שונה בחיים.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Accordion Item 5 -->
+      <div class="home-layout-section__accordion-item">
+        <button class="home-layout-section__accordion-trigger" aria-expanded="false">
+          <span class="home-layout-section__accordion-icon">
+            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8L10 12L14 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <h3 class="home-layout-section__accordion-title">בהזמנה גדולה של 100 מחזיקים - ניתן לקבל דוגמה ראשונה?</h3>
+        </button>
+        <div class="home-layout-section__accordion-panel">
+          <div class="home-layout-section__accordion-content">
+            <p>כמובן, בכל הזמנה אני מכינה דוגמה אחת ולפני שאני ממשיכה אני מחכה לאישור או תיקון של המזמין, גם אם מדובר בכמות קטנה.</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Decorative Image Placeholder: Supporting the gallery feel -->
     <div class="home-layout-section__image-wrapper">
-      <img data-placeholder="home-layout-image-1" data-context="A beautifully styled flat-lay photo of a personalized keychain with the affirmation 'I am strong' in Hebrew, surrounded by soft dried flowers, a warm cup of coffee, and a delicate notebook on a light wooden table. The scene is bathed in soft natural window light, evoking a calm, mindful morning ritual." width="600" height="400" src="" alt="מחזיק מפתחות בעבודת יד עם מסר אישי מעצים" style="object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
+      <div data-preserve-bg="0" class="home-layout-section__decorative-image" style="background-size: cover; background-position: center;" aria-hidden="true"></div>
     </div>
-
   </div>
 </section>
 
