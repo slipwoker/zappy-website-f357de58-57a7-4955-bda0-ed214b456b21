@@ -2451,89 +2451,97 @@
 
 </style>
 
+
+
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .home-gallery-section {
   position: relative;
   background: #FDF8F6;
   color: var(--text-dark);
-  padding: 80px 24px 80px;
+  padding: 80px 16px 120px;
   overflow: visible;
   direction: rtl;
 }
 
-.home-gallery-section__container {
+.home-gallery-section .gallery-container {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 
-.home-gallery-section__header {
+/* Header */
+.home-gallery-section .gallery-header {
   text-align: center;
   margin-bottom: 60px;
-  position: relative;
 }
 
-.home-gallery-section__header::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--primary);
-  margin: 20px auto 0;
-  border-radius: 2px;
-}
-
-.home-gallery-section__title {
+.home-gallery-section .gallery-header h2 {
   font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
   font-size: 3rem;
   font-weight: 600;
   color: var(--text-dark);
-  margin: 0 0 12px;
+  margin-bottom: 16px;
   line-height: 1.2;
-  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
 }
 
-.home-gallery-section__subtitle {
+.home-gallery-section .gallery-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.home-gallery-section .gallery-header p {
+  font-family: 'Inter', 'Assistant', sans-serif;
   font-size: 1rem;
   color: var(--text-muted);
-  margin: 0;
-  line-height: 1.6;
-  max-width: 500px;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
+  max-width: 600px;
+  margin: 16px auto 0;
+  line-height: 1.7;
 }
 
-.home-gallery-section__grid {
+/* Asymmetric Grid */
+.home-gallery-section .gallery-asymmetric-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
   gap: 32px;
   margin-bottom: 60px;
 }
 
-.home-gallery-section__card {
-  background: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(180,100,100,0.08);
-  border: 1px solid #EDD8D0;
-  overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+/* Feature Card (Large) - Spans 2 rows */
+.home-gallery-section .gallery-card--feature {
+  grid-row: span 2;
   display: flex;
   flex-direction: column;
 }
 
-.home-gallery-section__card:hover {
+/* Cards */
+.home-gallery-section .gallery-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(180, 100, 100, 0.08);
+  border: 1px solid #EDD8D0;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.home-gallery-section .gallery-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(232,99,122,0.25);
+  box-shadow: 0 12px 40px rgba(232, 99, 122, 0.25);
 }
 
-.home-gallery-section__card--feature {
-  grid-column: span 1;
-  grid-row: span 2;
-}
-
-.home-gallery-section__card-image {
+.home-gallery-section .card-media {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -2541,23 +2549,19 @@
   position: relative;
 }
 
-.home-gallery-section__card--feature .home-gallery-section__card-image {
-  aspect-ratio: 3 / 4;
-}
-
-.home-gallery-section__card-image img {
+.home-gallery-section .card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.5s ease;
 }
 
-.home-gallery-section__card:hover .home-gallery-section__card-image img {
+.home-gallery-section .gallery-card:hover .card-media img {
   transform: scale(1.05);
 }
 
-.home-gallery-section__card-content {
+.home-gallery-section .card-body {
   padding: 24px;
   flex: 1;
   display: flex;
@@ -2565,141 +2569,141 @@
   text-align: right;
 }
 
-.home-gallery-section__card-title {
+.home-gallery-section .card-body h3 {
   font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-dark);
-  margin: 0 0 8px;
+  margin-bottom: 8px;
   line-height: 1.3;
 }
 
-.home-gallery-section__card-desc {
+.home-gallery-section .card-body p {
+  font-family: 'Inter', 'Assistant', sans-serif;
   font-size: 1rem;
-  color: var(--text-dark);
-  margin: 0 0 12px;
-  line-height: 1.5;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
   flex: 1;
 }
 
-.home-gallery-section__card-usecase {
-  display: block;
+.home-gallery-section .card-tag {
+  display: inline-block;
+  font-family: 'Inter', 'Assistant', sans-serif;
   font-size: 0.875rem;
+  color: var(--secondary);
+  background: rgba(231, 111, 81, 0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.home-gallery-section .card-link {
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
   color: var(--primary);
-  font-weight: 500;
-  padding-top: 12px;
-  border-top: 1px solid #EDD8D0;
-  line-height: 1.4;
-}
-
-.home-gallery-section__editorial {
-  background: #F5EDE8;
-  border-radius: 12px;
-  padding: 40px;
-  text-align: center;
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.home-gallery-section__editorial p {
-  font-size: 1rem;
-  color: var(--text-dark);
-  line-height: 1.8;
-  margin: 0 0 28px;
-  max-width: 700px;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-}
-
-.home-gallery-section__cta {
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  background: var(--primary);
-  color: #FFFFFF;
-  font-weight: 600;
+  transition: gap 0.3s ease;
+  margin-top: auto;
+  width: fit-content;
+}
+
+.home-gallery-section .card-link:hover {
+  gap: 12px;
+}
+
+.home-gallery-section .link-arrow {
   font-size: 1rem;
-  padding: 14px 32px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.3);
-}
-
-.home-gallery-section__cta:hover {
-  background: #1348B5;
-  box-shadow: 0 6px 20px rgba(26, 86, 219, 0.4);
-  transform: translateY(-2px);
-}
-
-.home-gallery-section__cta svg {
-  width: 16px;
-  height: 16px;
   transition: transform 0.3s ease;
-  transform: rotate(180deg);
 }
 
-.home-gallery-section__cta:hover svg {
-  transform: rotate(180deg) translateX(-3px);
+.home-gallery-section .card-link:hover .link-arrow {
+  transform: translateX(4px);
 }
 
-.home-gallery-section__divider-wrapper {
+/* Editorial Note */
+.home-gallery-section .gallery-editorial {
+  text-align: center;
+  max-width: 800px;
+  margin: 40px auto 0;
+  padding: 32px 24px;
+  background: rgba(245, 237, 232, 0.5);
+  border-radius: 12px;
+  border: 1px dashed #EDD8D0;
+}
+
+.home-gallery-section .gallery-editorial p {
+  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Bottom Divider */
+.home-gallery-section .home-gallery-divider-wrapper {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 120px;
   pointer-events: none;
   z-index: 5;
 }
 
-.home-gallery-section__divider-wrapper svg {
+.home-gallery-section .home-gallery-divider-wrapper svg {
   display: block;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 -4px 8px rgba(180,100,100,0.08));
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .home-gallery-section {
-    padding: 60px 16px 60px;
+    padding: 60px 16px 100px;
   }
 
-  .home-gallery-section__header {
-    margin-bottom: 40px;
-  }
-
-  .home-gallery-section__title {
+  .home-gallery-section .gallery-header h2 {
     font-size: 2rem;
   }
 
-  .home-gallery-section__grid {
+  .home-gallery-section .gallery-asymmetric-grid {
     grid-template-columns: 1fr !important;
     gap: 24px;
   }
 
-  .home-gallery-section__card--feature {
-    grid-column: span 1;
+  .home-gallery-section .gallery-card--feature {
     grid-row: span 1;
   }
 
-  .home-gallery-section__card--feature .home-gallery-section__card-image {
-    aspect-ratio: 4 / 3;
-  }
-
-  .home-gallery-section__card-content {
+  .home-gallery-section .card-body {
     padding: 20px;
   }
 
-  .home-gallery-section__editorial {
-    padding: 28px 20px;
+  .home-gallery-section .gallery-editorial {
+    margin: 24px 16px 0;
+    padding: 24px 16px;
   }
 
-  .home-gallery-section__cta {
-    width: 100%;
-    padding: 16px 24px;
+  .home-gallery-section .gallery-editorial p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-gallery-section .gallery-asymmetric-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .home-gallery-section .gallery-card--feature {
+    grid-column: span 2;
+    grid-row: span 1;
   }
 }
 </style>
@@ -3882,99 +3886,99 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 
 
 
-<section class="home-gallery-section" data-layout-spec="Home-gallery" dir="rtl" data-zappy-section="true" id="ai-section-1783338906553-4dtvww6">
-  <div class="home-gallery-section__container">
-    <div class="home-gallery-section__header">
-      <h2 class="home-gallery-section__title">הגלריה שלנו</h2>
-      <p class="home-gallery-section__subtitle">כל פריט בעבודת יד, מותאם אישית עם המילים שמחזקות אותך</p>
-    </div>
-
-    <div class="home-gallery-section__grid">
+<section class="home-gallery-section" data-layout-spec="Home-gallery" data-zappy-section="true" id="ai-section-1783338906553-4dtvww6">
+  <div class="gallery-container">
+    <header class="gallery-header">
+      <h2>הגלריה שלנו</h2>
+      <p>כל פריט בעבודת יד, מותאם אישית עם המילים שמחזקות אותך</p>
+    </header>
+    
+    <div class="gallery-asymmetric-grid">
       <!-- Feature Card: Keychains (Large) -->
-      <article class="home-gallery-section__card home-gallery-section__card--feature">
-        <div class="home-gallery-section__card-image">
+      <article class="gallery-card gallery-card--feature">
+        <div class="card-media">
           <img alt="מחזיקי מפתחות בעיצוב אישי עם מסרים מחזקים" src="/assets/personalized-gifts-accessories-gallery-upload-1783403741455-g8l998.webp?t=1783403874623" data-context="A flat-lay photo of three personalized acrylic keychains in soft pastel colors (blush, sage, cream) resting on a linen fabric background. Each keychain has a different Hebrew affirmation engraved in elegant script: &quot;אני חזקה&quot;, &quot;אני אהובה&quot;, &quot;אני מצליחה&quot;. A small dried flower sprig and a cup of tea sit softly out of focus in the corner." style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
         </div>
-        <div class="home-gallery-section__card-content">
-          <h3 class="home-gallery-section__card-title">הצהרה יומית</h3>
-          <p class="home-gallery-section__card-desc">מחזיקי מפתחות בעבודת יד עם הטקסט שמדבר אליכם. התחילו כל יום עם תזכורת אישית בכיס.</p>
-          <span class="home-gallery-section__card-usecase">מתנה מושלמת לחברה הקרובה, לאחות או לעצמך</span>
+        <div class="card-body">
+          <h3>הצהרה יומית</h3>
+          <p>מחזיקי מפתחות בעבודת יד עם הטקסט שמדבר אליכם. התחילו כל יום עם תזכורת אישית בכיס.</p>
+          <span class="card-tag">מתנה מושלמת לחברה הקרובה, לאחות או לעצמך</span>
+          <a href="https://yado.co.il/collections/vendors?q=%D7%9E%D7%98%D7%A8%D7%94+%D7%A4%D7%A0%D7%99%D7%9E%D7%99%D7%AA+-+%D7%9E%D7%AA%D7%A0%D7%94+%D7%A2%D7%9D+%D7%9E%D7%A9%D7%9E%D7%A2%D7%95%D7%AA" class="card-link">לכל המוצרים <span class="link-arrow">←</span></a>
         </div>
       </article>
 
-      <!-- Card 1: Bookmarks -->
-      <article class="home-gallery-section__card">
-        <div class="home-gallery-section__card-image">
+      <!-- Small Card 1: Bookmarks -->
+      <article class="gallery-card">
+        <div class="card-media">
           <img alt="סימניות מתכת בעבודת יד עם חריטת טקסט אישי" src="/assets/personalized-gifts-accessories-gallery-upload-1783403741446-fj760s.webp?t=1783403892353" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
         </div>
-        <div class="home-gallery-section__card-content">
-          <h3 class="home-gallery-section__card-title">מילים של כוח</h3>
-          <p class="home-gallery-section__card-desc">סימניות עם הצהרות</p>
-          <span class="home-gallery-section__card-usecase">מתנה מרגשת למורים ולצוות החינוכי</span>
+        <div class="card-body">
+          <h3>מילים של כוח</h3>
+          <p>סימניות עם הצהרות</p>
+          <span class="card-tag">מתנה מרגשת למורים ולצוות החינוכי</span>
         </div>
       </article>
 
-      <!-- Card 2: Gift Sets -->
-      <article class="home-gallery-section__card">
-        <div class="home-gallery-section__card-image">
+      <!-- Small Card 2: Gift Sets -->
+      <article class="gallery-card">
+        <div class="card-media">
           <img alt="מארזי שי מוקפדים עם מוצרים תואמים ועיצוב אלגנטי" src="/assets/personalized-gifts-accessories-gallery-upload-1783341368617-1945b7.webp?t=1783403909686" data-context="A styled flat-lay of a curated gift box. The box is open, revealing a ceramic mug with a delicate gold heart and the text &quot;אני מספיק&quot;, a matching keychain, and a small scented candle. The set is tied with a silk ribbon in dusty rose. The background is a clean white marble surface." style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
         </div>
-        <div class="home-gallery-section__card-content">
-          <h3 class="home-gallery-section__card-title">מילים להשראה</h3>
-          <p class="home-gallery-section__card-desc">מארז סימניה ומחזיק תואמים</p>
-          <span class="home-gallery-section__card-usecase">מארז מושלם ליום האם או ליום המורה</span>
+        <div class="card-body">
+          <h3>מילים להשראה</h3>
+          <p>מארז סימניה ומחזיק תואמים</p>
+          <span class="card-tag">מארז מושלם ליום האם או ליום המורה</span>
         </div>
       </article>
 
-      <!-- Card 3: Mugs -->
-      <article class="home-gallery-section__card">
-        <div class="home-gallery-section__card-image">
+      <!-- Small Card 3: Mugs -->
+      <article class="gallery-card">
+        <div class="card-media">
           <img alt="ספלים בעבודת יד עם מסרים אישיים ואיורים עדינים" src="/assets/personalized-gifts-accessories-service-upload-1783344318600-a2rp4g.webp?t=1783403932265" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
         </div>
-        <div class="home-gallery-section__card-content">
-          <h3 class="home-gallery-section__card-title">בוקר עם השראה</h3>
-          <p class="home-gallery-section__card-desc">סימניות מאפוקסי</p>
-          <span class="home-gallery-section__card-usecase">מתנה לעובדים ולצוות בארגון</span>
+        <div class="card-body">
+          <h3>בוקר עם השראה</h3>
+          <p>סימניות מאפוקסי</p>
+          <span class="card-tag">מתנה לעובדים ולצוות בארגון</span>
         </div>
       </article>
 
-      <!-- Card 4: Additional Product 1 -->
-      <article class="home-gallery-section__card">
-        <div class="home-gallery-section__card-image">
+      <!-- Small Card 4: Additional Product -->
+      <article class="gallery-card">
+        <div class="card-media">
           <img alt="Image placeholder" src="/assets/personalized-gifts-accessories-gallery-upload-1782984839857-yfyzcp.webp?t=1783403983739" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
         </div>
-        <div class="home-gallery-section__card-content">
-          <h3 class="home-gallery-section__card-title">קפה עם השראה</h3>
-          <p class="home-gallery-section__card-desc">מגירות עם הצהרות</p>
-          <span class="home-gallery-section__card-usecase">מתנה בהתאמה</span>
+        <div class="card-body">
+          <h3>קפה עם השראה</h3>
+          <p>מגירות עם הצהרות</p>
+          <span class="card-tag">מתנה בהתאמה</span>
         </div>
       </article>
 
-      <!-- Card 5: Additional Product 2 -->
-      <article class="home-gallery-section__card">
-        <div class="home-gallery-section__card-image">
+      <!-- Small Card 5: Fairs -->
+      <article class="gallery-card">
+        <div class="card-media">
           <img alt="Image placeholder" src="/assets/personalized-gifts-accessories-gallery-upload-1783342037369-xyf6zm.webp?t=1783404007541" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="width: 100%; height: 100%; object-fit: cover; object-position: center;" loading="lazy" decoding="async" fetchpriority="low">
         </div>
-        <div class="home-gallery-section__card-content">
-          <h3 class="home-gallery-section__card-title">בדוכנים</h3>
-          <p class="home-gallery-section__card-desc">ירידים</p>
-          <span class="home-gallery-section__card-usecase">מתנה בהתאמה</span>
+        <div class="card-body">
+          <h3>בדוכנים</h3>
+          <p>ירידים</p>
+          <span class="card-tag">מתנה בהתאמה</span>
         </div>
       </article>
     </div>
 
-    <div class="home-gallery-section__editorial">
+    <!-- Editorial Note -->
+    <div class="gallery-editorial">
       <p>מחפשים מתנה מרגשת לצוות, למשפחה או לחברה הקרובה? אצלנו תוכלו ליצור סטים תואמים עם אותה המילה המחזקת, או לבחור מילים שונות שמותאמות אישית לכל אחד.</p>
-      <a href="https://yado.co.il/collections/vendors?q=%D7%9E%D7%98%D7%A8%D7%94+%D7%A4%D7%A0%D7%99%D7%9E%D7%99%D7%AA+-+%D7%9E%D7%AA%D7%A0%D7%94+%D7%A2%D7%9D+%D7%9E%D7%A9%D7%9E%D7%A2%D7%95%D7%AA" class="home-gallery-section__cta">
-        <span>לכל המוצרים</span>
-        <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </a>
     </div>
   </div>
 
-  <div class="home-gallery-section__divider-wrapper" data-no-icon-edit="true" aria-hidden="true">
-    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,80 L0,20 Q60,35 120,28 T240,22 Q300,32 360,25 T480,30 Q540,22 600,28 T720,20 Q780,35 840,28 T960,30 Q1020,22 1080,28 T1200,20 L1200,80 Z" fill="#FDF8F6"></path>
+  <!-- Bottom Divider: Layered Scalloped Wave -->
+  <div class="home-gallery-divider-wrapper" data-no-icon-edit="true" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,120 L0,40 Q50,35 100,42 T200,38 Q250,42 300,35 T400,40 Q450,38 500,42 T600,35 Q650,40 700,38 T800,42 Q850,35 900,40 T1000,38 Q1050,42 1100,35 T1200,40 L1200,120 Z" fill="#FDF8F6" opacity="0.08"></path>
+      <path d="M0,120 L0,55 Q50,50 100,57 T200,53 Q250,57 300,50 T400,55 Q450,53 500,57 T600,50 Q650,55 700,53 T800,57 Q850,50 900,55 T1000,53 Q1050,57 1100,50 T1200,55 L1200,120 Z" fill="#FDF8F6" opacity="0.05"></path>
     </svg>
   </div>
 </section>
