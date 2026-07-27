@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 /* Self-hosted fonts (Inter + Rubik for multi-language support) */
 
 /* Inter font (English / LTR languages) */
@@ -107,7 +109,9 @@
   --surface-color: #F0F4FA;
   --text-color: #4a4a4a;
   --text-secondary-color: #656565;
-}
+
+  --heading-font: 'Poppins', sans-serif;
+  --font-heading: 'Poppins', sans-serif;}
 
 /* CSS Reset / Normalize */
 *, *::before, *::after {
@@ -175,7 +179,7 @@ table {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--text-dark);
 }
 
