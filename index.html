@@ -2688,216 +2688,224 @@
 }
 </style>
 
+
+
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .index-hero-section {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    padding: 120px 24px 80px;
-    box-sizing: border-box;
+  background: #FDF8F6;
+  color: var(--text-dark);
+  padding: 120px 24px 60px;
+  position: relative;
+  overflow: hidden;
+  direction: rtl;
 }
 
-.index-hero-section .index-hero-bg-wrapper {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
+.index-hero-section .hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px;
 }
 
-.index-hero-section .index-hero-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.index-hero-section .hero-text-col {
+  flex: 1 1 45%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: right;
 }
 
-.index-hero-section .index-hero-scrim {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0.85) 100%);
-    pointer-events: none;
+.index-hero-section .hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #E8637A;
 }
 
-.index-hero-section .index-hero-content {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
+.index-hero-section .hero-headline {
+  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: #2C1810;
+  margin: 0;
 }
 
-.index-hero-section .index-hero-card {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
-    border-radius: 32px;
-    box-shadow: 0 16px 60px rgba(180, 100, 100, 0.18);
-    padding: 48px 56px;
-    max-width: 640px;
-    width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+.index-hero-section .hero-subtitle {
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #3D2B2B;
+  margin: 0;
 }
 
-.index-hero-section .index-hero-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 70px rgba(180, 100, 100, 0.25);
+.index-hero-section .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
 }
 
-.index-hero-section .index-hero-card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    text-align: right;
+.index-hero-section .btn {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Inter', 'Assistant', sans-serif;
 }
 
-.index-hero-section .index-hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
-    color: #2C1810;
-    margin: 0;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+.index-hero-section .btn-primary {
+  background: #E8637A;
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 12px 40px rgba(232, 99, 122, 0.25);
 }
 
-.index-hero-section .index-hero-subtitle {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: #3D2B2B;
-    margin: 0;
-    max-width: 90%;
+.index-hero-section .btn-primary:hover {
+  background: #d94f68;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(232, 99, 122, 0.35);
 }
 
-.index-hero-section .index-hero-cta-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 8px;
+.index-hero-section .btn-ghost {
+  background: transparent;
+  color: #E8637A;
+  padding: 12px 20px;
+  font-weight: 500;
+  text-decoration: underline;
+  font-size: 1rem;
+  border: none;
 }
 
-.index-hero-section .index-hero-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 32px;
-    border-radius: 100px;
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    border: none;
-    white-space: nowrap;
+.index-hero-section .btn-ghost:hover {
+  color: #d94f68;
+  transform: translateY(-2px);
 }
 
-.index-hero-section .index-hero-btn-primary {
-    background: #E8637A;
-    color: #FFFFFF;
-    box-shadow: 0 8px 24px rgba(232, 99, 122, 0.3);
+.index-hero-section .hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
 }
 
-.index-hero-section .index-hero-btn-primary:hover {
-    background: #d94f68;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(232, 99, 122, 0.45);
+.index-hero-section .trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: #3D2B2B;
+  font-weight: 500;
 }
 
-.index-hero-section .index-hero-btn-ghost {
-    background: transparent;
-    color: #3D2B2B;
-    border: 2px solid #3D2B2B;
-    padding: 12px 30px;
+.index-hero-section .trust-item svg {
+  width: 18px;
+  height: 18px;
+  color: #E8637A;
+  flex-shrink: 0;
 }
 
-.index-hero-section .index-hero-btn-ghost:hover {
-    background: rgba(61, 43, 43, 0.05);
-    border-color: #2C1810;
-    transform: translateY(-3px);
+.index-hero-section .hero-image-col {
+  flex: 1 1 45%;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
-.index-hero-section .index-hero-leaf-accent {
-    position: absolute;
-    top: 80px;
-    left: 40px;
-    width: 220px;
-    height: 220px;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.35;
+.index-hero-section .hero-image-frame {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(180, 100, 100, 0.12);
+  position: relative;
+  z-index: 2;
+}
+
+.index-hero-section .hero-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.index-hero-section .hero-leaf-accent {
+  position: absolute;
+  top: -30px;
+  left: -40px;
+  width: 220px;
+  height: 220px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .index-hero-section {
+    padding: 140px 48px 80px;
+  }
+  .index-hero-section .hero-container {
+    flex-wrap: nowrap;
+  }
+  .index-hero-section .hero-text-col {
+    flex-basis: 50%;
+  }
+  .index-hero-section .hero-image-col {
+    flex-basis: 50%;
+  }
 }
 
 @media (max-width: 768px) {
-    .index-hero-section {
-        padding: 100px 16px 40px;
-        min-height: auto;
-        align-items: flex-start;
-        justify-content: center;
-    }
-
-    .index-hero-section .index-hero-content {
-        justify-content: center;
-    }
-
-    .index-hero-section .index-hero-card {
-        padding: 32px 24px;
-        border-radius: 24px;
-        max-width: 100%;
-    }
-
-    .index-hero-section .index-hero-title {
-        font-size: 2.25rem;
-        line-height: 1.25;
-    }
-
-    .index-hero-section .index-hero-subtitle {
-        font-size: 1rem;
-        max-width: 100%;
-    }
-
-    .index-hero-section .index-hero-cta-group {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-    }
-
-    .index-hero-section .index-hero-btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .index-hero-section .index-hero-leaf-accent {
-        top: 100px;
-        left: -40px;
-        width: 140px;
-        height: 140px;
-        opacity: 0.2;
-    }
-
-    .index-hero-section .index-hero-card-content {
-        gap: 16px;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .index-hero-section .index-hero-card {
-        max-width: 520px;
-        padding: 40px 44px;
-    }
-
-    .index-hero-section .index-hero-title {
-        font-size: 2.5rem;
-    }
+  .index-hero-section {
+    padding: 100px 16px 40px;
+  }
+  .index-hero-section .hero-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .index-hero-section .hero-text-col,
+  .index-hero-section .hero-image-col {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .index-hero-section .hero-headline {
+    font-size: 2.5rem;
+  }
+  .index-hero-section .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .index-hero-section .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .index-hero-section .btn-primary,
+  .index-hero-section .btn-ghost {
+    text-align: center;
+  }
+  .index-hero-section .hero-leaf-accent {
+    top: -20px;
+    left: -20px;
+    width: 140px;
+    height: 140px;
+  }
+  .index-hero-section .hero-trust {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 /* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:index-hero */
 .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 48px !important; line-height: 1.2 !important; }
@@ -2961,7 +2969,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 </style>
     <link rel="stylesheet" href="/styles.css">
     <script>window.ZAPPY_WEBSITE_ID = "f357de58-57a7-4955-bda0-ed214b456b21"; window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
-    <link rel="preload" as="image" href="/assets/site-index-hero-image-1-1783334853506-k0op7s.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/image-personalized-gifts-accessories-section-hero-index-hero-image-1.webp" fetchpriority="high">
 
     <style id="zappy-dropdown-submenu-styles">
       /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
@@ -3536,29 +3544,50 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 </script>
   
   <main id="main">
-    <section class="index-hero-section" data-layout-spec="דף הבית-hero" dir="rtl" data-hero-type="fullscreen-card" id="hero" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="0">
-    <div class="index-hero-bg-wrapper">
-        <div data-zappy-zoom-wrapper="true" data-element-id="img-1787656485889-ostaiw0wh" data-element-type="image" data-zappy-zoom-wrapper-width-mode="full" style="position: absolute; top: 0px !important; left: 0px !important; width: 100%; height: 100%; max-width: none; margin-left: 0px !important; margin-right: 0px !important; z-index: 1 !important; overflow: hidden; inset: 0; max-height: none" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-zoom-wrapper-align="center"><img loading="eager" fetchpriority="high" data-hero-bg="true" data-context="A warm, softly lit flat-lay of a customizable affirmation gift set on a clean, light wooden table. The set includes a small ceramic mug, a metal bookmark, and a keychain, each subtly engraved with the Hebrew words 'אני חזקה' (I am strong), 'אני מצליחה' (I am successful), and 'אני אהובה' (I am loved). The scene includes a few eucalyptus leaves and a soft linen cloth, creating a feeling of calm, mindfulness, and personal ritual. The image is bright, airy, and high-quality." width="1920" height="1080" src="/assets/site-index-hero-image-1-1783334853506-k0op7s.webp" alt="סט מתנות אישי עם מילות חיזוק על רקע עץ בהיר" class="index-hero-bg" data-hero-background="true" data-element-type="image" data-element-id="img-1787656485889-ostaiw0wh" data-zappy-zoom="1" style="opacity: 1; mix-blend-mode: normal; object-position: 32% 58%; margin: 0; position: absolute; width: 100%; height: 100%; max-width: none; max-height: none; display: block !important; object-fit: cover; inset: 0" data-zappy-hero-img-base-opacity="1" data-zappy-hero-img-base-blend="normal" data-zappy-object-position="32% 58%" decoding="async"></div>
-        <div class="index-hero-scrim" aria-hidden="true" data-zappy-scrim-base-opacity="85" data-zappy-gradient-scrim="true" style="opacity: 0;"></div>
+    <section class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-type="side-by-side" id="hero">
+  <div class="hero-container">
+    <!-- Text Column -->
+    <div class="hero-text-col">
+      <span class="hero-eyebrow">מתנות עם משמעות</span>
+      <h1 class="hero-headline">המילה שתשנה את היום שלך</h1>
+      <h3 class="hero-subtitle">תכשיטים ואביזרים אישיים עם מסרים מעצימים. בחרי את המילים שלך, צבע וצורה — וצרי לעצמך או לאנשים שאוהבים קמע יומיומי של כוח ואהבה.</h3>
+      <div class="hero-actions">
+        <a href="#customize" class="btn btn-primary">לעיצוב המתנה שלי</a>
+        <a href="#gallery" class="btn btn-ghost">לגלות את הקולקציה</a>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-item">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+          התאמה אישית מלאה
+        </span>
+        <span class="trust-item">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+          משלוח עד הבית
+        </span>
+        <span class="trust-item">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+          עטיפה מפנקת במתנה
+        </span>
+      </div>
     </div>
 
-    <div class="index-hero-content">
-        <div class="index-hero-card">
-            <div class="index-hero-card-content"><div data-zappy-zoom-wrapper="true" data-element-id="img-1787656485890-p5hpiwhyi" data-element-type="image" data-zappy-zoom-wrapper-width="638px" data-zappy-zoom-wrapper-height="463px" data-zappy-zoom-wrapper-width-mode="full" data-zappy-zoom-wrapper-align="center" style="position: absolute !important; overflow: hidden !important; width: 100% !important; max-width: none !important; margin-left: 0px !important; margin-right: 0px !important; height: 100% !important; display: block !important; top: 0px !important; left: 0px !important; z-index: 1 !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img class="index-hero-logo" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1787656269884-rx8ftp.webp" alt="מטרה פנימית - מתנות עם משמעות" style="width: 100% !important; height: 100% !important; display: block !important; margin: 0px !important; object-fit: cover !important; object-position: 37% 40% !important; position: absolute !important; left: 0% !important; top: 0% !important; max-width: none !important; max-height: none !important;" data-element-type="image" data-element-id="img-1787656485890-p5hpiwhyi" data-zappy-zoom="1" data-zappy-object-position="37% 40%" data-zappy-original-width="638" data-zappy-original-height="462.765625" decoding="async"></div>
-<h1 class="index-hero-title">מילה אחת ביום משנה את כל המציאות</h1>
-<h3 class="index-hero-subtitle">תכשיטים ומתנות אישיים עם מסרים של עוצמה, אהבה והצלחה – תזכורת יומיומית לכוח שכבר נמצא בך.</h3>
-<div class="index-hero-cta-group">
-    <a href="#" class="index-hero-btn index-hero-btn-primary" data-element-type="button" data-element-id="btn-1787656485883-xeezfsnte" data-native-element="true">עיצוב מתנה אישית</a>
-    <a href="https://ellaswordscatalog.my.canva.site/" class="index-hero-btn index-hero-btn-ghost btn btn-ghost" data-element-type="button" data-element-id="btn-1787656485883-slse8f100" data-native-element="true" style="outline: none; color: rgb(44, 24, 16) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;" target="_blank" rel="noopener noreferrer">גלו את הקולקציה</a>
-</div></div>
-        </div>
+    <!-- Image Column -->
+    <div class="hero-image-col">
+      <div class="hero-image-frame">
+        <img loading="eager" fetchpriority="high" data-context="A warm, softly lit flat-lay of a personalized affirmation keychain and a matching bookmark on a linen cloth, surrounded by eucalyptus leaves and a small ceramic mug with the words 'I am strong' engraved, in a cozy, elegant, pastel-toned setting." width="600" height="400" src="/assets/image-personalized-gifts-accessories-section-hero-index-hero-image-1.webp" alt="ערכת מתנה אישית עם צמיד, סימנייה וספל עם מסר מעצים" decoding="async">
+      </div>
+      <!-- Decorative botanical SVG -->
+      <svg class="hero-leaf-accent" data-no-icon-edit="true" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#A8C5A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20,180 C40,130 80,80 150,30"></path>
+        <path d="M50,170 C60,140 90,110 140,60"></path>
+        <path d="M30,160 C45,130 70,100 110,55"></path>
+        <path d="M60,150 C65,130 80,110 100,75"></path>
+        <path d="M120,80 C125,100 115,120 95,140"></path>
+        <path d="M135,60 C140,80 130,100 110,120"></path>
+        <path d="M100,110 C115,115 125,125 125,140"></path>
+      </svg>
     </div>
-
-    <svg class="index-hero-leaf-accent" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10,210 C10,110 60,30 210,10 C190,60 160,160 10,210 Z" fill="none" stroke="#A8C5A0" stroke-width="2"></path>
-        <path d="M40,180 C40,120 80,60 180,40 C165,80 140,140 40,180 Z" fill="none" stroke="#A8C5A0" stroke-width="1.5"></path>
-        <path d="M70,150 C70,110 100,80 150,70 C140,100 120,120 70,150 Z" fill="none" stroke="#A8C5A0" stroke-width="1"></path>
-    </svg>
+  </div>
 </section>
 
 <section id="layout-1787473499774" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 60px 0px; direction: rtl;" data-component-id="imagecard-3col">
