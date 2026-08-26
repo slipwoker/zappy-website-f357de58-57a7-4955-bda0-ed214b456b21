@@ -2690,221 +2690,309 @@
 
 
 
+
+
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .index-hero-section {
-  background: #FDF8F6;
-  color: var(--text-dark);
-  padding: 120px 24px 60px;
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+  background-color: #2C1810;
+  color: var(--text-light);
+  padding-bottom: 80px;
   direction: rtl;
 }
 
-.index-hero-section .hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 48px;
+.index-hero-section .index-hero-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.index-hero-section .hero-text-col {
-  flex: 1 1 45%;
-  min-width: 300px;
+.index-hero-section .index-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  background-position: center !important;
+  z-index: 0;
+}
+
+.index-hero-section .index-hero-scrim {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgba(44,24,16,0.05) 0%, rgba(44,24,16,0.3) 40%, rgba(44,24,16,0.52) 75%, rgba(44,24,16,0.58) 100%),
+    linear-gradient(90deg, rgba(44,24,16,0.0) 0%, rgba(44,24,16,0.15) 50%, rgba(44,24,16,0.45) 100%);
+}
+
+.index-hero-section .index-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 24px 100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: flex-start;
   text-align: right;
 }
 
-.index-hero-section .hero-eyebrow {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #E8637A;
+.index-hero-section .index-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(252,250,247,0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(252,250,247,0.25);
+  border-radius: 100px;
+  padding: 8px 20px;
+  margin-bottom: 28px;
 }
 
-.index-hero-section .hero-headline {
+.index-hero-section .index-hero-badge span {
+  font-family: 'Assistant', 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.index-hero-section .index-hero-title {
   font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.15;
-  color: #2C1810;
-  margin: 0;
+  color: var(--text-light);
+  text-shadow: 0 2px 18px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.4);
+  margin: 0 0 20px;
+  max-width: 700px;
+  direction: rtl;
 }
 
-.index-hero-section .hero-subtitle {
-  font-family: 'Inter', 'Assistant', sans-serif;
+.index-hero-section .index-hero-subtitle {
+  font-family: 'Assistant', 'Inter', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1.6;
-  color: #3D2B2B;
-  margin: 0;
+  line-height: 1.7;
+  color: var(--text-light);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.35);
+  margin: 0 0 36px;
+  max-width: 560px;
+  direction: rtl;
+  opacity: 0.95;
 }
 
-.index-hero-section .hero-actions {
+.index-hero-section .index-hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 8px;
+  align-items: center;
 }
 
-.index-hero-section .btn {
-  display: inline-block;
+.index-hero-section .index-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Assistant', 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: 'Inter', 'Assistant', sans-serif;
-}
-
-.index-hero-section .btn-primary {
-  background: #E8637A;
-  color: #FFFFFF;
+  border-radius: 100px;
   padding: 14px 28px;
-  border-radius: 30px;
-  border: none;
-  font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 12px 40px rgba(232, 99, 122, 0.25);
+  min-height: 52px;
 }
 
-.index-hero-section .btn-primary:hover {
-  background: #d94f68;
-  transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(232, 99, 122, 0.35);
-}
-
-.index-hero-section .btn-ghost {
-  background: transparent;
-  color: #E8637A;
-  padding: 12px 20px;
-  font-weight: 500;
-  text-decoration: underline;
-  font-size: 1rem;
-  border: none;
-}
-
-.index-hero-section .btn-ghost:hover {
-  color: #d94f68;
-  transform: translateY(-2px);
-}
-
-.index-hero-section .hero-trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px 24px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-light);
-}
-
-.index-hero-section .trust-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.875rem;
-  color: #3D2B2B;
-  font-weight: 500;
-}
-
-.index-hero-section .trust-item svg {
-  width: 18px;
-  height: 18px;
-  color: #E8637A;
+.index-hero-section .index-hero-btn svg {
   flex-shrink: 0;
 }
 
-.index-hero-section .hero-image-col {
-  flex: 1 1 45%;
-  min-width: 300px;
-  position: relative;
-  display: flex;
-  justify-content: center;
+.index-hero-section .index-hero-btn-primary {
+  background: #E8637A;
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 0 30px rgba(232,99,122,0.3);
 }
 
-.index-hero-section .hero-image-frame {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(180, 100, 100, 0.12);
-  position: relative;
-  z-index: 2;
+.index-hero-section .index-hero-btn-primary:hover {
+  background: #d9536b;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(232,99,122,0.4);
 }
 
-.index-hero-section .hero-image-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.index-hero-section .index-hero-btn-secondary {
+  background: rgba(252,250,247,0.1);
+  color: var(--text-light);
+  border: 1.5px solid rgba(252,250,247,0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-.index-hero-section .hero-leaf-accent {
+.index-hero-section .index-hero-btn-secondary:hover {
+  background: rgba(252,250,247,0.22);
+  border-color: rgba(252,250,247,0.85);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.index-hero-section .index-hero-leaf-accent {
   position: absolute;
-  top: -30px;
-  left: -40px;
+  top: 100px;
+  left: 40px;
   width: 220px;
   height: 220px;
-  opacity: 0.35;
+  z-index: 2;
   pointer-events: none;
-  z-index: 1;
+  opacity: 0.35;
 }
 
-@media (min-width: 768px) {
-  .index-hero-section {
-    padding: 140px 48px 80px;
-  }
-  .index-hero-section .hero-container {
-    flex-wrap: nowrap;
-  }
-  .index-hero-section .hero-text-col {
-    flex-basis: 50%;
-  }
-  .index-hero-section .hero-image-col {
-    flex-basis: 50%;
-  }
+.index-hero-section .index-hero-leaf-accent svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.index-hero-section .index-hero-tassel {
+  position: absolute;
+  bottom: 160px;
+  right: 40px;
+  width: 60px;
+  height: 140px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.index-hero-section .index-hero-tassel svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.index-hero-section .index-hero-divider-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.index-hero-section .index-hero-divider-wrapper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 768px) {
   .index-hero-section {
-    padding: 100px 16px 40px;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    align-items: flex-end;
   }
-  .index-hero-section .hero-container {
-    flex-direction: column;
-    gap: 32px;
+
+  .index-hero-section .index-hero-content {
+    padding: 100px 16px 120px;
+    align-items: flex-start;
+    text-align: right;
   }
-  .index-hero-section .hero-text-col,
-  .index-hero-section .hero-image-col {
-    flex: 1 1 100%;
-    min-width: 0;
-  }
-  .index-hero-section .hero-headline {
+
+  .index-hero-section .index-hero-title {
     font-size: 2.5rem;
+    line-height: 1.2;
+    max-width: 100%;
+    margin-bottom: 16px;
   }
-  .index-hero-section .hero-subtitle {
-    font-size: 1.1rem;
+
+  .index-hero-section .index-hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 28px;
   }
-  .index-hero-section .hero-actions {
+
+  .index-hero-section .index-hero-actions {
     flex-direction: column;
     align-items: stretch;
-  }
-  .index-hero-section .btn-primary,
-  .index-hero-section .btn-ghost {
-    text-align: center;
-  }
-  .index-hero-section .hero-leaf-accent {
-    top: -20px;
-    left: -20px;
-    width: 140px;
-    height: 140px;
-  }
-  .index-hero-section .hero-trust {
-    flex-direction: column;
+    width: 100%;
     gap: 12px;
+  }
+
+  .index-hero-section .index-hero-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  .index-hero-section .index-hero-badge {
+    margin-bottom: 20px;
+    padding: 7px 16px;
+  }
+
+  .index-hero-section .index-hero-badge span {
+    font-size: 0.8rem;
+  }
+
+  .index-hero-section .index-hero-leaf-accent {
+    top: 80px;
+    left: 10px;
+    width: 120px;
+    height: 120px;
+    opacity: 0.25;
+  }
+
+  .index-hero-section .index-hero-tassel {
+    bottom: 140px;
+    right: 10px;
+    width: 40px;
+    height: 100px;
+    opacity: 0.4;
+  }
+
+  .index-hero-section .index-hero-scrim {
+    background-image:
+      linear-gradient(180deg, rgba(44,24,16,0.05) 0%, rgba(44,24,16,0.35) 50%, rgba(44,24,16,0.55) 80%, rgba(44,24,16,0.6) 100%);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .index-hero-section .index-hero-title {
+    font-size: 3rem;
+  }
+
+  .index-hero-section .index-hero-content {
+    padding: 140px 32px 100px;
+  }
+
+  .index-hero-section .index-hero-leaf-accent {
+    left: 20px;
+    width: 160px;
+    height: 160px;
+  }
+
+  .index-hero-section .index-hero-tassel {
+    right: 20px;
   }
 }
 /* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:index-hero */
@@ -2969,7 +3057,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 </style>
     <link rel="stylesheet" href="/styles.css">
     <script>window.ZAPPY_WEBSITE_ID = "f357de58-57a7-4955-bda0-ed214b456b21"; window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
-    <link rel="preload" as="image" href="/assets/site-index-hero-image-1-1783334853506-k0op7s.webp?t=1787662380171" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/site-index-hero-image-1-1782911108786-fujzdh.webp" fetchpriority="high">
 
     <style id="zappy-dropdown-submenu-styles">
       /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
@@ -3544,49 +3632,60 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 </script>
   
   <main id="main">
-    <section class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-type="side-by-side" id="hero">
-  <div class="hero-container">
-    <!-- Text Column -->
-    <div class="hero-text-col">
-      <h2 style="color: rgb(252, 250, 247) !important;"><span style="color: #000080 !important">מתנות עם משמעות</span></h2><h1></h1>
-      <h1 class="hero-headline">המילים שמלוות אותך בכל יום</h1>
-      <h3 class="hero-subtitle">בחרי את המילה שלך, צבע וצורה — צרי לעצמך או לכל מי שיקר לך קמע יומיומי של כוח ואהבה.</h3>
-      <div class="hero-actions">
-        <a href="#customize" class="btn btn-primary" data-element-type="button" data-element-id="btn-1787661812685-fd52cyvh2" data-native-element="true" style="outline: none;">לעיצוב המתנה שלי</a>
-        <a href="https://online.flippingbook.com/view/340817951/2/" class="btn btn-ghost" data-element-type="button" data-element-id="btn-1787661812685-539m7hr6a" data-native-element="true" style="outline: none; color: rgb(217, 79, 104) !important; border-color: transparent !important; background-color: transparent !important; background-image: none !important;" target="_blank" rel="noopener noreferrer">לגלות את הקולקציה</a>
-      </div>
-      <div class="hero-trust">
-        <span class="trust-item" style="color: rgb(252, 250, 247) !important;">
-          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
-          התאמה אישית מלאה
-        </span>
-        <span class="trust-item" style="color: rgb(252, 250, 247) !important;">
-          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
-          משלוח עד הבית
-        </span>
-        <span class="trust-item" style="color: rgb(252, 250, 247) !important;">
-          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
-          עטיפה מפנקת במתנה
-        </span>
-      </div>
-    </div>
+    <section class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="hero">
+  <div class="index-hero-bg-wrapper">
+    <div class="index-hero-bg" style="background-image: url('assets/site-index-hero-image-1-1783334853506-k0op7s.webp?t=1787662380171'); background-size: cover; background-position: center;"></div>
+    <div class="index-hero-scrim" aria-hidden="true"></div>
+  </div>
 
-    <!-- Image Column -->
-    <div class="hero-image-col">
-      <div class="hero-image-frame">
-        <img loading="eager" fetchpriority="high" data-context="A warm, softly lit flat-lay of a personalized affirmation keychain and a matching bookmark on a linen cloth, surrounded by eucalyptus leaves and a small ceramic mug with the words 'I am strong' engraved, in a cozy, elegant, pastel-toned setting." width="600" height="400" src="/assets/site-index-hero-image-1-1783334853506-k0op7s.webp?t=1787662380171" alt="ערכת מתנה אישית עם צמיד, סימנייה וספל עם מסר מעצים" data-element-type="image" data-element-id="img-1787661812689-ylwwi4nvf" style="object-position: 50% 50%; object-fit: contain; width: auto; height: auto; max-width: 600px; display: block; border-radius: 8px; margin: 20px" decoding="async">
-      </div>
-      <!-- Decorative botanical SVG -->
-      <svg class="hero-leaf-accent" data-no-icon-edit="true" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#A8C5A0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20,180 C40,130 80,80 150,30"></path>
-        <path d="M50,170 C60,140 90,110 140,60"></path>
-        <path d="M30,160 C45,130 70,100 110,55"></path>
-        <path d="M60,150 C65,130 80,110 100,75"></path>
-        <path d="M120,80 C125,100 115,120 95,140"></path>
-        <path d="M135,60 C140,80 130,100 110,120"></path>
-        <path d="M100,110 C115,115 125,125 125,140"></path>
-      </svg>
+  <div class="index-hero-leaf-accent" aria-hidden="true" data-no-icon-edit="true">
+    <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 190C30 190 20 120 70 70C120 20 190 10 190 10C190 10 200 80 150 130C100 180 30 190 30 190Z" stroke="#A8C5A0" stroke-width="2" fill="none"></path>
+      <path d="M70 70C90 50 110 40 130 35" stroke="#A8C5A0" stroke-width="2" fill="none"></path>
+      <path d="M100 100C115 90 130 85 145 82" stroke="#A8C5A0" stroke-width="2" fill="none"></path>
+      <path d="M130 130C140 125 150 122 160 120" stroke="#A8C5A0" stroke-width="2" fill="none"></path>
+    </svg>
+  </div>
+
+  <div class="index-hero-tassel" aria-hidden="true" data-no-icon-edit="true">
+    <svg viewBox="0 0 60 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 0C30 20 25 30 20 40C15 50 12 60 12 70C12 80 15 90 20 100C25 110 30 120 30 130" stroke="#E8B4B8" stroke-width="2" fill="none"></path>
+      <path d="M18 100L30 130L42 100" stroke="#E8B4B8" stroke-width="2" fill="none"></path>
+      <path d="M22 110L30 130L38 110" stroke="#E8B4B8" stroke-width="2" fill="none"></path>
+      <path d="M26 120L30 130L34 120" stroke="#E8B4B8" stroke-width="2" fill="none"></path>
+      <circle cx="30" cy="12" r="8" stroke="#E8B4B8" stroke-width="2" fill="none"></circle>
+    </svg>
+  </div>
+
+  <div class="index-hero-content">
+    <div class="index-hero-badge">
+      <span>מטרה פנימית</span>
     </div>
+    <h1 class="index-hero-title">המילים שמלוות אותך בכל יום</h1>
+    <h3 class="index-hero-subtitle">בחרי את המילה שלך, צבע וצורה — צרי לעצמך או לכל מי שיקר לך קמע יומיומי של כוח ואהבה.</h3>
+    <div class="index-hero-actions">
+      <a href="#customize" class="index-hero-btn index-hero-btn-primary">
+        <span>לעיצוב המתנה שלי</span>
+        <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+      </a>
+      <a href="https://online.flippingbook.com/view/340817951/2/" target="_blank" rel="noopener" class="index-hero-btn index-hero-btn-secondary">
+        <span>לגלות את הקולקציה</span>
+        <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M2 12h20"></path>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="index-hero-divider-wrapper" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,40 Q50,35 100,42 T200,38 Q250,42 300,35 T400,40 Q450,38 500,42 T600,35 Q650,40 700,38 T800,42 Q850,35 900,40 T1000,38 Q1050,42 1100,35 T1200,40 L1200,80 Z" fill="var(--bg-light)"></path>
+    </svg>
   </div>
 </section>
 
@@ -3742,7 +3841,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
       <div class="home-section-1-section__step-card" id="zappy-section-37" data-grid-item-index="3">
         <div class="home-section-1-section__step-number" id="zappy-section-38">04</div>
         <div class="home-section-1-section__step-image-wrapper" id="zappy-section-39">
-          <div data-zappy-zoom-wrapper="true" data-element-id="img-1783356686600-ehj1z6ecd" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="285px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 274px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 285px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="מתנה אישית מוכנה למסירה" class="home-section-1-section__step-image" src="/assets/site-index-hero-image-1-1782911108786-fujzdh.webp" data-context="An elegant gift box tied with a ribbon, containing a personalized keychain with the word " style="display: block !important; width: 242.267% !important; height: 130% !important; object-fit: cover !important; object-position: 65% 59% !important; margin: 0px !important; left: -92.4738% !important; top: -17.7% !important; max-width: none !important; max-height: none !important; position: absolute !important" data-element-type="image" data-element-id="img-1783356686600-ehj1z6ecd" data-zappy-zoom="1.3" data-zappy-object-position="65% 59%" data-zappy-original-width="274" data-zappy-original-height="285" decoding="async"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="img-1783356686600-ehj1z6ecd" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="285px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 274px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 285px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img loading="eager" fetchpriority="high" alt="מתנה אישית מוכנה למסירה" class="home-section-1-section__step-image" src="/assets/site-index-hero-image-1-1782911108786-fujzdh.webp" data-context="An elegant gift box tied with a ribbon, containing a personalized keychain with the word " style="display: block !important; width: 242.267% !important; height: 130% !important; object-fit: cover !important; object-position: 65% 59% !important; margin: 0px !important; left: -92.4738% !important; top: -17.7% !important; max-width: none !important; max-height: none !important; position: absolute !important" data-element-type="image" data-element-id="img-1783356686600-ehj1z6ecd" data-zappy-zoom="1.3" data-zappy-object-position="65% 59%" data-zappy-original-width="274" data-zappy-original-height="285" decoding="async"></div>
         </div>
         <div class="home-section-1-section__step-content" id="zappy-section-40">
           <h3 class="home-section-1-section__step-title" style="font-family: Poppins, sans-serif !important; text-align: center;">קחי אותה איתך לכל מקום 🌿
