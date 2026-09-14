@@ -6042,6 +6042,13 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
   padding: 12px;
   box-shadow: 0 8px 30px rgba(180,100,100,0.10);
 }
+
+.index-hero-section {
+  background-image: linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82)), url('assets/site-index-hero-image-1-1783334853506-k0op7s.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
