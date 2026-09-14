@@ -2782,309 +2782,242 @@
 
 
 
+
+
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .index-hero-section {
+  background: #FDF8F6;
+  color: var(--text-dark);
+  padding: 120px 16px 60px;
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: visible;
-  background-color: #2C1810;
-  color: var(--text-light);
-  padding-bottom: 80px;
+  overflow: hidden;
   direction: rtl;
 }
 
-.index-hero-section .index-hero-bg-wrapper {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.index-hero-section .index-hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover !important;
-  background-position: center !important;
-  z-index: 0;
-}
-
-.index-hero-section .index-hero-scrim {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  background-image:
-    linear-gradient(180deg, rgba(44,24,16,0.05) 0%, rgba(44,24,16,0.3) 40%, rgba(44,24,16,0.52) 75%, rgba(44,24,16,0.58) 100%),
-    linear-gradient(90deg, rgba(44,24,16,0.0) 0%, rgba(44,24,16,0.15) 50%, rgba(44,24,16,0.45) 100%);
-}
-
-.index-hero-section .index-hero-content {
-  position: relative;
-  z-index: 10;
+.index-hero-section .index-hero-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 140px 24px 100px;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: right;
-}
-
-.index-hero-section .index-hero-badge {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(252,250,247,0.14);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(252,250,247,0.25);
-  border-radius: 100px;
-  padding: 8px 20px;
-  margin-bottom: 28px;
+  gap: 40px;
 }
 
-.index-hero-section .index-hero-badge span {
-  font-family: 'Assistant', 'Inter', sans-serif;
-  font-size: 0.875rem;
+.index-hero-section .index-hero-text-column {
+  text-align: right;
+  width: 100%;
+  max-width: 600px;
+  z-index: 10;
+}
+
+.index-hero-section .index-hero-label {
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--text-light);
   text-transform: uppercase;
+  color: #E8637A;
+  margin-bottom: 16px;
 }
 
 .index-hero-section .index-hero-title {
   font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.15;
-  color: var(--text-light);
-  text-shadow: 0 2px 18px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.4);
-  margin: 0 0 20px;
-  max-width: 700px;
-  direction: rtl;
+  color: #2C1810;
+  margin-bottom: 20px;
+  text-align: right;
 }
 
 .index-hero-section .index-hero-subtitle {
-  font-family: 'Assistant', 'Inter', sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1.7;
-  color: var(--text-light);
-  text-shadow: 0 1px 10px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.35);
-  margin: 0 0 36px;
-  max-width: 560px;
-  direction: rtl;
-  opacity: 0.95;
+  line-height: 1.6;
+  color: #3D2B2B;
+  margin-bottom: 32px;
+  text-align: right;
 }
 
-.index-hero-section .index-hero-actions {
+.index-hero-section .index-hero-cta-group {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  align-items: center;
+  margin-bottom: 32px;
 }
 
 .index-hero-section .index-hero-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-family: 'Assistant', 'Inter', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 100px;
+  display: inline-block;
   padding: 14px 28px;
-  min-height: 52px;
-}
-
-.index-hero-section .index-hero-btn svg {
-  flex-shrink: 0;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-align: center;
 }
 
 .index-hero-section .index-hero-btn-primary {
   background: #E8637A;
   color: #FFFFFF;
   border: none;
-  box-shadow: 0 0 30px rgba(232,99,122,0.3);
+  box-shadow: 0 12px 40px rgba(232,99,122,0.25);
 }
 
 .index-hero-section .index-hero-btn-primary:hover {
-  background: #d9536b;
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(232,99,122,0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 50px rgba(232,99,122,0.35);
 }
 
 .index-hero-section .index-hero-btn-secondary {
-  background: rgba(252,250,247,0.1);
-  color: var(--text-light);
-  border: 1.5px solid rgba(252,250,247,0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: transparent;
+  color: #3D2B2B;
+  border: 2px solid #3D2B2B;
 }
 
 .index-hero-section .index-hero-btn-secondary:hover {
-  background: rgba(252,250,247,0.22);
-  border-color: rgba(252,250,247,0.85);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  background: rgba(61,43,43,0.05);
+  transform: translateY(-6px);
 }
 
-.index-hero-section .index-hero-leaf-accent {
-  position: absolute;
-  top: 100px;
-  left: 40px;
-  width: 220px;
-  height: 220px;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.35;
+.index-hero-section .index-hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.index-hero-section .index-hero-leaf-accent svg {
+.index-hero-section .index-hero-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #8B7B78;
+}
+
+.index-hero-section .index-hero-trust-item svg {
+  color: #E8637A;
+  flex-shrink: 0;
+}
+
+.index-hero-section .index-hero-image-column {
   width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.index-hero-section .index-hero-tassel {
-  position: absolute;
-  bottom: 160px;
-  right: 40px;
-  width: 60px;
-  height: 140px;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.index-hero-section .index-hero-tassel svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.index-hero-section .index-hero-divider-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  pointer-events: none;
+  max-width: 600px;
   z-index: 5;
 }
 
-.index-hero-section .index-hero-divider-wrapper svg {
+.index-hero-section .index-hero-image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(180,100,100,0.12);
+  background: #F5EDE8;
+}
+
+.index-hero-section .index-hero-image-wrapper img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.index-hero-section .index-hero-image-deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.35;
+}
+
+.index-hero-section .index-hero-image-deco-top {
+  top: -20px;
+  right: -20px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #A8C5A0 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.index-hero-section .index-hero-image-deco-bottom {
+  bottom: -30px;
+  left: -30px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #E8B4B8 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .index-hero-section {
+    padding: 140px 32px 80px;
+  }
+
+  .index-hero-section .index-hero-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .index-hero-section .index-hero-text-column {
+    flex: 1 1 50%;
+    max-width: 550px;
+  }
+
+  .index-hero-section .index-hero-image-column {
+    flex: 1 1 45%;
+    max-width: 500px;
+  }
+
+  .index-hero-section .index-hero-title {
+    font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 768px) {
   .index-hero-section {
-    min-height: 100vh;
-    padding-bottom: 80px;
-    align-items: flex-end;
+    padding-top: 100px;
   }
 
-  .index-hero-section .index-hero-content {
-    padding: 100px 16px 120px;
-    align-items: flex-start;
-    text-align: right;
+  .index-hero-section .index-hero-container {
+    gap: 32px;
   }
 
   .index-hero-section .index-hero-title {
     font-size: 2.5rem;
-    line-height: 1.2;
-    max-width: 100%;
-    margin-bottom: 16px;
   }
 
   .index-hero-section .index-hero-subtitle {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    max-width: 100%;
-    margin-bottom: 28px;
+    font-size: 1.1rem;
   }
 
-  .index-hero-section .index-hero-actions {
+  .index-hero-section .index-hero-cta-group {
     flex-direction: column;
     align-items: stretch;
-    width: 100%;
-    gap: 12px;
   }
 
   .index-hero-section .index-hero-btn {
     width: 100%;
-    justify-content: center;
-    padding: 14px 20px;
+    text-align: center;
   }
 
-  .index-hero-section .index-hero-badge {
-    margin-bottom: 20px;
-    padding: 7px 16px;
-  }
-
-  .index-hero-section .index-hero-badge span {
-    font-size: 0.8rem;
-  }
-
-  .index-hero-section .index-hero-leaf-accent {
-    top: 80px;
-    left: 10px;
+  .index-hero-section .index-hero-image-deco-top {
     width: 120px;
     height: 120px;
-    opacity: 0.25;
+    top: -10px;
+    right: -10px;
   }
 
-  .index-hero-section .index-hero-tassel {
-    bottom: 140px;
-    right: 10px;
-    width: 40px;
-    height: 100px;
-    opacity: 0.4;
-  }
-
-  .index-hero-section .index-hero-scrim {
-    background-image:
-      linear-gradient(180deg, rgba(44,24,16,0.05) 0%, rgba(44,24,16,0.35) 50%, rgba(44,24,16,0.55) 80%, rgba(44,24,16,0.6) 100%);
+  .index-hero-section .index-hero-image-deco-bottom {
+    width: 150px;
+    height: 150px;
+    bottom: -15px;
+    left: -15px;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .index-hero-section .index-hero-title {
-    font-size: 3rem;
-  }
-
-  .index-hero-section .index-hero-content {
-    padding: 140px 32px 100px;
-  }
-
-  .index-hero-section .index-hero-leaf-accent {
-    left: 20px;
-    width: 160px;
-    height: 160px;
-  }
-
-  .index-hero-section .index-hero-tassel {
-    right: 20px;
-  }
-}
 /* ZAPPY_POSTGEN_GUARD_HERO_FONT_CAP:index-hero */
 .hero h1, .hero-section h1, [class*="hero-"] h1, [class~="hero"] h1, .hero .hero-title, .hero-title { font-size: 48px !important; line-height: 1.2 !important; }
 @media (max-width: 1024px) {
@@ -3147,7 +3080,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 </style>
     <link rel="stylesheet" href="/styles.css">
     <script>window.ZAPPY_WEBSITE_ID = "f357de58-57a7-4955-bda0-ed214b456b21"; window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
-    <link rel="preload" as="image" href="/assets/site-index-hero-image-1-1782911108786-fujzdh.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/image-personalized-gifts-accessories-section-hero-index-hero-image-1.webp" fetchpriority="high">
 
     <style id="zappy-dropdown-submenu-styles">
       /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
@@ -3722,60 +3655,34 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 </script>
   
   <main id="main">
-    <section class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-type="fullscreen-scrim" data-zappy-section="true" id="hero">
-  <div class="index-hero-bg-wrapper">
-    <div class="index-hero-bg" style="background-image: url('assets/site-index-hero-image-1-1783334853506-k0op7s.webp?t=1787662380171'); background-size: cover; background-position: center;"></div>
-    <div class="index-hero-scrim" aria-hidden="true"></div>
-  </div>
-
-  <div class="index-hero-leaf-accent" aria-hidden="true" data-no-icon-edit="true">
-    <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30 190C30 190 20 120 70 70C120 20 190 10 190 10C190 10 200 80 150 130C100 180 30 190 30 190Z" stroke="#A8C5A0" stroke-width="2" fill="none"></path>
-      <path d="M70 70C90 50 110 40 130 35" stroke="#A8C5A0" stroke-width="2" fill="none"></path>
-      <path d="M100 100C115 90 130 85 145 82" stroke="#A8C5A0" stroke-width="2" fill="none"></path>
-      <path d="M130 130C140 125 150 122 160 120" stroke="#A8C5A0" stroke-width="2" fill="none"></path>
-    </svg>
-  </div>
-
-  <div class="index-hero-tassel" aria-hidden="true" data-no-icon-edit="true">
-    <svg viewBox="0 0 60 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30 0C30 20 25 30 20 40C15 50 12 60 12 70C12 80 15 90 20 100C25 110 30 120 30 130" stroke="#E8B4B8" stroke-width="2" fill="none"></path>
-      <path d="M18 100L30 130L42 100" stroke="#E8B4B8" stroke-width="2" fill="none"></path>
-      <path d="M22 110L30 130L38 110" stroke="#E8B4B8" stroke-width="2" fill="none"></path>
-      <path d="M26 120L30 130L34 120" stroke="#E8B4B8" stroke-width="2" fill="none"></path>
-      <circle cx="30" cy="12" r="8" stroke="#E8B4B8" stroke-width="2" fill="none"></circle>
-    </svg>
-  </div>
-
-  <div class="index-hero-content">
-    <div class="index-hero-badge">
-      <span>המילים של אלה</span>
+    <section class="index-hero-section" data-layout-spec="דף הבית-hero" data-hero-type="side-by-side" id="hero">
+  <div class="index-hero-container">
+    <div class="index-hero-text-column">
+      <div class="index-hero-label">מתנות עם משמעות</div>
+      <h1 class="index-hero-title">המילים שהופכות כל יום למיוחד</h1>
+      <h3 class="index-hero-subtitle">תכשיטים ואביזרים אישיים עם הצהרות מעצימות, שנוצרו כדי להזכיר לך את הכוח שלך בכל רגע.</h3>
+      <div class="index-hero-cta-group">
+        <a href="#products" class="index-hero-btn index-hero-btn-primary">התחילו ליצור</a>
+        <a href="#about" class="index-hero-btn index-hero-btn-secondary">גלו את הסיפור</a>
+      </div>
+      <div class="index-hero-trust">
+        <span class="index-hero-trust-item">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+          התאמה אישית מלאה
+        </span>
+        <span class="index-hero-trust-item">
+          <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+          איכות חומרים גבוהה
+        </span>
+      </div>
     </div>
-    <h1 class="index-hero-title">המילים שמלוות אותך בכל יום</h1>
-    <h3 class="index-hero-subtitle">בחרי את המילה שלך, צבע וצורה — צרי לעצמך או לכל מי שיקר לך קמע יומיומי של כוח ואהבה.</h3>
-    <div class="index-hero-actions">
-      <a href="#customize" class="index-hero-btn index-hero-btn-primary" data-element-type="button" data-element-id="btn-1787759393254-h7x6zkw0a" data-native-element="true">
-        <span>לעיצוב המתנה שלי</span>
-        <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
-          <line x1="19" y1="12" x2="5" y2="12"></line>
-          <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-      </a>
-      <a href="https://ellaswordscatalog.my.canva.site/" target="_blank" rel="noopener noreferrer" class="index-hero-btn index-hero-btn-secondary btn btn-primary" data-element-type="button" data-element-id="btn-1787759393254-ahe54gial" data-native-element="true" style="outline: none; border-color: rgb(231, 111, 81) !important; color: rgb(255, 255, 255) !important; background-color: rgb(231, 111, 81) !important; background-image: none !important;">
-        <span>לגלות את הקולקציה</span>
-        <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M2 12h20"></path>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-        </svg>
-      </a>
+    <div class="index-hero-image-column">
+      <div class="index-hero-image-wrapper">
+        <img loading="eager" fetchpriority="high" data-context="A beautifully arranged flat-lay of personalized affirmation gifts on a warm, light linen background. In the center, a delicate gold keychain with a small circular pendant engraved with the Hebrew words 'אני חזקה' (I am strong). Around it, a ceramic mug with a minimalist affirmation print, a leather bookmark with a subtle engraving, and a small gift box tied with a soft pink ribbon. Soft natural light, airy composition, elegant and calm atmosphere, high-end product photography style." width="600" height="400" src="/assets/image-personalized-gifts-accessories-section-hero-index-hero-image-1.webp" alt="ערכת מתנות אישית עם תכשיט, ספל, סימנייה וקופסת מתנה מעוצבת" decoding="async">
+        <div class="index-hero-image-deco index-hero-image-deco-top" aria-hidden="true"></div>
+        <div class="index-hero-image-deco index-hero-image-deco-bottom" aria-hidden="true"></div>
+      </div>
     </div>
-  </div>
-
-  <div class="index-hero-divider-wrapper" aria-hidden="true">
-    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,80 L0,40 Q50,35 100,42 T200,38 Q250,42 300,35 T400,40 Q450,38 500,42 T600,35 Q650,40 700,38 T800,42 Q850,35 900,40 T1000,38 Q1050,42 1100,35 T1200,40 L1200,80 Z" fill="var(--bg-light)"></path>
-    </svg>
   </div>
 </section>
 
@@ -3931,7 +3838,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
       <div class="home-section-1-section__step-card" id="zappy-section-37" data-grid-item-index="3">
         <div class="home-section-1-section__step-number" id="zappy-section-38">04</div>
         <div class="home-section-1-section__step-image-wrapper" id="zappy-section-39">
-          <div data-zappy-zoom-wrapper="true" data-element-id="img-1783356686600-ehj1z6ecd" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="285px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 274px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 285px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img loading="eager" fetchpriority="high" alt="מתנה אישית מוכנה למסירה" class="home-section-1-section__step-image" src="/assets/site-index-hero-image-1-1782911108786-fujzdh.webp" data-context="An elegant gift box tied with a ribbon, containing a personalized keychain with the word " style="display: block !important; width: 242.267% !important; height: 130% !important; object-fit: cover !important; object-position: 65% 59% !important; margin: 0px !important; left: -92.4738% !important; top: -17.7% !important; max-width: none !important; max-height: none !important; position: absolute !important" data-element-type="image" data-element-id="img-1783356686600-ehj1z6ecd" data-zappy-zoom="1.3" data-zappy-object-position="65% 59%" data-zappy-original-width="274" data-zappy-original-height="285" decoding="async"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="img-1783356686600-ehj1z6ecd" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="285px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 274px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 285px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="מתנה אישית מוכנה למסירה" class="home-section-1-section__step-image" src="/assets/site-index-hero-image-1-1782911108786-fujzdh.webp" data-context="An elegant gift box tied with a ribbon, containing a personalized keychain with the word " style="display: block !important; width: 242.267% !important; height: 130% !important; object-fit: cover !important; object-position: 65% 59% !important; margin: 0px !important; left: -92.4738% !important; top: -17.7% !important; max-width: none !important; max-height: none !important; position: absolute !important" data-element-type="image" data-element-id="img-1783356686600-ehj1z6ecd" data-zappy-zoom="1.3" data-zappy-object-position="65% 59%" data-zappy-original-width="274" data-zappy-original-height="285" decoding="async"></div>
         </div>
         <div class="home-section-1-section__step-content" id="zappy-section-40">
           <h3 class="home-section-1-section__step-title" style="font-family: Poppins, sans-serif !important; text-align: center;">קחי אותה איתך לכל מקום 🌿
@@ -4186,42 +4093,47 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
       
 
       <!-- Small Card 1: Bookmarks -->
-      <article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="0" id="zappy-section-61">
+      <article class="gallery-card" style="background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" id="zappy-section-61-add-1789387729801-egy8t7" data-grid-item-index="0">
+        <div class="card-media">
+          <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155061905-0-nvofj4zn0-add-1785155253314-r5va42-add-1785155254142-pufmn7-add-1785155254596-iokr01-add-1785155255181-gwergf-add-1785217591136-6xtyws-add-1789387729801-egy8t7" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="cursor: pointer; width: 105% !important; height: 139.66% !important; object-fit: cover !important; object-position: 50% 46% !important; margin: 0px !important; left: -2.5% !important; top: -18.2437% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1789387729802-0-3540tkvjr" id="new-grid-img-1789387729802-0-3540tkvjr" data-placeholder="image-placeholder" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="50% 46%" data-zappy-base64-stripped="true" loading="lazy" decoding="async" fetchpriority="low"></div>
+        </div>
+        
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="1" id="zappy-section-61">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155061905-0-nvofj4zn0-add-1785155253314-r5va42-add-1785155254142-pufmn7-add-1785155254596-iokr01-add-1785155255181-gwergf-add-1785217591136-6xtyws" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1785218875945-h3epst.webp?t=1785218894656" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="cursor: pointer; width: 105% !important; height: 139.66% !important; object-fit: cover !important; object-position: 50% 46% !important; margin: 0px !important; left: -2.5% !important; top: -18.2437% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1785217591137-0-hjd42nhsv" id="new-grid-img-1785217591137-0-hjd42nhsv" data-placeholder="image-placeholder" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="50% 46%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="1" id="zappy-section-62">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="2" id="zappy-section-62">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155061905-0-nvofj4zn0-add-1785155253314-r5va42-add-1785155254142-pufmn7-add-1785155254596-iokr01-add-1785155255181-gwergf" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/personalized-gifts-accessories-gallery-upload-1783341171057-qktbg8.webp" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="cursor: pointer; width: 105% !important; height: 185.595% !important; object-fit: cover !important; object-position: 50% 46% !important; margin: 0px !important; left: -2.5% !important; top: -39.3737% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1785155255181-0-luk69bqko" id="new-grid-img-1785155255181-0-luk69bqko" data-placeholder="image-placeholder" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="50% 46%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="2" id="zappy-section-63">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="3" id="zappy-section-63">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155061905-0-nvofj4zn0-add-1785155253314-r5va42-add-1785155254142-pufmn7-add-1785155254596-iokr01" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1785155135657-6wyn7i.webp" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="cursor: pointer; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 50% !important; margin: 0px !important; left: 0% !important; top: 0% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1785155254596-0-did8mtm0z" id="new-grid-img-1785155254596-0-did8mtm0z" data-placeholder="image-placeholder" data-ai-slot="grid-item-image" data-zappy-zoom="1" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="50% 50%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="3" id="zappy-section-64">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="4" id="zappy-section-64">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155061905-0-nvofj4zn0-add-1785155253314-r5va42-add-1785155254142-pufmn7" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1785155156590-iel57i.webp" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="cursor: pointer; width: 150% !important; height: 150.213% !important; object-fit: cover !important; object-position: 47% 63% !important; margin: 0px !important; left: -23.5% !important; top: -31.6342% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1785155254142-0-98i4sufx4" id="new-grid-img-1785155254142-0-98i4sufx4" data-placeholder="image-placeholder" data-ai-slot="grid-item-image" data-zappy-zoom="1.5" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="47% 63%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="4" id="zappy-section-65">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="5" id="zappy-section-65">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155061905-0-nvofj4zn0-add-1785155253314-r5va42" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1785155149615-jwve3l.webp" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="cursor: pointer; width: 105% !important; height: 185.467% !important; object-fit: cover !important; object-position: 77% 72% !important; margin: 0px !important; left: -3.85% !important; top: -61.5363% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1785155253314-0-bf5f93a1x" id="new-grid-img-1785155253314-0-bf5f93a1x" data-placeholder="image-placeholder" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="77% 72%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="5" id="zappy-section-66">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="6" id="zappy-section-66">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155061905-0-nvofj4zn0" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1785155148813-z5iusn.webp?t=1785155213314" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="object-position: 50% 50%; cursor: pointer; width: 105% !important; height: 185.467% !important; object-fit: cover !important; margin: 0px !important; left: -2.5% !important; top: -42.7336% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1785155061905-0-nvofj4zn0" id="new-grid-img-1785155061905-0-nvofj4zn0" data-placeholder="image-placeholder" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="6" id="zappy-section-67">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="7" id="zappy-section-67">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155061089-0-cx675vivq" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/personalized-gifts-accessories-gallery-upload-1783341372806-m0mjfd.webp?t=1785155221336" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="object-position: 50% 50%; cursor: pointer; width: 105% !important; height: 185.595% !important; object-fit: cover !important; margin: 0px !important; left: -2.5% !important; top: -42.7975% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1785155061089-0-cx675vivq" id="new-grid-img-1785155061089-0-cx675vivq" data-placeholder="image-placeholder" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" data-grid-item-index="7" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-68">
+      </article><article class="gallery-card" data-grid-item-index="8" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-68">
         <div class="card-media">
           <img alt="סימניות מתכת בעבודת יד עם חריטת טקסט אישי" src="/assets/personalized-gifts-accessories-gallery-upload-1783403741446-fj760s.webp?t=1783403892353" data-context="A close-up shot of a beautiful gold-tone metal bookmark with a tassel, lying across an open hardcover book. The bookmark is engraved with the Hebrew word &quot;אני מאמינה&quot;. Natural window light creates soft shadows on the cream-colored pages." style="width: 100%; height: 100%; object-fit: cover; object-position: center center;" data-element-type="image" data-element-id="img-1785154899802-n97f2qint" loading="lazy" decoding="async" fetchpriority="low">
         </div>
@@ -4229,7 +4141,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
       </article>
 
       <!-- Small Card 2: Gift Sets -->
-      <article class="gallery-card" data-grid-item-index="8" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-69">
+      <article class="gallery-card" data-grid-item-index="9" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-69">
         <div class="card-media">
           <img alt="מארזי שי מוקפדים עם מוצרים תואמים ועיצוב אלגנטי" src="/assets/personalized-gifts-accessories-gallery-upload-1783341368617-1945b7.webp?t=1783403909686" data-context="A styled flat-lay of a curated gift box. The box is open, revealing a ceramic mug with a delicate gold heart and the text &quot;אני מספיק&quot;, a matching keychain, and a small scented candle. The set is tied with a silk ribbon in dusty rose. The background is a clean white marble surface." style="width: 100%; height: 100%; object-fit: cover; object-position: center center;" data-element-type="image" data-element-id="img-1785154899802-ixj9cw25c" loading="lazy" decoding="async" fetchpriority="low">
         </div>
@@ -4237,7 +4149,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
       </article>
 
       <!-- Small Card 3: Mugs -->
-      <article class="gallery-card" data-grid-item-index="9" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-70">
+      <article class="gallery-card" data-grid-item-index="10" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-70">
         <div class="card-media">
           <img alt="ספלים בעבודת יד עם מסרים אישיים ואיורים עדינים" src="/assets/personalized-gifts-accessories-service-upload-1783344318600-a2rp4g.webp?t=1783403932265" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="width: 100%; height: 100%; object-fit: cover; object-position: center center;" data-element-type="image" data-element-id="img-1785154899802-boqb4fx50" loading="lazy" decoding="async" fetchpriority="low">
         </div>
@@ -4245,7 +4157,7 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
       </article>
 
       <!-- Small Card 4: Additional Product -->
-      <article class="gallery-card" data-grid-item-index="10" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-71">
+      <article class="gallery-card" data-grid-item-index="11" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-71">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="img-1785154899802-k1md6ul4f" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1785155161422-hbpvhv.webp" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="width: 104.988% !important; height: 185.446% !important; object-fit: cover !important; object-position: 62% 51% !important; margin: 0px !important; left: -3.09256% !important; top: -43.5774% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="img-1785154899802-k1md6ul4f" data-zappy-zoom="1.04988" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="62% 51%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
@@ -4253,34 +4165,34 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
       </article>
 
       <!-- Small Card 5: Fairs -->
-      <article class="gallery-card" data-grid-item-index="11" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-72">
+      <article class="gallery-card" data-grid-item-index="12" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;" id="zappy-section-72">
         <div class="card-media">
           <img alt="Image placeholder" src="/assets/personalized-gifts-accessories-gallery-upload-1783342037369-xyf6zm.webp?t=1783404007541" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="width: 100%; height: 100%; object-fit: cover; object-position: center center;" data-element-type="image" data-element-id="img-1785154899802-pzula9vjh" loading="lazy" decoding="async" fetchpriority="low">
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="12" id="zappy-section-73">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="13" id="zappy-section-73">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155058757-0-6i1sidjuw" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1785155135462-0ivt22.webp" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="cursor: pointer; width: 105% !important; height: 185.441% !important; object-fit: cover !important; object-position: 62% 65% !important; margin: 0px !important; left: -3.1% !important; top: -55.5366% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1785155058757-0-6i1sidjuw" id="new-grid-img-1785155058757-0-6i1sidjuw" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="62% 65%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="13" id="zappy-section-74">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="14" id="zappy-section-74">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155058757-0-6i1sidjuw-add-1785218907705-5atibt" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" class="zappy-resizable-hover"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1785218875773-jdi1rr.webp?t=1785218917778" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="cursor: pointer; width: 105% !important; height: 139.66% !important; object-fit: cover !important; object-position: 62% 65% !important; margin: 0px !important; left: -3.1% !important; top: -25.7791% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1785218907706-0-iu4hnfgh6" id="new-grid-img-1785218907706-0-iu4hnfgh6" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="62% 65%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="14" id="zappy-section-75">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="15" id="zappy-section-75">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155058757-0-6i1sidjuw-add-1785218907705-5atibt-add-1786857514765-4prr25" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1785155141784-jvr516.webp?t=1786857597231" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="cursor: pointer; width: 105% !important; height: 105.182% !important; object-fit: cover !important; object-position: 62% 65% !important; margin: 0px !important; left: -3.1% !important; top: -3.36803% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1786857514765-0-smnv57vrj" id="new-grid-img-1786857514765-0-smnv57vrj" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="62% 65%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="15" id="zappy-section-76">
+      </article><article class="gallery-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" data-grid-item-index="16" id="zappy-section-76">
         <div class="card-media">
           <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155058757-0-6i1sidjuw-add-1785218907705-5atibt-add-1786857514765-4prr25-add-1786857608893-9hdtj7" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" class="zappy-resizable-hover"><img alt="Image placeholder" src="/assets/image-personalized-gifts-accessories-media-upload-upload-1786857590662-fcsot6.webp?t=1786857617812" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="cursor: pointer; width: 105% !important; height: 185.467% !important; object-fit: cover !important; object-position: 62% 65% !important; margin: 0px !important; left: -3.1% !important; top: -55.5536% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1786857608893-0-6qsigrae3" id="new-grid-img-1786857608893-0-6qsigrae3" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="62% 65%" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
-      </article><article class="gallery-card" style="background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" id="zappy-section-76-add-1789387647957-dfgou2" data-grid-item-index="16">
+      </article><article class="gallery-card" style="background-color: rgb(255, 255, 255) !important; grid-area: auto !important;" id="zappy-section-76-add-1789387647957-dfgou2" data-grid-item-index="17">
         <div class="card-media">
-          <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155058757-0-6i1sidjuw-add-1785218907705-5atibt-add-1786857514765-4prr25-add-1786857608893-9hdtj7-add-1789387647957-dfgou2" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" class="zappy-resizable-hover"><img alt="Image placeholder" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="cursor: pointer; width: 105% !important; height: 185.467% !important; object-fit: cover !important; object-position: 62% 65% !important; margin: 0px !important; left: -3.1% !important; top: -55.5536% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1789387647958-0-raew4qscq" id="new-grid-img-1789387647958-0-raew4qscq" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="62% 65%" data-zappy-base64-stripped="true" loading="lazy" decoding="async" fetchpriority="low"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1785155058757-0-6i1sidjuw-add-1785218907705-5atibt-add-1786857514765-4prr25-add-1786857608893-9hdtj7-add-1789387647957-dfgou2" data-element-type="image" data-zappy-zoom-wrapper-width="274px" data-zappy-zoom-wrapper-height="206px" data-zappy-zoom-wrapper-width-mode="card-slot" data-zappy-zoom-wrapper-align="center" style="position: relative !important; overflow: hidden !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 206px !important; display: block !important; padding-bottom: 0px !important; min-height: 0px !important; max-height: none !important;" data-zappy-card-slot-fill="1" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img alt="Image placeholder" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-placeholder="image-placeholder" data-context="A lifestyle photo of two hands holding a warm white ceramic mug. The mug features a minimalist botanical illustration and the Hebrew affirmation &quot;אני בוחרת בטוב&quot;. Soft morning light filters through a window, with a cozy knitted blanket in the background." style="cursor: pointer; width: 105% !important; height: 139.66% !important; object-fit: cover !important; object-position: 62% 65% !important; margin: 0px !important; left: -3.1% !important; top: -25.7791% !important; max-width: none !important; max-height: none !important; display: block !important; position: absolute !important" data-element-type="image" data-element-id="new-grid-img-1789387647958-0-raew4qscq" id="new-grid-img-1789387647958-0-raew4qscq" data-ai-slot="grid-item-image" data-zappy-zoom="1.05" data-zappy-original-width="274" data-zappy-original-height="206" data-zappy-object-position="62% 65%" data-zappy-base64-stripped="true" loading="lazy" decoding="async" fetchpriority="low"></div>
         </div>
         
       </article>
