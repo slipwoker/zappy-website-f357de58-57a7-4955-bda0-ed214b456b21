@@ -6049,6 +6049,20 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+@media (max-width: 768px) {
+.index-hero-section .index-hero-container {
+  flex-direction: column !important;
+}
+
+.index-hero-section .index-hero-image-column {
+  order: 1 !important;
+}
+
+.index-hero-section .index-hero-text-column {
+  order: 2 !important;
+}
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
