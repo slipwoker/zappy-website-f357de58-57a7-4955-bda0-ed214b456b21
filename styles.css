@@ -6130,6 +6130,111 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
   right: 0;
 }
 }
+
+.home-layout-section .home-layout-section__grid {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  grid-template-columns: none;
+  gap: 0;
+}
+
+.home-layout-section .faq-item {
+  background: var(--background-color, var(--background, var(--bg-light, #FFFFFF)));
+  border-radius: 12px;
+  border: 1px solid #EDD8D0;
+  box-shadow: 0 4px 20px rgba(180, 100, 100, 0.08);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.home-layout-section .faq-item:hover {
+  box-shadow: 0 8px 30px rgba(232, 99, 122, 0.18);
+}
+
+.home-layout-section .faq-item.active {
+  border-color: rgba(232, 99, 122, 0.5);
+}
+
+.home-layout-section .faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: right;
+  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2C1810;
+  line-height: 1.35;
+}
+
+.home-layout-section .faq-question-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 50%;
+  background: rgba(232, 99, 122, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E8637A;
+  flex-shrink: 0;
+}
+
+.home-layout-section .faq-question-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.home-layout-section .faq-question-text {
+  flex: 1;
+}
+
+.home-layout-section .faq-toggle-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E8637A;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.home-layout-section .faq-toggle-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.home-layout-section .faq-item.active .faq-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.home-layout-section .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.home-layout-section .faq-answer p {
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #3D2B2B;
+  margin: 0;
+  padding: 0 22px 22px 22px;
+  text-align: right;
+}
+
+.home-layout-section .faq-item.active .faq-answer {
+  max-height: 500px;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
