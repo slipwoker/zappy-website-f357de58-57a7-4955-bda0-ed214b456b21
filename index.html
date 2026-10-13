@@ -2867,48 +2867,83 @@
 
 </style>
 
+
+
 <style data-zappy-section-v2-css="true">
 /* V2 Regenerated Section CSS */
 .home-layout-section {
   background: #FDF8F6;
   color: var(--text-dark);
   padding: 80px 16px;
-  direction: rtl;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  direction: rtl;
 }
 
 .home-layout-section__container {
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
+  padding: 0;
 }
 
-/* Section Heart Divider */
-.home-layout-section__heart-divider {
+.home-layout-section__header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 1;
 }
 
-.home-layout-section__heart-divider svg {
-  width: 40px;
-  height: 40px;
+.home-layout-section__eyebrow {
+  display: inline-block;
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #E8637A;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .home-layout-section__title {
+  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.3;
   color: #2C1810;
+  margin: 0 0 16px 0;
   text-align: center;
-  margin-bottom: 48px;
-  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
+  max-width: none !important;
+}
+
+.home-layout-section__heart-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 16px;
+  width: 40px;
+  height: 20px;
+  color: #E8637A;
+}
+
+.home-layout-section__heart-divider svg {
+  width: 40px;
+  height: 20px;
+  display: block;
+}
+
+.home-layout-section__intro {
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #3D2B2B;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
 }
 
 .home-layout-section__grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   direction: rtl;
 }
@@ -2919,28 +2954,36 @@
   box-shadow: 0 4px 20px rgba(180, 100, 100, 0.08);
   padding: 2rem;
   border: 1px solid #EDD8D0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 .home-layout-section__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(180, 100, 100, 0.12);
+  box-shadow: 0 12px 40px rgba(232, 99, 122, 0.25);
+}
+
+.home-layout-section__card--featured {
+  background: #FDF8F6;
+  border: 1px solid #EDD8D0;
+  grid-column: span 2;
 }
 
 .home-layout-section__card-icon {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #F5EDE8;
+  background: rgba(232, 99, 122, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
   color: #E8637A;
+  flex-shrink: 0;
 }
 
 .home-layout-section__card-icon svg {
@@ -2949,39 +2992,27 @@
 }
 
 .home-layout-section__card-title {
+  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.35;
   color: #2C1810;
-  margin-bottom: 12px;
+  margin: 0;
   text-align: right;
-  font-family: 'Cormorant Garamond', 'Libre Baskerville', serif;
 }
 
 .home-layout-section__card-text {
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-family: 'Inter', 'Assistant', sans-serif;
+  font-size: 16px;
   line-height: 1.7;
   color: #3D2B2B;
-  text-align: right;
   margin: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .home-layout-section__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  text-align: right;
 }
 
 @media (max-width: 768px) {
   .home-layout-section {
-    padding: 60px 16px;
-  }
-
-  .home-layout-section__title {
-    font-size: 1.75rem;
-    margin-bottom: 32px;
+    padding: 100px 16px 40px;
   }
 
   .home-layout-section__grid {
@@ -2989,38 +3020,42 @@
     gap: 16px;
   }
 
-  .home-layout-section__card {
-    padding: 1.5rem;
-  }
-
-  .home-layout-section__card-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 12px;
-  }
-
-  .home-layout-section__card-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .home-layout-section__card-title {
-    font-size: 1.125rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-layout-section {
-    padding: 48px 12px;
-  }
-
-  .home-layout-section__title {
-    font-size: 1.5rem;
-    margin-bottom: 24px;
+  .home-layout-section__card--featured {
+    grid-column: span 1;
   }
 
   .home-layout-section__card {
     padding: 1.25rem;
+  }
+
+  .home-layout-section__title {
+    font-size: 1.75rem;
+  }
+
+  .home-layout-section__header {
+    margin-bottom: 32px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-layout-section__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .home-layout-section {
+    padding: 100px 16px;
+  }
+
+  .home-layout-section__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .home-layout-section__card--featured {
+    grid-column: span 2;
   }
 }
 </style>
@@ -4247,63 +4282,56 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
 
 
 
-<section class="home-layout-section" data-layout-spec="Home-layout" data-zappy-section="true" id="layout-1783058683652">
+<section class="home-layout-section" data-layout-spec="Home-layout" dir="rtl" data-zappy-section="true" id="layout-1783058683652">
   <div class="home-layout-section__container">
-    <!-- Section Heart Divider -->
-    <div class="home-layout-section__heart-divider" aria-hidden="true">
-      <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 34C20 34 8 25.5 8 16.5C8 11.8 11.8 8 16.5 8C19.3 8 21.8 9.3 23.3 11.3C24.8 9.3 27.3 8 30.1 8C34.8 8 38.6 11.8 38.6 16.5C38.6 25.5 26.6 34 20 34Z" fill="#E8637A"></path>
-        <path d="M4 38H36" stroke="#E8637A" stroke-width="2" stroke-linecap="round"></path>
-      </svg>
+    <div class="home-layout-section__header">
+      <span class="home-layout-section__eyebrow">כל מה שרצית לדעת</span>
+      <h2 class="home-layout-section__title">כמה דברים שכדאי לדעת:</h2>
+      <div class="home-layout-section__heart-divider" aria-hidden="true">
+        <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 40 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 15 C18 10, 10 8, 8 12 C6 16, 12 19, 20 19 C28 19, 34 16, 32 12 C30 8, 22 10, 20 15 Z" fill="#E8637A"></path>
+          <line x1="0" y1="17" x2="40" y2="17" stroke="#E8637A" stroke-width="1.5"></line>
+        </svg>
+      </div>
+      <p class="home-layout-section__intro">כל התשובות לשאלות שחשובות לך לפני שמזמינים מתנה עם משמעות.</p>
     </div>
 
-    <h2 class="home-layout-section__title"><span style="color: #1a56db !important">כמה דברים שכדאי לדעת</span>:</h2>
-
-    <div class="home-layout-section__grid zappy-preserve-css-grid" id="zappy-auto-grid-1789889005942-eku00z" data-zappy-auto-grid="true" data-original-item-width="384" data-original-gap="24px" style="display: grid; --zappy-grid-cols: repeat(auto-fit, minmax(min(100%, 384px), 1fr)); grid-template-columns: repeat(auto-fit, minmax(min(100%, 384px), 1fr)); align-items: stretch !important;" data-zappy-explicit-columns="true">
-      <!-- Card 1 -->
-      <article class="home-layout-section__card" data-grid-item-index="0">
-        <div class="home-layout-section__card-icon" aria-hidden="true">
-          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-            <path d="M2 17l10 5 10-5"></path>
-            <path d="M2 12l10 5 10-5"></path>
+    <div class="home-layout-section__grid">
+      <article class="home-layout-section__card home-layout-section__card--featured">
+        <div class="home-layout-section__card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 2.5 4.5 6.5 4.5c2 0 3.5 1 4.5 2.5 1-1.5 2.5-2.5 4.5-2.5 4 0 6 4 4 8C19 16.65 12 21 12 21z"></path>
           </svg>
         </div>
         <h3 class="home-layout-section__card-title">אני יכולה ליצור מחזיק משלי או שזה מהמלאי שיש ?</h3>
-        <p class="home-layout-section__card-text">הרעיון המרכזי שלי זה מחזיק בהתאמה אישית, המילה שלך, הצורה והצבע שאת אוהבת, להוסיף קישוט קטן ויש לך את המחזיק שרק לך יש. ייחודי רק לך.&nbsp;כמובן שניתן לרכוש מהמלאי הקיים או להזמין בדומה למוצר שראית ואהבת.</p>
+        <p class="home-layout-section__card-text">הרעיון המרכזי שלי זה מחזיק בהתאמה אישית, המילה שלך, הצורה והצבע שאת אוהבת, להוסיף קישוט קטן ויש לך את המחזיק שרק לך יש. ייחודי רק לך. כמובן שניתן לרכוש מהמלאי הקיים או להזמין בדומה למוצר שראית ואהבת.</p>
       </article>
 
-      <!-- Card 2 -->
-      <article class="home-layout-section__card" data-grid-item-index="1">
-        <div class="home-layout-section__card-icon" aria-hidden="true">
-          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="6" x2="12" y2="12"></line>
-            <line x1="12" y1="12" x2="16" y2="14"></line>
+      <article class="home-layout-section__card">
+        <div class="home-layout-section__card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 7v5l3 2"></path>
           </svg>
         </div>
         <h3 class="home-layout-section__card-title">מה העלות של מחזיק מפתחות שנעשה בעבודת יד בהתאמה אישית?</h3>
         <p class="home-layout-section__card-text">העלות נעה בין 30 ש"ח למחזיק קטן ללא תוספות למחזיק גדול עם תוספת קישוט בעלות של 65 ש"ח, כמובן שהזמנה בכמות - תקבלי הצעה מותאמת.</p>
       </article>
 
-      <!-- Card 3 -->
-      <article class="home-layout-section__card" data-grid-item-index="2">
-        <div class="home-layout-section__card-icon" aria-hidden="true">
-          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
+      <article class="home-layout-section__card">
+        <div class="home-layout-section__card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+            <path d="M16 2v4M8 2v4M3 10h18"></path>
           </svg>
         </div>
         <h3 class="home-layout-section__card-title">כמה זמן ההכנה נדרש לביצוע? כמה זמן ייקח לי לקבל את המחזיק?</h3>
         <p class="home-layout-section__card-text">זמן הכנה נע בין יומיים לחודש - תלוי בכמות, בכמות של עד 30 מחזיקים מדובר בשבוע הכנה. כמובן שאם מדובר במשלוח עד הבית (לכל הארץ) יש לקח עוד 2-3 ימים. יש גם אפשרות לאיסוף.</p>
       </article>
 
-      <!-- Card 4 -->
-      <article class="home-layout-section__card" data-grid-item-index="3">
-        <div class="home-layout-section__card-icon" aria-hidden="true">
-          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <article class="home-layout-section__card">
+        <div class="home-layout-section__card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
         </div>
@@ -4311,24 +4339,23 @@ body:has(.zappy-announcement-bar) .navbar:not(.zappy-catalog-menu):not(.mobile-s
         <p class="home-layout-section__card-text">כמובן, יש אפשרות להתאים מארז לפי הלקוח, כמעט כל דבר ניתן למתג ולהרכיב למארז מהמם. לקחת את המילה שלך ולשים על מחברת, סימניה, כוסות, מוצרים שמתאימים לחג או לאירוע כמו עפרונות וכרטיסים עם שוקולדים.</p>
       </article>
 
-      <!-- Card 5 -->
-      <article class="home-layout-section__card" data-grid-item-index="4">
-        <div class="home-layout-section__card-icon" aria-hidden="true">
-          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 20h9"></path>
-            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+      <article class="home-layout-section__card">
+        <div class="home-layout-section__card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+            <path d="M2 2l7.586 7.586"></path>
+            <circle cx="11" cy="11" r="2"></circle>
           </svg>
         </div>
         <h3 class="home-layout-section__card-title">האם ניתן לרשום כל דבר על המחזיק?</h3>
         <p class="home-layout-section__card-text">כמעט, ניתן להכניס עד 3 מילים במחזיק, יש את המחזיקים הגדולים שאפשר להכניס גם משפט ארוך יותר. אפשר לבחור כל מילה שמדברת אליך או ליעד המתנה. לכל אחד יש משמעות שונה בחיים.</p>
       </article>
 
-      <!-- Card 6 -->
-      <article class="home-layout-section__card" data-grid-item-index="5">
-        <div class="home-layout-section__card-icon" aria-hidden="true">
-          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      <article class="home-layout-section__card">
+        <div class="home-layout-section__card-icon">
+          <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5"></path>
           </svg>
         </div>
         <h3 class="home-layout-section__card-title">בהזמנה גדולה האם ניתן לקבל דוגמה ראשונה?</h3>
