@@ -697,6 +697,81 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 /* ZAPPY_CUSTOM_JS_END:4ed67d8b2b0f */
 
+/* ZAPPY_CUSTOM_JS_START:de6ae0c84e81 */
+(function () {
+  function __zappyCustomInit() {
+    try {
+(function () {
+  var grid = document.querySelector('.index-testimonials-section__grid');
+  if (!grid) return;
+  var cards = grid.querySelectorAll(':scope > .index-testimonials-section__card');
+  if (!cards.length) return;
+
+  // Wrap in a carousel shell
+  var shell = document.createElement('div');
+  shell.className = 'tst-carousel';
+  var track = document.createElement('div');
+  track.className = 'tst-carousel-track';
+  grid.parentNode.insertBefore(shell, grid);
+  shell.appendChild(track);
+  while (grid.firstChild) track.appendChild(grid.firstChild);
+  grid.remove();
+
+  var section = document.querySelector('.index-testimonials-section') || shell.parentNode;
+  var prev = document.createElement('button');
+  prev.className = 'tst-nav tst-prev';
+  prev.type = 'button';
+  prev.setAttribute('aria-label', 'הקודם');
+  prev.innerHTML = '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+  var next = document.createElement('button');
+  next.className = 'tst-nav tst-next';
+  next.type = 'button';
+  next.setAttribute('aria-label', 'הבא');
+  next.innerHTML = '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+
+  var wrap = document.createElement('div');
+  wrap.className = 'tst-carousel-wrap';
+  shell.parentNode.insertBefore(wrap, shell);
+  wrap.appendChild(shell);
+  wrap.appendChild(prev);
+  wrap.appendChild(next);
+
+  var index = 0;
+  function cardsPerView() {
+    var w = shell.clientWidth;
+    if (w < 620) return 1;
+    if (w < 920) return 2;
+    return 3;
+  }
+  function update() {
+    var per = cardsPerView();
+    var max = Math.max(0, cards.length - per);
+    if (index > max) index = max;
+    if (index < 0) index = 0;
+    var w = shell.clientWidth / per;
+    track.style.transform = 'translateX(' + (index * w) + 'px)';
+    prev.disabled = index <= 0;
+    next.disabled = index >= max;
+    cards.forEach(function (c) { c.style.width = w + 'px'; });
+  }
+  prev.addEventListener('click', function () { index--; update(); });
+  next.addEventListener('click', function () { index++; update(); });
+  var t;
+  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(update, 120); });
+  update();
+})();
+    } catch (e) {
+      if (typeof console !== 'undefined' && console.warn) { console.warn('[zappy-custom-js]', e); }
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', __zappyCustomInit);
+  } else {
+    __zappyCustomInit();
+  }
+})();
+/* ZAPPY_CUSTOM_JS_END:de6ae0c84e81 */
+
 
 /* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
 (function(){
