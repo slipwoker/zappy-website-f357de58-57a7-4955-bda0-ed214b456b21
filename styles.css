@@ -6735,6 +6735,22 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
   grid-template-columns: 1fr !important;
 }
 }
+
+.new-words-section .new-words-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px !important;
+}
+
+.new-words-section .nw-item {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.new-words-section .nw-image-main img {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
