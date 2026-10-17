@@ -6751,6 +6751,31 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
   aspect-ratio: 1 / 1 !important;
   object-fit: cover !important;
 }
+
+#new-words-section .new-words-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px !important;
+}
+
+#new-words-section .nw-item {
+  min-width: 0 !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+#new-words-section .nw-images .nw-image-main img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+#new-words-section .nw-info .nw-desc {
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
