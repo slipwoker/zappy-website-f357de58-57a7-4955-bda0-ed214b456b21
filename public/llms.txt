@@ -47,7 +47,7 @@ Information about WCAG compliance and accessibility features.
   - `email` (email, required)
   - `phone` (tel)
   - `subject` (text)
-  - `message` (textarea)
+  - `message` (textarea, required)
   - `privacy_consent` (checkbox, required)
 
 ---
