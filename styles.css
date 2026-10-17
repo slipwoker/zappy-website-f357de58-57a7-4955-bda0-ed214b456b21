@@ -6585,6 +6585,84 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
     font-size: 1.8rem;
   }
 }
+
+.new-words-section .nw-item {
+  background: var(--background-color, var(--background, var(--bg-light, #FFFFFF)));
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(180,100,100,0.08);
+  border: 1px solid #EDD8D0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-words-section .nw-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(232,99,122,0.25);
+}
+
+.new-words-section .nw-images {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.new-words-section .nw-image-main, .new-words-section .nw-image-secondary {
+  width: 100%;
+  overflow: hidden;
+}
+
+.new-words-section .nw-image-main {
+  aspect-ratio: 4 / 3;
+  background: #F5EDE8;
+}
+
+.new-words-section .nw-image-secondary {
+  aspect-ratio: 4 / 3;
+  background: #F5EDE8;
+}
+
+.new-words-section .nw-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.new-words-section .nw-info {
+  padding: 24px 22px 28px;
+  text-align: right;
+}
+
+.new-words-section .nw-name {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2C1810;
+  margin: 0 0 12px 0;
+}
+
+.new-words-section .nw-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #3D2B2B;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+.new-words-section .new-words-grid {
+  grid-template-columns: 1fr !important;
+  gap: 24px;
+}
+
+.new-words-section .nw-info {
+  padding: 20px 16px 24px;
+}
+}
+/* zappy-self-heal */
+.new-words-section .nw-info { padding: 24px 22px 28px !important; }
+
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
