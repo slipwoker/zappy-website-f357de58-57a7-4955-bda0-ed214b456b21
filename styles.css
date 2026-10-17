@@ -6668,6 +6668,29 @@ div[id*="mic-access-tool-box"] button[class*="reset"] * {
 /* zappy-self-heal */
 .new-words-section .nw-info { padding: 24px 22px 28px !important; }
 
+
+.new-words-section .nw-images {
+  display: block !important;
+  height: auto !important;
+}
+
+.new-words-section .nw-image-main {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.new-words-section .nw-image-secondary {
+  display: none !important;
+}
+
+.new-words-section .nw-image-main .nw-img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3 !important;
+  object-fit: cover !important;
+  display: block !important;
+}
 /* mobile-submenu-overflow-fix */
 @media (max-width: 768px) {
   .navbar .sub-menu.mobile-expanded,
